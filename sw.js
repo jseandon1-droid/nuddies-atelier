@@ -4,13 +4,13 @@
      network-first so a new deploy shows up on the next load, cache when offline.
    - traits/manifest.json: network-first. When its content changes, the trait-art cache is
      purged, so replaced or renamed art can never be served from an old cache.
-   - Trait PNGs: cache-first (the generator preloads every layer, ~270 MB, so re-fetching in
-     the background on each open would burn phone data). Freshness comes from the manifest
-     purge above, which also re-caches the new library in the background. Bytes are
-     cached untouched, so exports stay pixel-identical to the art.
+   - Trait PNGs + picker thumbnails: cache-first, on demand. The app only fetches the layers
+     you actually view (no 270 MB preload), and each one is kept for offline use after its
+     first view. Freshness comes from the manifest purge above. Bytes are cached untouched,
+     so exports stay pixel-identical to the art.
    - Google Fonts: stale-while-revalidate.
    Bump VERSION only when this file's logic changes; content updates need no bump. */
-const VERSION = 'v1';
+const VERSION = 'v2';
 const SHELL = `nuddies-shell-${VERSION}`;
 const ART = `nuddies-art-${VERSION}`;
 const FONTS = `nuddies-fonts-${VERSION}`;
@@ -28,10 +28,7 @@ self.addEventListener('activate', (e) => {
   const keep = new Set([SHELL, ART, FONTS]);
   e.waitUntil(caches.keys()
     .then((keys) => Promise.all(keys.filter((k) => !keep.has(k)).map((k) => caches.delete(k))))
-    .then(() => self.clients.claim())
-    // first install: cache the whole library now, so the app works offline after one visit
-    .then(() => caches.match('traits/manifest.json'))
-    .then((r) => r && r.text()).then((t) => t && warmArt(t)));
+    .then(() => self.clients.claim()));
 });
 
 async function networkFirst(req, cacheName, onFresh) {
@@ -70,29 +67,11 @@ async function staleWhileRevalidate(req, cacheName, event) {
   return refresh;
 }
 
-// When the trait manifest changes, drop cached art so no stale layer is ever composited,
-// then re-cache the new library in the background so the app stays fully usable offline
-// (a same-tab reload is served from the browser's memory cache and would not refill it).
-async function warmArt(manifestText) {
-  let M; try { M = JSON.parse(manifestText); } catch { return; }
-  const cache = await caches.open(ART);
-  const urls = M.categories.flatMap((c) => c.options.filter((o) => o.file)
-    .map((o) => new URL(`traits/${c.name}/${o.file}`, self.registration.scope).href));
-  for (let i = 0; i < urls.length; i += 8) {
-    await Promise.all(urls.slice(i, i + 8).map(async (u) => {
-      if (await cache.match(u)) return;
-      try { const r = await fetch(u, { cache: 'no-cache' }); if (r.ok) await cache.put(u, r); } catch {}
-    }));
-  }
-}
-function purgeArtIfManifestChanged(event) {
-  return async (fresh, cached) => {
-    if (!cached) return;
-    const a = await fresh.text();
-    if (a === await cached.text()) return;
-    await caches.delete(ART);
-    event.waitUntil(warmArt(a));
-  };
+// When the trait manifest changes, drop cached art + thumbnails so no stale layer is ever
+// composited; layers are re-fetched on demand as they are viewed.
+async function purgeArtIfManifestChanged(fresh, cached) {
+  if (!cached) return;
+  if (await fresh.text() !== await cached.text()) await caches.delete(ART);
 }
 
 self.addEventListener('fetch', (e) => {
@@ -110,8 +89,9 @@ self.addEventListener('fetch', (e) => {
   const rel = url.pathname.startsWith(scope.pathname) ? url.pathname.slice(scope.pathname.length) : url.pathname;
 
   if (rel === 'traits/manifest.json') {
-    e.respondWith(networkFirst(req, SHELL, purgeArtIfManifestChanged(e)));
-  } else if (rel.startsWith('traits/') && rel.toLowerCase().endsWith('.png')) {
+    e.respondWith(networkFirst(req, SHELL, purgeArtIfManifestChanged));
+  } else if ((rel.startsWith('traits/') && rel.toLowerCase().endsWith('.png')) ||
+             (rel.startsWith('thumbs/') && rel.toLowerCase().endsWith('.webp'))) {
     e.respondWith(cacheFirst(req, ART));
   } else if (req.mode === 'navigate') {
     e.respondWith(networkFirst(req, SHELL).catch(() => caches.match('index.html')));
