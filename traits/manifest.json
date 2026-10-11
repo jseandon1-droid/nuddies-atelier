@@ -1,0 +1,5523 @@
+{
+  "canvas": 1000,
+  "categories": [
+    {
+      "name": "Background",
+      "options": [
+        {
+          "name": "None",
+          "weight": 100
+        },
+        {
+          "name": "Amethyst Blaze",
+          "file": "amethyst-blaze.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Sea",
+          "file": "blue-sea.png",
+          "weight": 100
+        },
+        {
+          "name": "Cream",
+          "file": "cream.png",
+          "weight": 100
+        },
+        {
+          "name": "Dark Green",
+          "file": "dark-green.png",
+          "weight": 100
+        },
+        {
+          "name": "Beige",
+          "file": "beige.png",
+          "weight": 100
+        },
+        {
+          "name": "Dark Blue",
+          "file": "dark-blue.png",
+          "weight": 100
+        },
+        {
+          "name": "Crystals Bloom",
+          "file": "crystals-bloom.png",
+          "weight": 100
+        },
+        {
+          "name": "Gold",
+          "file": "gold.png",
+          "weight": 100
+        },
+        {
+          "name": "Flow Lakeside",
+          "file": "flow-lakeside.png",
+          "weight": 100
+        },
+        {
+          "name": "Fire Blaze",
+          "file": "fire-blaze.png",
+          "weight": 100
+        },
+        {
+          "name": "Light Purple",
+          "file": "light-purple.png",
+          "weight": 100
+        },
+        {
+          "name": "Kiwi Green",
+          "file": "kiwi-green.png",
+          "weight": 100
+        },
+        {
+          "name": "Inferno",
+          "file": "inferno.png",
+          "weight": 100
+        },
+        {
+          "name": "Moonstone",
+          "file": "moonstone.png",
+          "weight": 100
+        },
+        {
+          "name": "Midnight Blue",
+          "file": "midnight-blue.png",
+          "weight": 100
+        },
+        {
+          "name": "Lumina Hourglass",
+          "file": "lumina-hourglass.png",
+          "weight": 100
+        },
+        {
+          "name": "Orbit",
+          "file": "orbit.png",
+          "weight": 100
+        },
+        {
+          "name": "Ocean Flow",
+          "file": "ocean-flow.png",
+          "weight": 100
+        },
+        {
+          "name": "Nocturne Flora",
+          "file": "nocturne-flora.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Cherry",
+          "file": "pink-cherry.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Lavender",
+          "file": "pink-lavender.png",
+          "weight": 100
+        },
+        {
+          "name": "Ornament Flowers",
+          "file": "ornament-flowers.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Cherry",
+          "file": "red-cherry.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink",
+          "file": "pink.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Ornament Strip",
+          "file": "pink-ornament-strip.png",
+          "weight": 100
+        },
+        {
+          "name": "Regal Table",
+          "file": "regal-table.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Wine",
+          "file": "red-wine.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Petals",
+          "file": "red-petals.png",
+          "weight": 100
+        },
+        {
+          "name": "Sky Light",
+          "file": "sky-light.png",
+          "weight": 100
+        },
+        {
+          "name": "Sky Blue",
+          "file": "sky-blue.png",
+          "weight": 100
+        },
+        {
+          "name": "RGB Flow Mandala",
+          "file": "rgb-flow-mandala.png",
+          "weight": 100
+        },
+        {
+          "name": "Sunburst Yellow",
+          "file": "sunburst-yellow.png",
+          "weight": 100
+        },
+        {
+          "name": "Solaris Spark",
+          "file": "solaris-spark.png",
+          "weight": 100
+        },
+        {
+          "name": "Skyborne Shrine",
+          "file": "skyborne-shrine.png",
+          "weight": 100
+        },
+        {
+          "name": "Twin Sun Solar",
+          "file": "twin-sun-solar.png",
+          "weight": 100
+        },
+        {
+          "name": "Sunlit Flora",
+          "file": "sunlit-flora.png",
+          "weight": 100
+        },
+        {
+          "name": "Yellow",
+          "file": "yellow.png",
+          "weight": 100
+        },
+        {
+          "name": "White",
+          "file": "white.png",
+          "weight": 100
+        },
+        {
+          "name": "Vintage Ornament",
+          "file": "vintage-ornament.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Radial",
+          "file": "red-radial.png",
+          "weight": 100
+        },
+        {
+          "name": "Lilac Radial",
+          "file": "lilac-radial.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Radial",
+          "file": "black-radial.png",
+          "weight": 100
+        },
+        {
+          "name": "Black",
+          "file": "black.png",
+          "weight": 100
+        },
+        {
+          "name": "Emerald Radial",
+          "file": "emerald-radial.png",
+          "weight": 100
+        },
+        {
+          "name": "Yellow Green Radial",
+          "file": "yellow-green-radial.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue",
+          "file": "blue.png",
+          "weight": 100
+        },
+        {
+          "name": "Red",
+          "file": "red.png",
+          "weight": 100
+        },
+        {
+          "name": "Dark Red",
+          "file": "dark-red.png",
+          "weight": 100
+        },
+        {
+          "name": "Hot Pink",
+          "file": "hot-pink.png",
+          "weight": 100
+        },
+        {
+          "name": "Dark Magenta",
+          "file": "dark-magenta.png",
+          "weight": 100
+        },
+        {
+          "name": "Light Blue",
+          "file": "light-blue.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Amethyst Blaze",
+          "file": "blue-amethyst-blaze.png",
+          "weight": 100
+        },
+        {
+          "name": "Violet Amethyst Blaze",
+          "file": "violet-amethyst-blaze.png",
+          "weight": 100
+        },
+        {
+          "name": "Lime Amethyst Blaze",
+          "file": "lime-amethyst-blaze.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Amethyst Blaze",
+          "file": "magenta-amethyst-blaze.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Amethyst Blaze",
+          "file": "black-amethyst-blaze.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Blue Sea",
+          "file": "black-blue-sea.png",
+          "weight": 100
+        },
+        {
+          "name": "Silver Blue Sea",
+          "file": "silver-blue-sea.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Blue Sea",
+          "file": "pink-blue-sea.png",
+          "weight": 100
+        },
+        {
+          "name": "Violet Blue Sea",
+          "file": "violet-blue-sea.png",
+          "weight": 100
+        },
+        {
+          "name": "Lime Blue Sea",
+          "file": "lime-blue-sea.png",
+          "weight": 100
+        },
+        {
+          "name": "Peach Blue Sea",
+          "file": "peach-blue-sea.png",
+          "weight": 100
+        },
+        {
+          "name": "Grey Lotus",
+          "file": "grey-lotus.png",
+          "weight": 100
+        },
+        {
+          "name": "White Lotus",
+          "file": "white-lotus.png",
+          "weight": 100
+        },
+        {
+          "name": "Violet Lotus",
+          "file": "violet-lotus.png",
+          "weight": 100
+        },
+        {
+          "name": "Cyan Lotus",
+          "file": "cyan-lotus.png",
+          "weight": 100
+        },
+        {
+          "name": "Lime Lotus",
+          "file": "lime-lotus.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Lotus",
+          "file": "pink-lotus.png",
+          "weight": 100
+        },
+        {
+          "name": "Orange Lumina Hourglass",
+          "file": "orange-lumina-hourglass.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Lumina Hourglass",
+          "file": "blue-lumina-hourglass.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Lumina Hourglass",
+          "file": "magenta-lumina-hourglass.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Green Lumina Hourglass",
+          "file": "pink-green-lumina-hourglass.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Olive Lumina Hourglass",
+          "file": "pink-olive-lumina-hourglass.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Maroon Lumina Hourglass",
+          "file": "blue-maroon-lumina-hourglass.png",
+          "weight": 100
+        },
+        {
+          "name": "Grey Lumina Hourglass",
+          "file": "grey-lumina-hourglass.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Inferno",
+          "file": "blue-inferno.png",
+          "weight": 100
+        },
+        {
+          "name": "Yellow Inferno",
+          "file": "yellow-inferno.png",
+          "weight": 100
+        },
+        {
+          "name": "Grey Inferno",
+          "file": "grey-inferno.png",
+          "weight": 100
+        },
+        {
+          "name": "Cyan Inferno",
+          "file": "cyan-inferno.png",
+          "weight": 100
+        },
+        {
+          "name": "Crimson Inferno",
+          "file": "crimson-inferno.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Fire Blaze",
+          "file": "green-fire-blaze.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Fire Blaze",
+          "file": "magenta-fire-blaze.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Fire Blaze",
+          "file": "blue-fire-blaze.png",
+          "weight": 100
+        },
+        {
+          "name": "Grey Fire Blaze",
+          "file": "grey-fire-blaze.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Fire Blaze",
+          "file": "red-fire-blaze.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Crystals Bloom",
+          "file": "green-crystals-bloom.png",
+          "weight": 100
+        },
+        {
+          "name": "Gold Crystals Bloom",
+          "file": "gold-crystals-bloom.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Crystals Bloom",
+          "file": "pink-crystals-bloom.png",
+          "weight": 100
+        },
+        {
+          "name": "Grey Crystals Bloom",
+          "file": "grey-crystals-bloom.png",
+          "weight": 100
+        },
+        {
+          "name": "Peach Crystals Bloom",
+          "file": "peach-crystals-bloom.png",
+          "weight": 100
+        }
+      ]
+    },
+    {
+      "name": "Back Accessory",
+      "options": [
+        {
+          "name": "None",
+          "weight": 100
+        },
+        {
+          "name": "Gold Eternal Axe",
+          "file": "gold-eternal-axe.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Eternal Axe",
+          "file": "black-eternal-axe.png",
+          "weight": 100
+        },
+        {
+          "name": "Teal Eternal Axe",
+          "file": "teal-eternal-axe.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Eternal Axe",
+          "file": "purple-eternal-axe.png",
+          "weight": 100
+        },
+        {
+          "name": "Eternal Hellwings",
+          "file": "eternal-hellwings.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Eternal Hellwings",
+          "file": "red-eternal-hellwings.png",
+          "weight": 100
+        },
+        {
+          "name": "Frost Eternal Hellwings",
+          "file": "frost-eternal-hellwings.png",
+          "weight": 100
+        },
+        {
+          "name": "Aurea Scales",
+          "file": "aurea-scales.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Aurea Scales",
+          "file": "pink-aurea-scales.png",
+          "weight": 100
+        },
+        {
+          "name": "Silver Aurea Scales",
+          "file": "silver-aurea-scales.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Aurea Scales",
+          "file": "green-aurea-scales.png",
+          "weight": 100
+        },
+        {
+          "name": "Golden Death Tail",
+          "file": "golden-death-tail.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Death Tail",
+          "file": "pink-death-tail.png",
+          "weight": 100
+        },
+        {
+          "name": "OG White Angel Wings",
+          "file": "og-white-angel-wings.png",
+          "weight": 100
+        },
+        {
+          "name": "OG Black Angel Wings",
+          "file": "og-black-angel-wings.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Feather Wings",
+          "file": "black-feather-wings.png",
+          "weight": 100
+        },
+        {
+          "name": "Bat Wings",
+          "file": "bat-wings.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Bat Wings",
+          "file": "pink-bat-wings.png",
+          "weight": 100
+        },
+        {
+          "name": "Cupid Wings",
+          "file": "cupid-wings.png",
+          "weight": 100
+        },
+        {
+          "name": "Fire Blazing Wings",
+          "file": "fire-blazing-wings.png",
+          "weight": 100
+        },
+        {
+          "name": "Golden Feather Wings",
+          "file": "golden-feather-wings.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Feather Wings",
+          "file": "red-feather-wings.png",
+          "weight": 100
+        },
+        {
+          "name": "Nu Golden Wings",
+          "file": "nu-golden-wings.png",
+          "weight": 100
+        },
+        {
+          "name": "Metallic Edge Wings",
+          "file": "metallic-edge-wings.png",
+          "weight": 100
+        },
+        {
+          "name": "Cream Metallic Edge Wings",
+          "file": "cream-metallic-edge-wings.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Devil Wings",
+          "file": "red-devil-wings.png",
+          "weight": 100
+        },
+        {
+          "name": "Skeleton Wings",
+          "file": "skeleton-wings.png",
+          "weight": 100
+        },
+        {
+          "name": "Sting Eagle Wings",
+          "file": "sting-eagle-wings.png",
+          "weight": 100
+        },
+        {
+          "name": "White Feather Wings",
+          "file": "white-feather-wings.png",
+          "weight": 100
+        },
+        {
+          "name": "Monochrome Devil Wings",
+          "file": "monochrome-devil-wings.png",
+          "weight": 100
+        },
+        {
+          "name": "Sky Blue Cupid Wings",
+          "file": "sky-blue-cupid-wings.png",
+          "weight": 100
+        },
+        {
+          "name": "Golden Celestial Lyre",
+          "file": "golden-celestial-lyre.png",
+          "weight": 100
+        },
+        {
+          "name": "Golden Sunbreaker Great Sword",
+          "file": "golden-sunbreaker-great-sword.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Sunbreaker Great Sword",
+          "file": "pink-sunbreaker-great-sword.png",
+          "weight": 100
+        },
+        {
+          "name": "Silver Sunbreaker Great Sword",
+          "file": "silver-sunbreaker-great-sword.png",
+          "weight": 100
+        },
+        {
+          "name": "Golden Armadillo Tail",
+          "file": "golden-armadillo-tail.png",
+          "weight": 100
+        },
+        {
+          "name": "Golden Regalia Bow",
+          "file": "golden-regalia-bow.png",
+          "weight": 100
+        },
+        {
+          "name": "Teal Golden Regalia Bow",
+          "file": "teal-golden-regalia-bow.png",
+          "weight": 100
+        },
+        {
+          "name": "Golden Monkey Tail",
+          "file": "golden-monkey-tail.png",
+          "weight": 100
+        },
+        {
+          "name": "Hellwings",
+          "file": "hellwings.png",
+          "weight": 100
+        },
+        {
+          "name": "Heaven's Gemini Blades",
+          "file": "heavens-gemini-blades.png",
+          "weight": 100
+        },
+        {
+          "name": "Silver Heaven's Gemini Blades",
+          "file": "silver-heavens-gemini-blades.png",
+          "weight": 100
+        },
+        {
+          "name": "Golden Twin Leaf",
+          "file": "golden-twin-leaf.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Twin Leaf",
+          "file": "red-twin-leaf.png",
+          "weight": 100
+        },
+        {
+          "name": "Holy Chainsword",
+          "file": "holy-chainsword.png",
+          "weight": 100
+        },
+        {
+          "name": "Imperial Assault",
+          "file": "imperial-assault.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Imperial Assault",
+          "file": "pink-imperial-assault.png",
+          "weight": 100
+        },
+        {
+          "name": "Lumina Blaze Tail",
+          "file": "lumina-blaze-tail.png",
+          "weight": 100
+        },
+        {
+          "name": "Power Bat",
+          "file": "power-bat.png",
+          "weight": 100
+        },
+        {
+          "name": "Ring Of The Damned",
+          "file": "ring-of-the-damned.png",
+          "weight": 100
+        },
+        {
+          "name": "Seraphic Night Wings",
+          "file": "seraphic-night-wings.png",
+          "weight": 100
+        },
+        {
+          "name": "Sunflare Tail",
+          "file": "sunflare-tail.png",
+          "weight": 100
+        },
+        {
+          "name": "Wings Of Divinity",
+          "file": "wings-of-divinity.png",
+          "weight": 100
+        },
+        {
+          "name": "White Wings Of Divinity",
+          "file": "white-wings-of-divinity.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Wings Of Divinity",
+          "file": "black-wings-of-divinity.png",
+          "weight": 100
+        },
+        {
+          "name": "Violet Sunflare Tail",
+          "file": "violet-sunflare-tail.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Sunflare Tail",
+          "file": "pink-sunflare-tail.png",
+          "weight": 100
+        },
+        {
+          "name": "Cyan Sunflare Tail",
+          "file": "cyan-sunflare-tail.png",
+          "weight": 100
+        },
+        {
+          "name": "Silver Sunflare Tail",
+          "file": "silver-sunflare-tail.png",
+          "weight": 100
+        },
+        {
+          "name": "Lime Sunflare Tail",
+          "file": "lime-sunflare-tail.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Sunflare Tail",
+          "file": "black-sunflare-tail.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Wings Of Divinity",
+          "file": "green-wings-of-divinity.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Wings Of Divinity",
+          "file": "purple-wings-of-divinity.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Wings Of Divinity",
+          "file": "magenta-wings-of-divinity.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Wings Of Divinity",
+          "file": "blue-wings-of-divinity.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Wings Of Divinity",
+          "file": "red-wings-of-divinity.png",
+          "weight": 100
+        },
+        {
+          "name": "Silver Power Bat",
+          "file": "silver-power-bat.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Power Bat",
+          "file": "black-power-bat.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Power Bat",
+          "file": "magenta-power-bat.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Power Bat",
+          "file": "purple-power-bat.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Power Bat",
+          "file": "blue-power-bat.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Power Bat",
+          "file": "green-power-bat.png",
+          "weight": 100
+        },
+        {
+          "name": "Orange Power Bat",
+          "file": "orange-power-bat.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Power Bat",
+          "file": "pink-power-bat.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Devil Tail",
+          "file": "red-devil-tail.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Devil Tail",
+          "file": "green-devil-tail.png",
+          "weight": 100
+        },
+        {
+          "name": "Gold Devil Tail",
+          "file": "gold-devil-tail.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Devil Tail",
+          "file": "purple-devil-tail.png",
+          "weight": 100
+        },
+        {
+          "name": "Cyan Devil Tail",
+          "file": "cyan-devil-tail.png",
+          "weight": 100
+        },
+        {
+          "name": "Silver Devil Tail",
+          "file": "silver-devil-tail.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Devil Tail",
+          "file": "black-devil-tail.png",
+          "weight": 100
+        },
+        {
+          "name": "Silver Reptile Tail",
+          "file": "silver-reptile-tail.png",
+          "weight": 100
+        },
+        {
+          "name": "Violet Reptile Tail",
+          "file": "violet-reptile-tail.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Reptile Tail",
+          "file": "blue-reptile-tail.png",
+          "weight": 100
+        },
+        {
+          "name": "Orange Reptile Tail",
+          "file": "orange-reptile-tail.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Reptile Tail",
+          "file": "magenta-reptile-tail.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Scorpion Tail",
+          "file": "green-scorpion-tail.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Scorpion Tail",
+          "file": "purple-scorpion-tail.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Scorpion Tail",
+          "file": "blue-scorpion-tail.png",
+          "weight": 100
+        },
+        {
+          "name": "Mint Green Scorpion Tail",
+          "file": "mint-green-scorpion-tail.png",
+          "weight": 100
+        },
+        {
+          "name": "Salmon Scorpion Tail",
+          "file": "salmon-scorpion-tail.png",
+          "weight": 100
+        },
+        {
+          "name": "Silver Scorpion Tail",
+          "file": "silver-scorpion-tail.png",
+          "weight": 100
+        },
+        {
+          "name": "Grey Scorpion Tail",
+          "file": "grey-scorpion-tail.png",
+          "weight": 100
+        }
+      ]
+    },
+    {
+      "name": "Skin",
+      "options": [
+        {
+          "name": "Nu",
+          "file": "nu.png",
+          "weight": 100
+        },
+        {
+          "name": "Nu Pink",
+          "file": "nu-pink.png",
+          "weight": 100
+        },
+        {
+          "name": "Nu Blue",
+          "file": "nu-blue.png",
+          "weight": 100
+        },
+        {
+          "name": "Nu Green",
+          "file": "nu-green.png",
+          "weight": 100
+        },
+        {
+          "name": "Nu w/ eyes",
+          "file": "nu-w-eyes.png",
+          "weight": 100
+        },
+        {
+          "name": "Nu Pink w/ eyes",
+          "file": "nu-pink-w-eyes.png",
+          "weight": 100
+        },
+        {
+          "name": "Nu Blue w/ eyes",
+          "file": "nu-blue-w-eyes.png",
+          "weight": 100
+        },
+        {
+          "name": "Nu Green w/ eyes",
+          "file": "nu-green-w-eyes.png",
+          "weight": 100
+        },
+        {
+          "name": "Nebula",
+          "file": "nebula.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Nebula",
+          "file": "green-nebula.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Nebula",
+          "file": "pink-nebula.png",
+          "weight": 100
+        },
+        {
+          "name": "Golden Nebula",
+          "file": "golden-nebula.png",
+          "weight": 100
+        },
+        {
+          "name": "Venus",
+          "file": "venus.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Venus",
+          "file": "pink-venus.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Venus",
+          "file": "purple-venus.png",
+          "weight": 100
+        },
+        {
+          "name": "Sky Blue Venus",
+          "file": "sky-blue-venus.png",
+          "weight": 100
+        },
+        {
+          "name": "Water",
+          "file": "water.png",
+          "weight": 100
+        },
+        {
+          "name": "Golden Water",
+          "file": "golden-water.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Water",
+          "file": "green-water.png",
+          "weight": 100
+        },
+        {
+          "name": "Violet Water",
+          "file": "violet-water.png",
+          "weight": 100
+        },
+        {
+          "name": "Lollipop",
+          "file": "lollipop.png",
+          "weight": 100
+        },
+        {
+          "name": "Nerds",
+          "file": "nerds.png",
+          "weight": 100
+        },
+        {
+          "name": "Jolly Rancher",
+          "file": "jolly-rancher.png",
+          "weight": 100
+        },
+        {
+          "name": "Taffy",
+          "file": "taffy.png",
+          "weight": 100
+        },
+        {
+          "name": "Stone",
+          "file": "stone.png",
+          "weight": 100
+        },
+        {
+          "name": "Ruby",
+          "file": "ruby.png",
+          "weight": 100
+        },
+        {
+          "name": "Turquoise",
+          "file": "turquoise.png",
+          "weight": 100
+        },
+        {
+          "name": "Amethyst",
+          "file": "amethyst.png",
+          "weight": 100
+        },
+        {
+          "name": "Tattoos",
+          "file": "tattoos.png",
+          "weight": 100
+        },
+        {
+          "name": "Gold Tattoos",
+          "file": "gold-tattoos.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Tattoos",
+          "file": "pink-tattoos.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Tattoos",
+          "file": "blue-tattoos.png",
+          "weight": 100
+        },
+        {
+          "name": "Tattoos w/ eyes",
+          "file": "tattoos-w-eyes.png",
+          "weight": 100
+        },
+        {
+          "name": "Gold Tattoos w/ eyes",
+          "file": "gold-tattoos-w-eyes.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Tattoos w/ eyes",
+          "file": "pink-tattoos-w-eyes.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Tattoos w/ eyes",
+          "file": "blue-tattoos-w-eyes.png",
+          "weight": 100
+        },
+        {
+          "name": "Transparent Skull",
+          "file": "transparent-skull.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Transparent Skull",
+          "file": "blue-transparent-skull.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Transparent Skull",
+          "file": "purple-transparent-skull.png",
+          "weight": 100
+        },
+        {
+          "name": "Yellow Transparent Skull",
+          "file": "yellow-transparent-skull.png",
+          "weight": 100
+        },
+        {
+          "name": "Transparent Skull w/ eyes",
+          "file": "transparent-skull-w-eyes.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Transparent Skull w/ eyes",
+          "file": "blue-transparent-skull-w-eyes.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Transparent Skull w/ eyes",
+          "file": "purple-transparent-skull-w-eyes.png",
+          "weight": 100
+        },
+        {
+          "name": "Yellow Transparent Skull w/ eyes",
+          "file": "yellow-transparent-skull-w-eyes.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Dip Blood",
+          "file": "red-dip-blood.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Serpent",
+          "file": "blue-serpent.png",
+          "weight": 100
+        },
+        {
+          "name": "Blaze",
+          "file": "blaze.png",
+          "weight": 100
+        },
+        {
+          "name": "Brown",
+          "file": "brown.png",
+          "weight": 100
+        },
+        {
+          "name": "Circuit",
+          "file": "circuit.png",
+          "weight": 100
+        },
+        {
+          "name": "Gold",
+          "file": "gold.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Serpent",
+          "file": "green-serpent.png",
+          "weight": 100
+        },
+        {
+          "name": "Green",
+          "file": "green.png",
+          "weight": 100
+        },
+        {
+          "name": "Mecha Zombie",
+          "file": "mecha-zombie.png",
+          "weight": 100
+        },
+        {
+          "name": "Venom",
+          "file": "venom.png",
+          "weight": 100
+        },
+        {
+          "name": "Monochrome Transparent Skull",
+          "file": "monochrome-transparent-skull.png",
+          "weight": 100
+        },
+        {
+          "name": "Monochrome Nebula",
+          "file": "monochrome-nebula.png",
+          "weight": 100
+        },
+        {
+          "name": "Monochrome Serpent",
+          "file": "monochrome-serpent.png",
+          "weight": 100
+        },
+        {
+          "name": "Monochrome Lollipop",
+          "file": "monochrome-lollipop.png",
+          "weight": 100
+        },
+        {
+          "name": "Monochrome Circuit",
+          "file": "monochrome-circuit.png",
+          "weight": 100
+        }
+      ]
+    },
+    {
+      "name": "Head",
+      "options": [
+        {
+          "name": "None",
+          "weight": 100
+        },
+        {
+          "name": "3 Stars Holy Set",
+          "file": "3-stars-holy-set.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Crown",
+          "file": "black-crown.png",
+          "weight": 100
+        },
+        {
+          "name": "Beanie",
+          "file": "beanie.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Beanie",
+          "file": "blue-beanie.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Oceans",
+          "file": "blue-oceans.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Bandana",
+          "file": "blue-bandana.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Long Hair",
+          "file": "black-long-hair.png",
+          "weight": 100
+        },
+        {
+          "name": "Cake Head",
+          "file": "cake-head.png",
+          "weight": 100
+        },
+        {
+          "name": "Bucket Hat",
+          "file": "bucket-hat.png",
+          "weight": 100
+        },
+        {
+          "name": "Braids",
+          "file": "braids.png",
+          "weight": 100
+        },
+        {
+          "name": "Chinese Hair",
+          "file": "chinese-hair.png",
+          "weight": 100
+        },
+        {
+          "name": "Champion Typed Blue Trucker Hat",
+          "file": "champion-typed-blue-trucker-hat.png",
+          "weight": 100
+        },
+        {
+          "name": "Cat Ears",
+          "file": "cat-ears.png",
+          "weight": 100
+        },
+        {
+          "name": "Emoticons Beanie",
+          "file": "emoticons-beanie.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Emoticons Beanie",
+          "file": "pink-emoticons-beanie.png",
+          "weight": 100
+        },
+        {
+          "name": "Drad Hair",
+          "file": "drad-hair.png",
+          "weight": 100
+        },
+        {
+          "name": "Crown",
+          "file": "crown.png",
+          "weight": 100
+        },
+        {
+          "name": "Gold Cross Medal Helmet",
+          "file": "gold-cross-medal-helmet.png",
+          "weight": 100
+        },
+        {
+          "name": "Flower",
+          "file": "flower.png",
+          "weight": 100
+        },
+        {
+          "name": "Faux Fur",
+          "file": "faux-fur.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Faux Fur",
+          "file": "green-faux-fur.png",
+          "weight": 100
+        },
+        {
+          "name": "Headband Castle",
+          "file": "headband-castle.png",
+          "weight": 100
+        },
+        {
+          "name": "Golden Thorn Headband",
+          "file": "golden-thorn-headband.png",
+          "weight": 100
+        },
+        {
+          "name": "Gold Flower Boni",
+          "file": "gold-flower-boni.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Gold Flower Boni",
+          "file": "red-gold-flower-boni.png",
+          "weight": 100
+        },
+        {
+          "name": "N Blue Trucker Hat",
+          "file": "n-blue-trucker-hat.png",
+          "weight": 100
+        },
+        {
+          "name": "Ice Cream",
+          "file": "ice-cream.png",
+          "weight": 100
+        },
+        {
+          "name": "Horn",
+          "file": "horn.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Horn",
+          "file": "red-horn.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Horned Polkadot",
+          "file": "pink-horned-polkadot.png",
+          "weight": 100
+        },
+        {
+          "name": "NU Typed Bandana",
+          "file": "nu-typed-bandana.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Bat",
+          "file": "pink-bat.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Pink Bat",
+          "file": "blue-pink-bat.png",
+          "weight": 100
+        },
+        {
+          "name": "Robotic Headset",
+          "file": "robotic-headset.png",
+          "weight": 100
+        },
+        {
+          "name": "Rat Crown",
+          "file": "rat-crown.png",
+          "weight": 100
+        },
+        {
+          "name": "Queen Crown",
+          "file": "queen-crown.png",
+          "weight": 100
+        },
+        {
+          "name": "Serpent",
+          "file": "serpent.png",
+          "weight": 100
+        },
+        {
+          "name": "Short Blonde",
+          "file": "short-blonde.png",
+          "weight": 100
+        },
+        {
+          "name": "Seraphim",
+          "file": "seraphim.png",
+          "weight": 100
+        },
+        {
+          "name": "Tired Bear",
+          "file": "tired-bear.png",
+          "weight": 100
+        },
+        {
+          "name": "Tentacles",
+          "file": "tentacles.png",
+          "weight": 100
+        },
+        {
+          "name": "Yellow Tentacles",
+          "file": "yellow-tentacles.png",
+          "weight": 100
+        },
+        {
+          "name": "SnapBack",
+          "file": "snapback.png",
+          "weight": 100
+        },
+        {
+          "name": "Wild Fox",
+          "file": "wild-fox.png",
+          "weight": 100
+        },
+        {
+          "name": "Undercut",
+          "file": "undercut.png",
+          "weight": 100
+        },
+        {
+          "name": "Trapper Hat",
+          "file": "trapper-hat.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Crown",
+          "file": "green-crown.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Crown",
+          "file": "pink-crown.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Crown",
+          "file": "blue-crown.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Seraphim",
+          "file": "pink-seraphim.png",
+          "weight": 100
+        },
+        {
+          "name": "Orange Seraphim",
+          "file": "orange-seraphim.png",
+          "weight": 100
+        },
+        {
+          "name": "White Queen Crown",
+          "file": "white-queen-crown.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Queen Crown",
+          "file": "pink-queen-crown.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Queen Crown",
+          "file": "red-queen-crown.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Queen Crown",
+          "file": "blue-queen-crown.png",
+          "weight": 100
+        },
+        {
+          "name": "Ponytail",
+          "file": "ponytail.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Wild Fox",
+          "file": "purple-wild-fox.png",
+          "weight": 100
+        },
+        {
+          "name": "Yellow Cat Ears",
+          "file": "yellow-cat-ears.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Beret",
+          "file": "black-beret.png",
+          "weight": 100
+        },
+        {
+          "name": "Teal Trapper Hat",
+          "file": "teal-trapper-hat.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Trapper Hat",
+          "file": "blue-trapper-hat.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Trapper Hat",
+          "file": "green-trapper-hat.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Trapper Hat",
+          "file": "purple-trapper-hat.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Undercut",
+          "file": "blue-undercut.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Undercut",
+          "file": "purple-undercut.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Undercut",
+          "file": "green-undercut.png",
+          "weight": 100
+        },
+        {
+          "name": "Silver Undercut",
+          "file": "silver-undercut.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Wild Fox",
+          "file": "blue-wild-fox.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Wild Fox",
+          "file": "green-wild-fox.png",
+          "weight": 100
+        },
+        {
+          "name": "Orange Wild Fox",
+          "file": "orange-wild-fox.png",
+          "weight": 100
+        },
+        {
+          "name": "Monochrome Wild Fox",
+          "file": "monochrome-wild-fox.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Wild Fox",
+          "file": "red-wild-fox.png",
+          "weight": 100
+        },
+        {
+          "name": "Mint SnapBack",
+          "file": "mint-snapback.png",
+          "weight": 100
+        },
+        {
+          "name": "Peach SnapBack",
+          "file": "peach-snapback.png",
+          "weight": 100
+        },
+        {
+          "name": "Green SnapBack",
+          "file": "green-snapback.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple SnapBack",
+          "file": "purple-snapback.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue SnapBack",
+          "file": "blue-snapback.png",
+          "weight": 100
+        },
+        {
+          "name": "Cyan Tentacles",
+          "file": "cyan-tentacles.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Tentacles",
+          "file": "purple-tentacles.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Tentacles",
+          "file": "pink-tentacles.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Tentacles",
+          "file": "green-tentacles.png",
+          "weight": 100
+        },
+        {
+          "name": "Monochrome Tentacles",
+          "file": "monochrome-tentacles.png",
+          "weight": 100
+        },
+        {
+          "name": "Teal Tired Bear",
+          "file": "teal-tired-bear.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Tired Bear",
+          "file": "purple-tired-bear.png",
+          "weight": 100
+        },
+        {
+          "name": "Brown Tired Bear",
+          "file": "brown-tired-bear.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Tired Bear",
+          "file": "red-tired-bear.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Tired Bear",
+          "file": "blue-tired-bear.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Seraphim",
+          "file": "blue-seraphim.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Seraphim",
+          "file": "purple-seraphim.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Seraphim",
+          "file": "red-seraphim.png",
+          "weight": 100
+        },
+        {
+          "name": "Gold Seraphim",
+          "file": "gold-seraphim.png",
+          "weight": 100
+        },
+        {
+          "name": "Monochrome Seraphim",
+          "file": "monochrome-seraphim.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Short Blonde",
+          "file": "pink-short-blonde.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Short Blonde",
+          "file": "blue-short-blonde.png",
+          "weight": 100
+        },
+        {
+          "name": "Monochrome Short Blonde",
+          "file": "monochrome-short-blonde.png",
+          "weight": 100
+        },
+        {
+          "name": "Orange Short Blonde",
+          "file": "orange-short-blonde.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Short Blonde",
+          "file": "purple-short-blonde.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Queen Crown",
+          "file": "purple-queen-crown.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Queen Crown",
+          "file": "green-queen-crown.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Queen Crown",
+          "file": "magenta-queen-crown.png",
+          "weight": 100
+        },
+        {
+          "name": "Cobalt Queen Crown",
+          "file": "cobalt-queen-crown.png",
+          "weight": 100
+        },
+        {
+          "name": "Monochrome Queen Crown",
+          "file": "monochrome-queen-crown.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Rat Crown",
+          "file": "blue-rat-crown.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Rat Crown",
+          "file": "purple-rat-crown.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Rat Crown",
+          "file": "magenta-rat-crown.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Rat Crown",
+          "file": "red-rat-crown.png",
+          "weight": 100
+        },
+        {
+          "name": "Monochrome Rat Crown",
+          "file": "monochrome-rat-crown.png",
+          "weight": 100
+        },
+        {
+          "name": "Teal Robotic Headset",
+          "file": "teal-robotic-headset.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Robotic Headset",
+          "file": "purple-robotic-headset.png",
+          "weight": 100
+        },
+        {
+          "name": "Monochrome Robotic Headset",
+          "file": "monochrome-robotic-headset.png",
+          "weight": 100
+        },
+        {
+          "name": "Rust Robotic Headset",
+          "file": "rust-robotic-headset.png",
+          "weight": 100
+        },
+        {
+          "name": "Amber Robotic Headset",
+          "file": "amber-robotic-headset.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Robotic Headset",
+          "file": "green-robotic-headset.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Robotic Headset",
+          "file": "magenta-robotic-headset.png",
+          "weight": 100
+        },
+        {
+          "name": "Monochrome Horn",
+          "file": "monochrome-horn.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Horn",
+          "file": "magenta-horn.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Horn",
+          "file": "blue-horn.png",
+          "weight": 100
+        },
+        {
+          "name": "Teal Horn",
+          "file": "teal-horn.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Horn",
+          "file": "purple-horn.png",
+          "weight": 100
+        },
+        {
+          "name": "Monochrome Horned Polkadot",
+          "file": "monochrome-horned-polkadot.png",
+          "weight": 100
+        },
+        {
+          "name": "Cyan Horned Polkadot",
+          "file": "cyan-horned-polkadot.png",
+          "weight": 100
+        },
+        {
+          "name": "Peach Horned Polkadot",
+          "file": "peach-horned-polkadot.png",
+          "weight": 100
+        },
+        {
+          "name": "Mint Horned Polkadot",
+          "file": "mint-horned-polkadot.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Horned Polkadot",
+          "file": "green-horned-polkadot.png",
+          "weight": 100
+        },
+        {
+          "name": "Mint NU Typed Bandana",
+          "file": "mint-nu-typed-bandana.png",
+          "weight": 100
+        },
+        {
+          "name": "Red NU Typed Bandana",
+          "file": "red-nu-typed-bandana.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink NU Typed Bandana",
+          "file": "pink-nu-typed-bandana.png",
+          "weight": 100
+        },
+        {
+          "name": "Lime NU Typed Bandana",
+          "file": "lime-nu-typed-bandana.png",
+          "weight": 100
+        },
+        {
+          "name": "Ice NU Typed Bandana",
+          "file": "ice-nu-typed-bandana.png",
+          "weight": 100
+        },
+        {
+          "name": "Monochrome Bat",
+          "file": "monochrome-bat.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Bat",
+          "file": "red-bat.png",
+          "weight": 100
+        },
+        {
+          "name": "Yellow Bat",
+          "file": "yellow-bat.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Bat",
+          "file": "magenta-bat.png",
+          "weight": 100
+        },
+        {
+          "name": "Cyan Bat",
+          "file": "cyan-bat.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Ice Cream",
+          "file": "green-ice-cream.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Ice Cream",
+          "file": "blue-ice-cream.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Ice Cream",
+          "file": "magenta-ice-cream.png",
+          "weight": 100
+        },
+        {
+          "name": "Monochrome Ice Cream",
+          "file": "monochrome-ice-cream.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Ice Cream",
+          "file": "red-ice-cream.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink N Blue Trucker Hat",
+          "file": "pink-n-blue-trucker-hat.png",
+          "weight": 100
+        },
+        {
+          "name": "Green N Blue Trucker Hat",
+          "file": "green-n-blue-trucker-hat.png",
+          "weight": 100
+        },
+        {
+          "name": "Royal Blue N Blue Trucker Hat",
+          "file": "royal-blue-n-blue-trucker-hat.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta N Blue Trucker Hat",
+          "file": "magenta-n-blue-trucker-hat.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple N Blue Trucker Hat",
+          "file": "purple-n-blue-trucker-hat.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Gold Flower Boni",
+          "file": "green-gold-flower-boni.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Gold Flower Boni",
+          "file": "pink-gold-flower-boni.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Gold Flower Boni",
+          "file": "blue-gold-flower-boni.png",
+          "weight": 100
+        },
+        {
+          "name": "Mint Gold Flower Boni",
+          "file": "mint-gold-flower-boni.png",
+          "weight": 100
+        },
+        {
+          "name": "Lime Gold Flower Boni",
+          "file": "lime-gold-flower-boni.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Golden Thorn Headband",
+          "file": "pink-golden-thorn-headband.png",
+          "weight": 100
+        },
+        {
+          "name": "Monochrome Golden Thorn Headband",
+          "file": "monochrome-golden-thorn-headband.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Golden Thorn Headband",
+          "file": "green-golden-thorn-headband.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Golden Thorn Headband",
+          "file": "blue-golden-thorn-headband.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Golden Thorn Headband",
+          "file": "magenta-golden-thorn-headband.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Headband Castle",
+          "file": "purple-headband-castle.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Headband Castle",
+          "file": "blue-headband-castle.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Headband Castle",
+          "file": "green-headband-castle.png",
+          "weight": 100
+        },
+        {
+          "name": "Monochrome Headband Castle",
+          "file": "monochrome-headband-castle.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Headband Castle",
+          "file": "pink-headband-castle.png",
+          "weight": 100
+        },
+        {
+          "name": "Brown Faux Fur",
+          "file": "brown-faux-fur.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Faux Fur",
+          "file": "pink-faux-fur.png",
+          "weight": 100
+        },
+        {
+          "name": "Teal Faux Fur",
+          "file": "teal-faux-fur.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Faux Fur",
+          "file": "purple-faux-fur.png",
+          "weight": 100
+        },
+        {
+          "name": "Lime Faux Fur",
+          "file": "lime-faux-fur.png",
+          "weight": 100
+        },
+        {
+          "name": "Monochrome Flower",
+          "file": "monochrome-flower.png",
+          "weight": 100
+        },
+        {
+          "name": "Sky Blue Flower",
+          "file": "sky-blue-flower.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Flower",
+          "file": "pink-flower.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Flower",
+          "file": "blue-flower.png",
+          "weight": 100
+        },
+        {
+          "name": "Orange Flower",
+          "file": "orange-flower.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Gold Cross Medal Helmet",
+          "file": "blue-gold-cross-medal-helmet.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Gold Cross Medal Helmet",
+          "file": "magenta-gold-cross-medal-helmet.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Gold Cross Medal Helmet",
+          "file": "green-gold-cross-medal-helmet.png",
+          "weight": 100
+        },
+        {
+          "name": "Monochrome Gold Cross Medal Helmet",
+          "file": "monochrome-gold-cross-medal-helmet.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Gold Cross Medal Helmet",
+          "file": "purple-gold-cross-medal-helmet.png",
+          "weight": 100
+        },
+        {
+          "name": "Light Blue Crown",
+          "file": "light-blue-crown.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Crown",
+          "file": "purple-crown.png",
+          "weight": 100
+        },
+        {
+          "name": "Orange Crown",
+          "file": "orange-crown.png",
+          "weight": 100
+        },
+        {
+          "name": "Gold Crown",
+          "file": "gold-crown.png",
+          "weight": 100
+        },
+        {
+          "name": "Bright Green Crown",
+          "file": "bright-green-crown.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Drad Hair",
+          "file": "blue-drad-hair.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Drad Hair",
+          "file": "purple-drad-hair.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Drad Hair",
+          "file": "pink-drad-hair.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Drad Hair",
+          "file": "green-drad-hair.png",
+          "weight": 100
+        },
+        {
+          "name": "Monochrome Drad Hair",
+          "file": "monochrome-drad-hair.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Emoticons Beanie",
+          "file": "purple-emoticons-beanie.png",
+          "weight": 100
+        },
+        {
+          "name": "Mint Emoticons Beanie",
+          "file": "mint-emoticons-beanie.png",
+          "weight": 100
+        },
+        {
+          "name": "Orange Emoticons Beanie",
+          "file": "orange-emoticons-beanie.png",
+          "weight": 100
+        },
+        {
+          "name": "Coral Emoticons Beanie",
+          "file": "coral-emoticons-beanie.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Emoticons Beanie",
+          "file": "blue-emoticons-beanie.png",
+          "weight": 100
+        },
+        {
+          "name": "Teal Cat Ears",
+          "file": "teal-cat-ears.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Cat Ears",
+          "file": "purple-cat-ears.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Cat Ears",
+          "file": "red-cat-ears.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Cat Ears",
+          "file": "magenta-cat-ears.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Cat Ears",
+          "file": "blue-cat-ears.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Champion Typed Blue Trucker Hat",
+          "file": "green-champion-typed-blue-trucker-hat.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Champion Typed Blue Trucker Hat",
+          "file": "red-champion-typed-blue-trucker-hat.png",
+          "weight": 100
+        },
+        {
+          "name": "Orange Champion Typed Blue Trucker Hat",
+          "file": "orange-champion-typed-blue-trucker-hat.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Champion Typed Blue Trucker Hat",
+          "file": "magenta-champion-typed-blue-trucker-hat.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Champion Typed Blue Trucker Hat",
+          "file": "purple-champion-typed-blue-trucker-hat.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Chinese Hair",
+          "file": "blue-chinese-hair.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Chinese Hair",
+          "file": "purple-chinese-hair.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Chinese Hair",
+          "file": "green-chinese-hair.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Chinese Hair",
+          "file": "red-chinese-hair.png",
+          "weight": 100
+        },
+        {
+          "name": "Monochrome Chinese Hair",
+          "file": "monochrome-chinese-hair.png",
+          "weight": 100
+        },
+        {
+          "name": "Maroon Braids",
+          "file": "maroon-braids.png",
+          "weight": 100
+        },
+        {
+          "name": "Navy Braids",
+          "file": "navy-braids.png",
+          "weight": 100
+        },
+        {
+          "name": "Brown Braids",
+          "file": "brown-braids.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Braids",
+          "file": "red-braids.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Braids",
+          "file": "black-braids.png",
+          "weight": 100
+        },
+        {
+          "name": "Orange Cake Head",
+          "file": "orange-cake-head.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Cake Head",
+          "file": "blue-cake-head.png",
+          "weight": 100
+        },
+        {
+          "name": "Indigo Cake Head",
+          "file": "indigo-cake-head.png",
+          "weight": 100
+        },
+        {
+          "name": "Monochrome Cake Head",
+          "file": "monochrome-cake-head.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Cake Head",
+          "file": "green-cake-head.png",
+          "weight": 100
+        },
+        {
+          "name": "Yellow Long Hair",
+          "file": "yellow-long-hair.png",
+          "weight": 100
+        },
+        {
+          "name": "Teal Long Hair",
+          "file": "teal-long-hair.png",
+          "weight": 100
+        },
+        {
+          "name": "Maroon Long Hair",
+          "file": "maroon-long-hair.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Long Hair",
+          "file": "purple-long-hair.png",
+          "weight": 100
+        },
+        {
+          "name": "Grey Long Hair",
+          "file": "grey-long-hair.png",
+          "weight": 100
+        },
+        {
+          "name": "Tan Bucket Hat",
+          "file": "tan-bucket-hat.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Bucket Hat",
+          "file": "green-bucket-hat.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Bucket Hat",
+          "file": "purple-bucket-hat.png",
+          "weight": 100
+        },
+        {
+          "name": "Monochrome Bucket Hat",
+          "file": "monochrome-bucket-hat.png",
+          "weight": 100
+        },
+        {
+          "name": "Monochrome Blue Bandana",
+          "file": "monochrome-blue-bandana.png",
+          "weight": 100
+        },
+        {
+          "name": "Gold Blue Bandana",
+          "file": "gold-blue-bandana.png",
+          "weight": 100
+        },
+        {
+          "name": "Green-Pink Blue Bandana",
+          "file": "green-pink-blue-bandana.png",
+          "weight": 100
+        },
+        {
+          "name": "Red-Teal Blue Bandana",
+          "file": "red-teal-blue-bandana.png",
+          "weight": 100
+        },
+        {
+          "name": "Green-Purple Blue Bandana",
+          "file": "green-purple-blue-bandana.png",
+          "weight": 100
+        },
+        {
+          "name": "Monochrome Blue Oceans",
+          "file": "monochrome-blue-oceans.png",
+          "weight": 100
+        },
+        {
+          "name": "Brown-Orange Blue Oceans",
+          "file": "brown-orange-blue-oceans.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple-Gold Blue Oceans",
+          "file": "purple-gold-blue-oceans.png",
+          "weight": 100
+        },
+        {
+          "name": "Green-Teal Blue Oceans",
+          "file": "green-teal-blue-oceans.png",
+          "weight": 100
+        },
+        {
+          "name": "Teal-Purple Blue Oceans",
+          "file": "teal-purple-blue-oceans.png",
+          "weight": 100
+        },
+        {
+          "name": "Violet Chinese Hair",
+          "file": "violet-chinese-hair.png",
+          "weight": 100
+        },
+        {
+          "name": "Navy Beret",
+          "file": "navy-beret.png",
+          "weight": 100
+        },
+        {
+          "name": "Monochrome Beret",
+          "file": "monochrome-beret.png",
+          "weight": 100
+        },
+        {
+          "name": "Green-Pink Beret",
+          "file": "green-pink-beret.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Beret",
+          "file": "magenta-beret.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Beret",
+          "file": "blue-beret.png",
+          "weight": 100
+        },
+        {
+          "name": "Gold Dragon Crown",
+          "file": "gold-dragon-crown.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Dragon Crown",
+          "file": "red-dragon-crown.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Dragon Crown",
+          "file": "purple-dragon-crown.png",
+          "weight": 100
+        },
+        {
+          "name": "Brown Dragon Crown",
+          "file": "brown-dragon-crown.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Dragon Crown",
+          "file": "green-dragon-crown.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Beanie",
+          "file": "black-beanie.png",
+          "weight": 100
+        },
+        {
+          "name": "Teal Beanie",
+          "file": "teal-beanie.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Beanie",
+          "file": "red-beanie.png",
+          "weight": 100
+        },
+        {
+          "name": "Navy Beanie",
+          "file": "navy-beanie.png",
+          "weight": 100
+        },
+        {
+          "name": "Orange Beanie",
+          "file": "orange-beanie.png",
+          "weight": 100
+        },
+        {
+          "name": "Grey 3 Stars Holy Set",
+          "file": "grey-3-stars-holy-set.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta 3 Stars Holy Set",
+          "file": "magenta-3-stars-holy-set.png",
+          "weight": 100
+        },
+        {
+          "name": "Green 3 Stars Holy Set",
+          "file": "green-3-stars-holy-set.png",
+          "weight": 100
+        },
+        {
+          "name": "Orange 3 Stars Holy Set",
+          "file": "orange-3-stars-holy-set.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple 3 Stars Holy Set",
+          "file": "purple-3-stars-holy-set.png",
+          "weight": 100
+        }
+      ]
+    },
+    {
+      "name": "Clothing",
+      "options": [
+        {
+          "name": "None",
+          "weight": 100
+        },
+        {
+          "name": "Polo",
+          "file": "polo.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Belt Dress",
+          "file": "black-belt-dress.png",
+          "weight": 100
+        },
+        {
+          "name": "Assassins Set",
+          "file": "assassins-set.png",
+          "weight": 100
+        },
+        {
+          "name": "Army Jersey",
+          "file": "army-jersey.png",
+          "weight": 100
+        },
+        {
+          "name": "Broken Office Set",
+          "file": "broken-office-set.png",
+          "weight": 100
+        },
+        {
+          "name": "Broken Wearpack",
+          "file": "broken-wearpack.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Bikini",
+          "file": "black-bikini.png",
+          "weight": 100
+        },
+        {
+          "name": "Denim",
+          "file": "denim.png",
+          "weight": 100
+        },
+        {
+          "name": "Commanders Set",
+          "file": "commanders-set.png",
+          "weight": 100
+        },
+        {
+          "name": "Clown Set",
+          "file": "clown-set.png",
+          "weight": 100
+        },
+        {
+          "name": "Gold Stud Tanktop",
+          "file": "gold-stud-tanktop.png",
+          "weight": 100
+        },
+        {
+          "name": "Gold Shoulder Shield",
+          "file": "gold-shoulder-shield.png",
+          "weight": 100
+        },
+        {
+          "name": "Gold Relief Vest",
+          "file": "gold-relief-vest.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Gold Relief Vest",
+          "file": "black-gold-relief-vest.png",
+          "weight": 100
+        },
+        {
+          "name": "Grecian Solaria",
+          "file": "grecian-solaria.png",
+          "weight": 100
+        },
+        {
+          "name": "Golden Dress",
+          "file": "golden-dress.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Golden Dress",
+          "file": "pink-golden-dress.png",
+          "weight": 100
+        },
+        {
+          "name": "Golden Relief Tanktop",
+          "file": "golden-relief-tanktop.png",
+          "weight": 100
+        },
+        {
+          "name": "Teal Golden Relief Tanktop",
+          "file": "teal-golden-relief-tanktop.png",
+          "weight": 100
+        },
+        {
+          "name": "Halterneck",
+          "file": "halterneck.png",
+          "weight": 100
+        },
+        {
+          "name": "Halter",
+          "file": "halter.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Halter",
+          "file": "pink-halter.png",
+          "weight": 100
+        },
+        {
+          "name": "Leaf Dress",
+          "file": "leaf-dress.png",
+          "weight": 100
+        },
+        {
+          "name": "Kimono",
+          "file": "kimono.png",
+          "weight": 100
+        },
+        {
+          "name": "Holy Set Silver Acc",
+          "file": "holy-set-silver-acc.png",
+          "weight": 100
+        },
+        {
+          "name": "Marine Form",
+          "file": "marine-form.png",
+          "weight": 100
+        },
+        {
+          "name": "Leather Shirt",
+          "file": "leather-shirt.png",
+          "weight": 100
+        },
+        {
+          "name": "Leather Jacket",
+          "file": "leather-jacket.png",
+          "weight": 100
+        },
+        {
+          "name": "Off Shoulders",
+          "file": "off-shoulders.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Off Shoulders",
+          "file": "pink-off-shoulders.png",
+          "weight": 100
+        },
+        {
+          "name": "Nu Basket Jersey",
+          "file": "nu-basket-jersey.png",
+          "weight": 100
+        },
+        {
+          "name": "Metal Sleeveless",
+          "file": "metal-sleeveless.png",
+          "weight": 100
+        },
+        {
+          "name": "Plunging Sunburst",
+          "file": "plunging-sunburst.png",
+          "weight": 100
+        },
+        {
+          "name": "Petals Dress",
+          "file": "petals-dress.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Shoulder Shield",
+          "file": "blue-shoulder-shield.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Petals Dress",
+          "file": "blue-petals-dress.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Petals Dress",
+          "file": "pink-petals-dress.png",
+          "weight": 100
+        },
+        {
+          "name": "Holy Set Gold Acc",
+          "file": "holy-set-gold-acc.png",
+          "weight": 100
+        },
+        {
+          "name": "Party Dress",
+          "file": "party-dress.png",
+          "weight": 100
+        },
+        {
+          "name": "Puffer",
+          "file": "puffer.png",
+          "weight": 100
+        },
+        {
+          "name": "Puffer Hoodie",
+          "file": "puffer-hoodie.png",
+          "weight": 100
+        },
+        {
+          "name": "Raglan Sleeve",
+          "file": "raglan-sleeve.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Fur Chain",
+          "file": "red-fur-chain.png",
+          "weight": 100
+        },
+        {
+          "name": "Sabrina Shirt",
+          "file": "sabrina-shirt.png",
+          "weight": 100
+        },
+        {
+          "name": "Sari",
+          "file": "sari.png",
+          "weight": 100
+        },
+        {
+          "name": "Yellow Sari",
+          "file": "yellow-sari.png",
+          "weight": 100
+        },
+        {
+          "name": "Shirt",
+          "file": "shirt.png",
+          "weight": 100
+        },
+        {
+          "name": "Swayer Sweater Black",
+          "file": "swayer-sweater-black.png",
+          "weight": 100
+        },
+        {
+          "name": "Swayer Sweater Brown",
+          "file": "swayer-sweater-brown.png",
+          "weight": 100
+        },
+        {
+          "name": "Swayer Sweater Green",
+          "file": "swayer-sweater-green.png",
+          "weight": 100
+        },
+        {
+          "name": "Swayer Sweater Orange",
+          "file": "swayer-sweater-orange.png",
+          "weight": 100
+        },
+        {
+          "name": "Swayer Sweater Pink",
+          "file": "swayer-sweater-pink.png",
+          "weight": 100
+        },
+        {
+          "name": "Swayer Sweater Purple",
+          "file": "swayer-sweater-purple.png",
+          "weight": 100
+        },
+        {
+          "name": "Sweather Black",
+          "file": "sweather-black.png",
+          "weight": 100
+        },
+        {
+          "name": "Vest",
+          "file": "vest.png",
+          "weight": 100
+        },
+        {
+          "name": "Viking",
+          "file": "viking.png",
+          "weight": 100
+        },
+        {
+          "name": "Silver Viking",
+          "file": "silver-viking.png",
+          "weight": 100
+        },
+        {
+          "name": "Water Flow Dress",
+          "file": "water-flow-dress.png",
+          "weight": 100
+        },
+        {
+          "name": "White Fur",
+          "file": "white-fur.png",
+          "weight": 100
+        },
+        {
+          "name": "White Shirt",
+          "file": "white-shirt.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Dynasty Collar",
+          "file": "red-dynasty-collar.png",
+          "weight": 100
+        },
+        {
+          "name": "Yellow Dynasty Collar",
+          "file": "yellow-dynasty-collar.png",
+          "weight": 100
+        },
+        {
+          "name": "Coral Water Flow Dress",
+          "file": "coral-water-flow-dress.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Water Flow Dress",
+          "file": "green-water-flow-dress.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Water Flow Dress",
+          "file": "magenta-water-flow-dress.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Water Flow Dress",
+          "file": "red-water-flow-dress.png",
+          "weight": 100
+        },
+        {
+          "name": "Swayer Sweater Mint",
+          "file": "swayer-sweater-mint.png",
+          "weight": 100
+        },
+        {
+          "name": "Swayer Sweater Magenta",
+          "file": "swayer-sweater-magenta.png",
+          "weight": 100
+        },
+        {
+          "name": "Swayer Sweater White",
+          "file": "swayer-sweater-white.png",
+          "weight": 100
+        },
+        {
+          "name": "Swayer Sweater Coral",
+          "file": "swayer-sweater-coral.png",
+          "weight": 100
+        },
+        {
+          "name": "Swayer Sweater Lavender",
+          "file": "swayer-sweater-lavender.png",
+          "weight": 100
+        },
+        {
+          "name": "Black White Fur",
+          "file": "black-white-fur.png",
+          "weight": 100
+        },
+        {
+          "name": "Orange White Fur",
+          "file": "orange-white-fur.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue White Fur",
+          "file": "blue-white-fur.png",
+          "weight": 100
+        },
+        {
+          "name": "Green White Fur",
+          "file": "green-white-fur.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple White Fur",
+          "file": "purple-white-fur.png",
+          "weight": 100
+        },
+        {
+          "name": "Grey Shirt",
+          "file": "grey-shirt.png",
+          "weight": 100
+        },
+        {
+          "name": "Orange Shirt",
+          "file": "orange-shirt.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Shirt",
+          "file": "green-shirt.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Shirt",
+          "file": "purple-shirt.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Shirt",
+          "file": "magenta-shirt.png",
+          "weight": 100
+        },
+        {
+          "name": "Sage Shirt",
+          "file": "sage-shirt.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Shirt",
+          "file": "red-shirt.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Shirt",
+          "file": "black-shirt.png",
+          "weight": 100
+        },
+        {
+          "name": "Yellow Shirt",
+          "file": "yellow-shirt.png",
+          "weight": 100
+        },
+        {
+          "name": "Lavender Shirt",
+          "file": "lavender-shirt.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Vest",
+          "file": "blue-vest.png",
+          "weight": 100
+        },
+        {
+          "name": "Orange Vest",
+          "file": "orange-vest.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Vest",
+          "file": "purple-vest.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Vest",
+          "file": "magenta-vest.png",
+          "weight": 100
+        },
+        {
+          "name": "White Vest",
+          "file": "white-vest.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Red Fur Chain",
+          "file": "magenta-red-fur-chain.png",
+          "weight": 100
+        },
+        {
+          "name": "Teal Red Fur Chain",
+          "file": "teal-red-fur-chain.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Red Fur Chain",
+          "file": "green-red-fur-chain.png",
+          "weight": 100
+        },
+        {
+          "name": "Grey Red Fur Chain",
+          "file": "grey-red-fur-chain.png",
+          "weight": 100
+        },
+        {
+          "name": "Yellow Red Fur Chain",
+          "file": "yellow-red-fur-chain.png",
+          "weight": 100
+        },
+        {
+          "name": "Copper Viking",
+          "file": "copper-viking.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Viking",
+          "file": "green-viking.png",
+          "weight": 100
+        },
+        {
+          "name": "Orange Viking",
+          "file": "orange-viking.png",
+          "weight": 100
+        },
+        {
+          "name": "Teal Viking",
+          "file": "teal-viking.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Viking",
+          "file": "purple-viking.png",
+          "weight": 100
+        },
+        {
+          "name": "Grey Sabrina Shirt",
+          "file": "grey-sabrina-shirt.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Sabrina Shirt",
+          "file": "green-sabrina-shirt.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Sabrina Shirt",
+          "file": "red-sabrina-shirt.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Sabrina Shirt",
+          "file": "purple-sabrina-shirt.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Sabrina Shirt",
+          "file": "blue-sabrina-shirt.png",
+          "weight": 100
+        },
+        {
+          "name": "Scarlet Sari",
+          "file": "scarlet-sari.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Sari",
+          "file": "purple-sari.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Sari",
+          "file": "magenta-sari.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Sari",
+          "file": "blue-sari.png",
+          "weight": 100
+        },
+        {
+          "name": "Orange Sari",
+          "file": "orange-sari.png",
+          "weight": 100
+        },
+        {
+          "name": "Grey Sari",
+          "file": "grey-sari.png",
+          "weight": 100
+        },
+        {
+          "name": "Teal Puffer Hoodie",
+          "file": "teal-puffer-hoodie.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Puffer Hoodie",
+          "file": "blue-puffer-hoodie.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Puffer Hoodie",
+          "file": "magenta-puffer-hoodie.png",
+          "weight": 100
+        },
+        {
+          "name": "Orange Puffer Hoodie",
+          "file": "orange-puffer-hoodie.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Puffer Hoodie",
+          "file": "green-puffer-hoodie.png",
+          "weight": 100
+        },
+        {
+          "name": "Grey Puffer",
+          "file": "grey-puffer.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Puffer",
+          "file": "magenta-puffer.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Puffer",
+          "file": "purple-puffer.png",
+          "weight": 100
+        },
+        {
+          "name": "Teal Puffer",
+          "file": "teal-puffer.png",
+          "weight": 100
+        },
+        {
+          "name": "Yellow Puffer",
+          "file": "yellow-puffer.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Party Dress",
+          "file": "purple-party-dress.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Party Dress",
+          "file": "magenta-party-dress.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Party Dress",
+          "file": "green-party-dress.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Party Dress",
+          "file": "red-party-dress.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Party Dress",
+          "file": "blue-party-dress.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Plunging Sunburst",
+          "file": "red-plunging-sunburst.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Plunging Sunburst",
+          "file": "black-plunging-sunburst.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Plunging Sunburst",
+          "file": "purple-plunging-sunburst.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Plunging Sunburst",
+          "file": "green-plunging-sunburst.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Plunging Sunburst",
+          "file": "blue-plunging-sunburst.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Petals Dress",
+          "file": "black-petals-dress.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Petals Dress",
+          "file": "magenta-petals-dress.png",
+          "weight": 100
+        },
+        {
+          "name": "Cobalt Petals Dress",
+          "file": "cobalt-petals-dress.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Petals Dress",
+          "file": "purple-petals-dress.png",
+          "weight": 100
+        },
+        {
+          "name": "Teal Petals Dress",
+          "file": "teal-petals-dress.png",
+          "weight": 100
+        },
+        {
+          "name": "Tan Raglan Sleeve",
+          "file": "tan-raglan-sleeve.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Raglan Sleeve",
+          "file": "red-raglan-sleeve.png",
+          "weight": 100
+        },
+        {
+          "name": "Mint Raglan Sleeve",
+          "file": "mint-raglan-sleeve.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Raglan Sleeve",
+          "file": "pink-raglan-sleeve.png",
+          "weight": 100
+        },
+        {
+          "name": "Lavender Raglan Sleeve",
+          "file": "lavender-raglan-sleeve.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Off Shoulders",
+          "file": "red-off-shoulders.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Off Shoulders",
+          "file": "green-off-shoulders.png",
+          "weight": 100
+        },
+        {
+          "name": "White Off Shoulders",
+          "file": "white-off-shoulders.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Off Shoulders",
+          "file": "blue-off-shoulders.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Off Shoulders",
+          "file": "purple-off-shoulders.png",
+          "weight": 100
+        },
+        {
+          "name": "Monochrome Nu Basket Jersey",
+          "file": "monochrome-nu-basket-jersey.png",
+          "weight": 100
+        },
+        {
+          "name": "Orange Nu Basket Jersey",
+          "file": "orange-nu-basket-jersey.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Nu Basket Jersey",
+          "file": "blue-nu-basket-jersey.png",
+          "weight": 100
+        },
+        {
+          "name": "Lime Nu Basket Jersey",
+          "file": "lime-nu-basket-jersey.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Nu Basket Jersey",
+          "file": "magenta-nu-basket-jersey.png",
+          "weight": 100
+        },
+        {
+          "name": "Teal Leather Shirt",
+          "file": "teal-leather-shirt.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Leather Shirt",
+          "file": "magenta-leather-shirt.png",
+          "weight": 100
+        },
+        {
+          "name": "Silver Leather Shirt",
+          "file": "silver-leather-shirt.png",
+          "weight": 100
+        },
+        {
+          "name": "Maroon Leather Shirt",
+          "file": "maroon-leather-shirt.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Leather Shirt",
+          "file": "purple-leather-shirt.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Leather Jacket",
+          "file": "black-leather-jacket.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Leather Jacket",
+          "file": "red-leather-jacket.png",
+          "weight": 100
+        },
+        {
+          "name": "Teal Leather Jacket",
+          "file": "teal-leather-jacket.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Leather Jacket",
+          "file": "magenta-leather-jacket.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Leather Jacket",
+          "file": "purple-leather-jacket.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Marine Form",
+          "file": "pink-marine-form.png",
+          "weight": 100
+        },
+        {
+          "name": "Lime Marine Form",
+          "file": "lime-marine-form.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Marine Form",
+          "file": "blue-marine-form.png",
+          "weight": 100
+        },
+        {
+          "name": "Orange Marine Form",
+          "file": "orange-marine-form.png",
+          "weight": 100
+        },
+        {
+          "name": "Monochrome Marine Form",
+          "file": "monochrome-marine-form.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Kimono",
+          "file": "blue-kimono.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Kimono",
+          "file": "pink-kimono.png",
+          "weight": 100
+        },
+        {
+          "name": "Monochrome Kimono",
+          "file": "monochrome-kimono.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Kimono",
+          "file": "red-kimono.png",
+          "weight": 100
+        },
+        {
+          "name": "Lime Kimono",
+          "file": "lime-kimono.png",
+          "weight": 100
+        },
+        {
+          "name": "Teal Leaf Dress",
+          "file": "teal-leaf-dress.png",
+          "weight": 100
+        },
+        {
+          "name": "White Leaf Dress",
+          "file": "white-leaf-dress.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Leaf Dress",
+          "file": "purple-leaf-dress.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Leaf Dress",
+          "file": "black-leaf-dress.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Leaf Dress",
+          "file": "magenta-leaf-dress.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Holy Set Silver Acc",
+          "file": "green-holy-set-silver-acc.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Holy Set Silver Acc",
+          "file": "red-holy-set-silver-acc.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Holy Set Silver Acc",
+          "file": "purple-holy-set-silver-acc.png",
+          "weight": 100
+        },
+        {
+          "name": "Tan Holy Set Silver Acc",
+          "file": "tan-holy-set-silver-acc.png",
+          "weight": 100
+        },
+        {
+          "name": "Gold Holy Set Silver Acc",
+          "file": "gold-holy-set-silver-acc.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Halterneck",
+          "file": "purple-halterneck.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Halterneck",
+          "file": "red-halterneck.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Halterneck",
+          "file": "magenta-halterneck.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Halterneck",
+          "file": "blue-halterneck.png",
+          "weight": 100
+        },
+        {
+          "name": "Monochrome Halterneck",
+          "file": "monochrome-halterneck.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Golden Dress",
+          "file": "black-golden-dress.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Golden Dress",
+          "file": "magenta-golden-dress.png",
+          "weight": 100
+        },
+        {
+          "name": "Orange Golden Dress",
+          "file": "orange-golden-dress.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Golden Dress",
+          "file": "purple-golden-dress.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Golden Dress",
+          "file": "green-golden-dress.png",
+          "weight": 100
+        },
+        {
+          "name": "Mint Halter",
+          "file": "mint-halter.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Halter",
+          "file": "purple-halter.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Halter",
+          "file": "blue-halter.png",
+          "weight": 100
+        },
+        {
+          "name": "Monochrome Halter",
+          "file": "monochrome-halter.png",
+          "weight": 100
+        },
+        {
+          "name": "Mauve Halter",
+          "file": "mauve-halter.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Golden Relief Tanktop",
+          "file": "black-golden-relief-tanktop.png",
+          "weight": 100
+        },
+        {
+          "name": "White Golden Relief Tanktop",
+          "file": "white-golden-relief-tanktop.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Golden Relief Tanktop",
+          "file": "magenta-golden-relief-tanktop.png",
+          "weight": 100
+        },
+        {
+          "name": "Lime Golden Relief Tanktop",
+          "file": "lime-golden-relief-tanktop.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Golden Relief Tanktop",
+          "file": "blue-golden-relief-tanktop.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Grecian Solaria",
+          "file": "black-grecian-solaria.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Grecian Solaria",
+          "file": "magenta-grecian-solaria.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Grecian Solaria",
+          "file": "green-grecian-solaria.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Grecian Solaria",
+          "file": "purple-grecian-solaria.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Grecian Solaria",
+          "file": "blue-grecian-solaria.png",
+          "weight": 100
+        },
+        {
+          "name": "White Grecian Solaria",
+          "file": "white-grecian-solaria.png",
+          "weight": 100
+        },
+        {
+          "name": "White Gold Relief Vest",
+          "file": "white-gold-relief-vest.png",
+          "weight": 100
+        },
+        {
+          "name": "Monochrome Gold Relief Vest",
+          "file": "monochrome-gold-relief-vest.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Gold Relief Vest",
+          "file": "red-gold-relief-vest.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Gold Relief Vest",
+          "file": "blue-gold-relief-vest.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Gold Relief Vest",
+          "file": "green-gold-relief-vest.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Gold Relief Vest",
+          "file": "pink-gold-relief-vest.png",
+          "weight": 100
+        },
+        {
+          "name": "White Shoulder Shield",
+          "file": "white-shoulder-shield.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Shoulder Shield",
+          "file": "magenta-shoulder-shield.png",
+          "weight": 100
+        },
+        {
+          "name": "Sky Blue Shoulder Shield",
+          "file": "sky-blue-shoulder-shield.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Shoulder Shield",
+          "file": "green-shoulder-shield.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Shoulder Shield",
+          "file": "black-shoulder-shield.png",
+          "weight": 100
+        },
+        {
+          "name": "Brown Gold Stud Tanktop",
+          "file": "brown-gold-stud-tanktop.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Gold Stud Tanktop",
+          "file": "blue-gold-stud-tanktop.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Gold Stud Tanktop",
+          "file": "pink-gold-stud-tanktop.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Gold Stud Tanktop",
+          "file": "green-gold-stud-tanktop.png",
+          "weight": 100
+        },
+        {
+          "name": "Monochrome Gold Stud Tanktop",
+          "file": "monochrome-gold-stud-tanktop.png",
+          "weight": 100
+        },
+        {
+          "name": "Monochrome Clown Set",
+          "file": "monochrome-clown-set.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Clown Set",
+          "file": "pink-clown-set.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Clown Set",
+          "file": "blue-clown-set.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Clown Set",
+          "file": "green-clown-set.png",
+          "weight": 100
+        },
+        {
+          "name": "Neon Clown Set",
+          "file": "neon-clown-set.png",
+          "weight": 100
+        },
+        {
+          "name": "Carnival Clown Set",
+          "file": "carnival-clown-set.png",
+          "weight": 100
+        },
+        {
+          "name": "Monochrome Commanders Set",
+          "file": "monochrome-commanders-set.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Commanders Set",
+          "file": "blue-commanders-set.png",
+          "weight": 100
+        },
+        {
+          "name": "Orchid Commanders Set",
+          "file": "orchid-commanders-set.png",
+          "weight": 100
+        },
+        {
+          "name": "Royal Commanders Set",
+          "file": "royal-commanders-set.png",
+          "weight": 100
+        },
+        {
+          "name": "Sapphire Commanders Set",
+          "file": "sapphire-commanders-set.png",
+          "weight": 100
+        },
+        {
+          "name": "Monochrome Denim",
+          "file": "monochrome-denim.png",
+          "weight": 100
+        },
+        {
+          "name": "Gold Denim",
+          "file": "gold-denim.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Denim",
+          "file": "purple-denim.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Denim",
+          "file": "pink-denim.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Black Bikini",
+          "file": "red-black-bikini.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Black Bikini",
+          "file": "magenta-black-bikini.png",
+          "weight": 100
+        },
+        {
+          "name": "Cyan Black Bikini",
+          "file": "cyan-black-bikini.png",
+          "weight": 100
+        },
+        {
+          "name": "Orange Black Bikini",
+          "file": "orange-black-bikini.png",
+          "weight": 100
+        },
+        {
+          "name": "Monochrome Black Bikini",
+          "file": "monochrome-black-bikini.png",
+          "weight": 100
+        },
+        {
+          "name": "Monochrome Broken Wearpack",
+          "file": "monochrome-broken-wearpack.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Broken Wearpack",
+          "file": "blue-broken-wearpack.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Broken Wearpack",
+          "file": "pink-broken-wearpack.png",
+          "weight": 100
+        },
+        {
+          "name": "Gold Broken Wearpack",
+          "file": "gold-broken-wearpack.png",
+          "weight": 100
+        },
+        {
+          "name": "Brown Broken Wearpack",
+          "file": "brown-broken-wearpack.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Broken Wearpack",
+          "file": "green-broken-wearpack.png",
+          "weight": 100
+        },
+        {
+          "name": "Monochrome Broken Office Set",
+          "file": "monochrome-broken-office-set.png",
+          "weight": 100
+        },
+        {
+          "name": "Periwinkle Broken Office Set",
+          "file": "periwinkle-broken-office-set.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Broken Office Set",
+          "file": "pink-broken-office-set.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Broken Office Set",
+          "file": "red-broken-office-set.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Broken Office Set",
+          "file": "blue-broken-office-set.png",
+          "weight": 100
+        },
+        {
+          "name": "Orange Broken Office Set",
+          "file": "orange-broken-office-set.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Broken Office Set",
+          "file": "black-broken-office-set.png",
+          "weight": 100
+        },
+        {
+          "name": "Monochrome Army Jersey",
+          "file": "monochrome-army-jersey.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Army Jersey",
+          "file": "blue-army-jersey.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Army Jersey",
+          "file": "purple-army-jersey.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Army Jersey",
+          "file": "green-army-jersey.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Army Jersey",
+          "file": "magenta-army-jersey.png",
+          "weight": 100
+        },
+        {
+          "name": "Monochrome Assassins Set",
+          "file": "monochrome-assassins-set.png",
+          "weight": 100
+        },
+        {
+          "name": "Cyan Assassins Set",
+          "file": "cyan-assassins-set.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Assassins Set",
+          "file": "green-assassins-set.png",
+          "weight": 100
+        },
+        {
+          "name": "Brown Assassins Set",
+          "file": "brown-assassins-set.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Assassins Set",
+          "file": "magenta-assassins-set.png",
+          "weight": 100
+        },
+        {
+          "name": "Indigo Assassins Set",
+          "file": "indigo-assassins-set.png",
+          "weight": 100
+        },
+        {
+          "name": "Cyan Black Belt Dress",
+          "file": "cyan-black-belt-dress.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Black Belt Dress",
+          "file": "blue-black-belt-dress.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Black Belt Dress",
+          "file": "red-black-belt-dress.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Black Belt Dress",
+          "file": "pink-black-belt-dress.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Black Belt Dress",
+          "file": "magenta-black-belt-dress.png",
+          "weight": 100
+        },
+        {
+          "name": "Monochrome Black Belt Dress",
+          "file": "monochrome-black-belt-dress.png",
+          "weight": 100
+        }
+      ]
+    },
+    {
+      "name": "Neck",
+      "options": [
+        {
+          "name": "None",
+          "weight": 100
+        },
+        {
+          "name": "All Seeing Eye",
+          "file": "all-seeing-eye.png",
+          "weight": 100
+        },
+        {
+          "name": "Silver All Seeing Eye",
+          "file": "silver-all-seeing-eye.png",
+          "weight": 100
+        },
+        {
+          "name": "Golden Aurum Excalis",
+          "file": "golden-aurum-excalis.png",
+          "weight": 100
+        },
+        {
+          "name": "Golden Blaze Collar",
+          "file": "golden-blaze-collar.png",
+          "weight": 100
+        },
+        {
+          "name": "Golden Heptasight",
+          "file": "golden-heptasight.png",
+          "weight": 100
+        },
+        {
+          "name": "Floral Cross",
+          "file": "floral-cross.png",
+          "weight": 100
+        },
+        {
+          "name": "Golden Eternal Lock",
+          "file": "golden-eternal-lock.png",
+          "weight": 100
+        },
+        {
+          "name": "Golden Candlelight",
+          "file": "golden-candlelight.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Candlelight",
+          "file": "blue-candlelight.png",
+          "weight": 100
+        },
+        {
+          "name": "Golden Trivecta",
+          "file": "golden-trivecta.png",
+          "weight": 100
+        },
+        {
+          "name": "Golden Trinity Arrows Pendant",
+          "file": "golden-trinity-arrows-pendant.png",
+          "weight": 100
+        },
+        {
+          "name": "Golden Orbital",
+          "file": "golden-orbital.png",
+          "weight": 100
+        },
+        {
+          "name": "Silver Orbital",
+          "file": "silver-orbital.png",
+          "weight": 100
+        },
+        {
+          "name": "Imperial Ember Eye",
+          "file": "imperial-ember-eye.png",
+          "weight": 100
+        },
+        {
+          "name": "Guns N' Gold",
+          "file": "guns-n-gold.png",
+          "weight": 100
+        },
+        {
+          "name": "Golden Urban Luxe",
+          "file": "golden-urban-luxe.png",
+          "weight": 100
+        },
+        {
+          "name": "Eternal Trinity's Starbolt",
+          "file": "eternal-trinitys-starbolt.png",
+          "weight": 100
+        },
+        {
+          "name": "Imperial Sunburst",
+          "file": "imperial-sunburst.png",
+          "weight": 100
+        },
+        {
+          "name": "Liquid Gold Necklace",
+          "file": "liquid-gold-necklace.png",
+          "weight": 100
+        },
+        {
+          "name": "N-Link Chain",
+          "file": "n-link-chain.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta N-Link Chain",
+          "file": "magenta-n-link-chain.png",
+          "weight": 100
+        },
+        {
+          "name": "Violet N-Link Chain",
+          "file": "violet-n-link-chain.png",
+          "weight": 100
+        },
+        {
+          "name": "Lime N-Link Chain",
+          "file": "lime-n-link-chain.png",
+          "weight": 100
+        },
+        {
+          "name": "Red N-Link Chain",
+          "file": "red-n-link-chain.png",
+          "weight": 100
+        },
+        {
+          "name": "Cyan N-Link Chain",
+          "file": "cyan-n-link-chain.png",
+          "weight": 100
+        },
+        {
+          "name": "Silver N-Link Chain",
+          "file": "silver-n-link-chain.png",
+          "weight": 100
+        },
+        {
+          "name": "Black N-Link Chain",
+          "file": "black-n-link-chain.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Imperial Sunburst",
+          "file": "green-imperial-sunburst.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Imperial Sunburst",
+          "file": "pink-imperial-sunburst.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Imperial Sunburst",
+          "file": "blue-imperial-sunburst.png",
+          "weight": 100
+        },
+        {
+          "name": "Cyan Imperial Sunburst",
+          "file": "cyan-imperial-sunburst.png",
+          "weight": 100
+        },
+        {
+          "name": "Silver Imperial Sunburst",
+          "file": "silver-imperial-sunburst.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Imperial Sunburst",
+          "file": "black-imperial-sunburst.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Liquid Gold Necklace",
+          "file": "green-liquid-gold-necklace.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Liquid Gold Necklace",
+          "file": "pink-liquid-gold-necklace.png",
+          "weight": 100
+        },
+        {
+          "name": "Cyan Liquid Gold Necklace",
+          "file": "cyan-liquid-gold-necklace.png",
+          "weight": 100
+        },
+        {
+          "name": "Silver Liquid Gold Necklace",
+          "file": "silver-liquid-gold-necklace.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Liquid Gold Necklace",
+          "file": "black-liquid-gold-necklace.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Liquid Gold Necklace",
+          "file": "purple-liquid-gold-necklace.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Golden Urban Luxe",
+          "file": "green-golden-urban-luxe.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Golden Urban Luxe",
+          "file": "pink-golden-urban-luxe.png",
+          "weight": 100
+        },
+        {
+          "name": "Violet Golden Urban Luxe",
+          "file": "violet-golden-urban-luxe.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Golden Urban Luxe",
+          "file": "blue-golden-urban-luxe.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Golden Urban Luxe",
+          "file": "black-golden-urban-luxe.png",
+          "weight": 100
+        },
+        {
+          "name": "Silver Golden Urban Luxe",
+          "file": "silver-golden-urban-luxe.png",
+          "weight": 100
+        },
+        {
+          "name": "Cyan Guns N' Gold",
+          "file": "cyan-guns-n-gold.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Guns N' Gold",
+          "file": "green-guns-n-gold.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Guns N' Gold",
+          "file": "pink-guns-n-gold.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Guns N' Gold",
+          "file": "purple-guns-n-gold.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Guns N' Gold",
+          "file": "blue-guns-n-gold.png",
+          "weight": 100
+        },
+        {
+          "name": "Silver Guns N' Gold",
+          "file": "silver-guns-n-gold.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Guns N' Gold",
+          "file": "black-guns-n-gold.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Imperial Ember Eye",
+          "file": "green-imperial-ember-eye.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Imperial Ember Eye",
+          "file": "pink-imperial-ember-eye.png",
+          "weight": 100
+        },
+        {
+          "name": "Violet Imperial Ember Eye",
+          "file": "violet-imperial-ember-eye.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Imperial Ember Eye",
+          "file": "blue-imperial-ember-eye.png",
+          "weight": 100
+        },
+        {
+          "name": "Silver Imperial Ember Eye",
+          "file": "silver-imperial-ember-eye.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Imperial Ember Eye",
+          "file": "black-imperial-ember-eye.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Golden Orbital",
+          "file": "green-golden-orbital.png",
+          "weight": 100
+        },
+        {
+          "name": "Cyan Golden Orbital",
+          "file": "cyan-golden-orbital.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Golden Orbital",
+          "file": "pink-golden-orbital.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Golden Orbital",
+          "file": "blue-golden-orbital.png",
+          "weight": 100
+        },
+        {
+          "name": "Silver Golden Orbital",
+          "file": "silver-golden-orbital.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Golden Orbital",
+          "file": "black-golden-orbital.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Golden Trinity Arrows Pendant",
+          "file": "purple-golden-trinity-arrows-pendant.png",
+          "weight": 100
+        },
+        {
+          "name": "Lime Golden Trinity Arrows Pendant",
+          "file": "lime-golden-trinity-arrows-pendant.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Golden Trinity Arrows Pendant",
+          "file": "magenta-golden-trinity-arrows-pendant.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Golden Trinity Arrows Pendant",
+          "file": "blue-golden-trinity-arrows-pendant.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Golden Trinity Arrows Pendant",
+          "file": "black-golden-trinity-arrows-pendant.png",
+          "weight": 100
+        },
+        {
+          "name": "Silver Golden Trinity Arrows Pendant",
+          "file": "silver-golden-trinity-arrows-pendant.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Golden Trivecta",
+          "file": "green-golden-trivecta.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Golden Trivecta",
+          "file": "purple-golden-trivecta.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Golden Trivecta",
+          "file": "magenta-golden-trivecta.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Golden Trivecta",
+          "file": "blue-golden-trivecta.png",
+          "weight": 100
+        },
+        {
+          "name": "Silver Golden Trivecta",
+          "file": "silver-golden-trivecta.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Golden Trivecta",
+          "file": "black-golden-trivecta.png",
+          "weight": 100
+        },
+        {
+          "name": "Cyan Golden Eternal Lock",
+          "file": "cyan-golden-eternal-lock.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Golden Eternal Lock",
+          "file": "red-golden-eternal-lock.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Golden Eternal Lock",
+          "file": "pink-golden-eternal-lock.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Golden Eternal Lock",
+          "file": "purple-golden-eternal-lock.png",
+          "weight": 100
+        },
+        {
+          "name": "Lime Golden Eternal Lock",
+          "file": "lime-golden-eternal-lock.png",
+          "weight": 100
+        },
+        {
+          "name": "Silver Golden Eternal Lock",
+          "file": "silver-golden-eternal-lock.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Golden Eternal Lock",
+          "file": "black-golden-eternal-lock.png",
+          "weight": 100
+        },
+        {
+          "name": "Orange Golden Candlelight",
+          "file": "orange-golden-candlelight.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Golden Candlelight",
+          "file": "purple-golden-candlelight.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Golden Candlelight",
+          "file": "pink-golden-candlelight.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Golden Candlelight",
+          "file": "green-golden-candlelight.png",
+          "weight": 100
+        },
+        {
+          "name": "Silver Golden Candlelight",
+          "file": "silver-golden-candlelight.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Golden Candlelight",
+          "file": "black-golden-candlelight.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Eternal Trinity's Starbolt",
+          "file": "black-eternal-trinitys-starbolt.png",
+          "weight": 100
+        },
+        {
+          "name": "Silver Eternal Trinity's Starbolt",
+          "file": "silver-eternal-trinitys-starbolt.png",
+          "weight": 100
+        },
+        {
+          "name": "Cyan Eternal Trinity's Starbolt",
+          "file": "cyan-eternal-trinitys-starbolt.png",
+          "weight": 100
+        },
+        {
+          "name": "Salmon Eternal Trinity's Starbolt",
+          "file": "salmon-eternal-trinitys-starbolt.png",
+          "weight": 100
+        },
+        {
+          "name": "Lime Eternal Trinity's Starbolt",
+          "file": "lime-eternal-trinitys-starbolt.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Eternal Trinity's Starbolt",
+          "file": "pink-eternal-trinitys-starbolt.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Eternal Trinity's Starbolt",
+          "file": "purple-eternal-trinitys-starbolt.png",
+          "weight": 100
+        }
+      ]
+    },
+    {
+      "name": "Mask",
+      "options": [
+        {
+          "name": "None",
+          "weight": 100
+        },
+        {
+          "name": "Nuddies Goggles",
+          "file": "nuddies-goggles.png",
+          "weight": 100
+        },
+        {
+          "name": "Goggles",
+          "file": "goggles.png",
+          "weight": 100
+        },
+        {
+          "name": "Astralis Veil",
+          "file": "astralis-veil.png",
+          "weight": 100
+        },
+        {
+          "name": "Tiger Face",
+          "file": "tiger-face.png",
+          "weight": 100
+        },
+        {
+          "name": "The Shining Paw",
+          "file": "the-shining-paw.png",
+          "weight": 100
+        },
+        {
+          "name": "Gold The Shining Paw",
+          "file": "gold-the-shining-paw.png",
+          "weight": 100
+        },
+        {
+          "name": "Red The Shining Paw",
+          "file": "red-the-shining-paw.png",
+          "weight": 100
+        },
+        {
+          "name": "Snake of Verdant Flame",
+          "file": "snake-of-verdant-flame.png",
+          "weight": 100
+        },
+        {
+          "name": "Silver Spiked Helmet",
+          "file": "silver-spiked-helmet.png",
+          "weight": 100
+        },
+        {
+          "name": "Shinobi Mask",
+          "file": "shinobi-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Regalia Neko Mask",
+          "file": "regalia-neko-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Ornamental Face Veil",
+          "file": "ornamental-face-veil.png",
+          "weight": 100
+        },
+        {
+          "name": "Monsters Mask TF",
+          "file": "monsters-mask-tf.png",
+          "weight": 100
+        },
+        {
+          "name": "Monkey Mask",
+          "file": "monkey-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Majestic Gold Veil",
+          "file": "majestic-gold-veil.png",
+          "weight": 100
+        },
+        {
+          "name": "Teal Majestic Gold Veil",
+          "file": "teal-majestic-gold-veil.png",
+          "weight": 100
+        },
+        {
+          "name": "Kappa Mask",
+          "file": "kappa-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Celestia Golden Star Mask",
+          "file": "celestia-golden-star-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Celestia Golden Star Mask",
+          "file": "pink-celestia-golden-star-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Creepy Skull",
+          "file": "creepy-skull.png",
+          "weight": 100
+        },
+        {
+          "name": "Deathfang Oni Mask",
+          "file": "deathfang-oni-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Eagle Flower Mask",
+          "file": "eagle-flower-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Frog Face",
+          "file": "frog-face.png",
+          "weight": 100
+        },
+        {
+          "name": "Gold Feather Mask",
+          "file": "gold-feather-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Gold Spiked Helmet",
+          "file": "gold-spiked-helmet.png",
+          "weight": 100
+        },
+        {
+          "name": "Golden Bascinet",
+          "file": "golden-bascinet.png",
+          "weight": 100
+        },
+        {
+          "name": "Golden Owl Mask",
+          "file": "golden-owl-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Golden Solaris Mask",
+          "file": "golden-solaris-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Imperial Sun Shourd Mask",
+          "file": "imperial-sun-shourd-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Neko Mask",
+          "file": "neko-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Mask OFV",
+          "file": "black-mask-ofv.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Eyepatch",
+          "file": "black-eyepatch.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Mask BEP",
+          "file": "black-mask-bep.png",
+          "weight": 100
+        },
+        {
+          "name": "Black and White Regalia Neko Mask",
+          "file": "black-and-white-regalia-neko-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Regalia Neko Mask",
+          "file": "pink-regalia-neko-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Flower Face",
+          "file": "flower-face.png",
+          "weight": 100
+        },
+        {
+          "name": "Ice Cream Face",
+          "file": "ice-cream-face.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Broken Masl",
+          "file": "pink-broken-masl.png",
+          "weight": 100
+        },
+        {
+          "name": "Nu Pacifier",
+          "file": "nu-pacifier.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Nuddies Goggles",
+          "file": "purple-nuddies-goggles.png",
+          "weight": 100
+        },
+        {
+          "name": "Silver Nu Pacifier",
+          "file": "silver-nu-pacifier.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Nu Pacifier",
+          "file": "blue-nu-pacifier.png",
+          "weight": 100
+        },
+        {
+          "name": "Affordable Glasses",
+          "file": "affordable-glasses.png",
+          "weight": 100
+        },
+        {
+          "name": "Belt Face Mask CEG",
+          "file": "belt-face-mask-ceg.png",
+          "weight": 100
+        },
+        {
+          "name": "Belt Face Mask EP",
+          "file": "belt-face-mask-ep.png",
+          "weight": 100
+        },
+        {
+          "name": "Belt Face Mask TCEGF",
+          "file": "belt-face-mask-tcegf.png",
+          "weight": 100
+        },
+        {
+          "name": "Belt Face Mask",
+          "file": "belt-face-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Mask DFOM",
+          "file": "black-mask-dfom.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Mask EFM",
+          "file": "black-mask-efm.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Mask EP",
+          "file": "black-mask-ep.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Mask GFM",
+          "file": "black-mask-gfm.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Mask NM",
+          "file": "black-mask-nm.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Mask OFS",
+          "file": "black-mask-ofs.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Mask SS",
+          "file": "black-mask-ss.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Mask TF",
+          "file": "black-mask-tf.png",
+          "weight": 100
+        },
+        {
+          "name": "White Black Mask TF",
+          "file": "white-black-mask-tf.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Mask",
+          "file": "black-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Black NU Type Bandana",
+          "file": "black-nu-type-bandana.png",
+          "weight": 100
+        },
+        {
+          "name": "Teal Black NU Type Bandana",
+          "file": "teal-black-nu-type-bandana.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Black NU Type Bandana",
+          "file": "green-black-nu-type-bandana.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Spider",
+          "file": "black-spider.png",
+          "weight": 100
+        },
+        {
+          "name": "Blackmask SoVF",
+          "file": "blackmask-sovf.png",
+          "weight": 100
+        },
+        {
+          "name": "Blee Pimple Patch AG",
+          "file": "blee-pimple-patch-ag.png",
+          "weight": 100
+        },
+        {
+          "name": "Blee Pimple Patch BEP",
+          "file": "blee-pimple-patch-bep.png",
+          "weight": 100
+        },
+        {
+          "name": "Blee Pimple Patch BS",
+          "file": "blee-pimple-patch-bs.png",
+          "weight": 100
+        },
+        {
+          "name": "Blee Pimple Patch CEG",
+          "file": "blee-pimple-patch-ceg.png",
+          "weight": 100
+        },
+        {
+          "name": "Blee Pimple Patch CGSM",
+          "file": "blee-pimple-patch-cgsm.png",
+          "weight": 100
+        },
+        {
+          "name": "Blee Pimple Patch CS",
+          "file": "blee-pimple-patch-cs.png",
+          "weight": 100
+        },
+        {
+          "name": "Blee Pimple Patch EP",
+          "file": "blee-pimple-patch-ep.png",
+          "weight": 100
+        },
+        {
+          "name": "Blee Pimple Patch Imperial",
+          "file": "blee-pimple-patch-imperial.png",
+          "weight": 100
+        },
+        {
+          "name": "Blee Pimple Patch OFS",
+          "file": "blee-pimple-patch-ofs.png",
+          "weight": 100
+        },
+        {
+          "name": "Blee Pimple Patch OFV",
+          "file": "blee-pimple-patch-ofv.png",
+          "weight": 100
+        },
+        {
+          "name": "Blee Pimple Patch SS",
+          "file": "blee-pimple-patch-ss.png",
+          "weight": 100
+        },
+        {
+          "name": "Blee Pimple Patch SSFG",
+          "file": "blee-pimple-patch-ssfg.png",
+          "weight": 100
+        },
+        {
+          "name": "Blee Pimple Patch SoVF",
+          "file": "blee-pimple-patch-sovf.png",
+          "weight": 100
+        },
+        {
+          "name": "Blee Pimple Patch TCEGF",
+          "file": "blee-pimple-patch-tcegf.png",
+          "weight": 100
+        },
+        {
+          "name": "Blee Pimple Patch",
+          "file": "blee-pimple-patch.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Paisley Bandana AG",
+          "file": "blue-paisley-bandana-ag.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Paisley Bandana BEP",
+          "file": "blue-paisley-bandana-bep.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Paisley Bandana BS",
+          "file": "blue-paisley-bandana-bs.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Paisley Bandana CEG",
+          "file": "blue-paisley-bandana-ceg.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Paisley Bandana EP",
+          "file": "blue-paisley-bandana-ep.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Paisley Bandana OFS",
+          "file": "blue-paisley-bandana-ofs.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Paisley Bandana SS",
+          "file": "blue-paisley-bandana-ss.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Paisley Bandana SSFG",
+          "file": "blue-paisley-bandana-ssfg.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Paisley Bandana TCEGF",
+          "file": "blue-paisley-bandana-tcegf.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Paisley Bandana",
+          "file": "blue-paisley-bandana.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Paisley Bandana",
+          "file": "red-paisley-bandana.png",
+          "weight": 100
+        },
+        {
+          "name": "Buckle",
+          "file": "buckle.png",
+          "weight": 100
+        },
+        {
+          "name": "Cat eye Glasses",
+          "file": "cat-eye-glasses.png",
+          "weight": 100
+        },
+        {
+          "name": "Cigarettes",
+          "file": "cigarettes.png",
+          "weight": 100
+        },
+        {
+          "name": "Creepy Mouth",
+          "file": "creepy-mouth.png",
+          "weight": 100
+        },
+        {
+          "name": "Golden Dominion Veil",
+          "file": "golden-dominion-veil.png",
+          "weight": 100
+        },
+        {
+          "name": "Golden Mouth Plate Belt Mask DFOM",
+          "file": "golden-mouth-plate-belt-mask-dfom.png",
+          "weight": 100
+        },
+        {
+          "name": "Golden Mouth Plate Belt Mask",
+          "file": "golden-mouth-plate-belt-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Golden Mouth Plate Belt Mask",
+          "file": "blue-golden-mouth-plate-belt-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Imperial Mask",
+          "file": "imperial-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Imperial Mask",
+          "file": "green-imperial-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Imperial Mask",
+          "file": "pink-imperial-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Kaneki Ken Mask AG",
+          "file": "kaneki-ken-mask-ag.png",
+          "weight": 100
+        },
+        {
+          "name": "Kaneki Ken Mask BEP",
+          "file": "kaneki-ken-mask-bep.png",
+          "weight": 100
+        },
+        {
+          "name": "Kaneki Ken Mask BS",
+          "file": "kaneki-ken-mask-bs.png",
+          "weight": 100
+        },
+        {
+          "name": "Kaneki Ken Mask CEG",
+          "file": "kaneki-ken-mask-ceg.png",
+          "weight": 100
+        },
+        {
+          "name": "Kaneki Ken Mask CGSM",
+          "file": "kaneki-ken-mask-cgsm.png",
+          "weight": 100
+        },
+        {
+          "name": "Kaneki Ken Mask CS",
+          "file": "kaneki-ken-mask-cs.png",
+          "weight": 100
+        },
+        {
+          "name": "Kaneki Ken Mask EP",
+          "file": "kaneki-ken-mask-ep.png",
+          "weight": 100
+        },
+        {
+          "name": "Kaneki Ken Mask OFV",
+          "file": "kaneki-ken-mask-ofv.png",
+          "weight": 100
+        },
+        {
+          "name": "Kaneki Ken Mask SoVF",
+          "file": "kaneki-ken-mask-sovf.png",
+          "weight": 100
+        },
+        {
+          "name": "Kaneki Ken Mask TCEGF",
+          "file": "kaneki-ken-mask-tcegf.png",
+          "weight": 100
+        },
+        {
+          "name": "Monsters Mask TCEGF",
+          "file": "monsters-mask-tcegf.png",
+          "weight": 100
+        },
+        {
+          "name": "Monsters Mask",
+          "file": "monsters-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Mouth",
+          "file": "mouth.png",
+          "weight": 100
+        },
+        {
+          "name": "Ocean Frame Sunglasses",
+          "file": "ocean-frame-sunglasses.png",
+          "weight": 100
+        },
+        {
+          "name": "Pirates Eyepatch",
+          "file": "pirates-eyepatch.png",
+          "weight": 100
+        },
+        {
+          "name": "Smoke AG",
+          "file": "smoke-ag.png",
+          "weight": 100
+        },
+        {
+          "name": "Smoke BEP",
+          "file": "smoke-bep.png",
+          "weight": 100
+        },
+        {
+          "name": "Smoke BS",
+          "file": "smoke-bs.png",
+          "weight": 100
+        },
+        {
+          "name": "Smoke EP",
+          "file": "smoke-ep.png",
+          "weight": 100
+        },
+        {
+          "name": "Smoke SS",
+          "file": "smoke-ss.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Smoke SS",
+          "file": "pink-smoke-ss.png",
+          "weight": 100
+        },
+        {
+          "name": "Smoke SSFG",
+          "file": "smoke-ssfg.png",
+          "weight": 100
+        },
+        {
+          "name": "Smoke TCEGF",
+          "file": "smoke-tcegf.png",
+          "weight": 100
+        },
+        {
+          "name": "Triangle Cat Eye Green Frame",
+          "file": "triangle-cat-eye-green-frame.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Black Mask BEP",
+          "file": "purple-black-mask-bep.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Black Mask BEP",
+          "file": "blue-black-mask-bep.png",
+          "weight": 100
+        },
+        {
+          "name": "Teal Black Mask BEP",
+          "file": "teal-black-mask-bep.png",
+          "weight": 100
+        },
+        {
+          "name": "Orange Black Mask BEP",
+          "file": "orange-black-mask-bep.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Black Mask BEP",
+          "file": "pink-black-mask-bep.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Black Mask BEP",
+          "file": "green-black-mask-bep.png",
+          "weight": 100
+        },
+        {
+          "name": "Silver Black Mask BEP",
+          "file": "silver-black-mask-bep.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Black Mask OFV",
+          "file": "green-black-mask-ofv.png",
+          "weight": 100
+        },
+        {
+          "name": "Gold Black Mask OFV",
+          "file": "gold-black-mask-ofv.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Black Mask OFV",
+          "file": "magenta-black-mask-ofv.png",
+          "weight": 100
+        },
+        {
+          "name": "Violet Black Mask OFV",
+          "file": "violet-black-mask-ofv.png",
+          "weight": 100
+        },
+        {
+          "name": "Cyan Black Mask OFV",
+          "file": "cyan-black-mask-ofv.png",
+          "weight": 100
+        },
+        {
+          "name": "Silver Black Mask OFV",
+          "file": "silver-black-mask-ofv.png",
+          "weight": 100
+        },
+        {
+          "name": "Yellow Tiger Face",
+          "file": "yellow-tiger-face.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Tiger Face",
+          "file": "magenta-tiger-face.png",
+          "weight": 100
+        },
+        {
+          "name": "Lime Tiger Face",
+          "file": "lime-tiger-face.png",
+          "weight": 100
+        },
+        {
+          "name": "Violet Tiger Face",
+          "file": "violet-tiger-face.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Tiger Face",
+          "file": "blue-tiger-face.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Tiger Face",
+          "file": "black-tiger-face.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Snake of Verdant Flame",
+          "file": "purple-snake-of-verdant-flame.png",
+          "weight": 100
+        },
+        {
+          "name": "Teal Snake of Verdant Flame",
+          "file": "teal-snake-of-verdant-flame.png",
+          "weight": 100
+        },
+        {
+          "name": "Gold Snake of Verdant Flame",
+          "file": "gold-snake-of-verdant-flame.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Snake of Verdant Flame",
+          "file": "red-snake-of-verdant-flame.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Snake of Verdant Flame",
+          "file": "magenta-snake-of-verdant-flame.png",
+          "weight": 100
+        },
+        {
+          "name": "Silver Snake of Verdant Flame",
+          "file": "silver-snake-of-verdant-flame.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Snake of Verdant Flame",
+          "file": "black-snake-of-verdant-flame.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Silver Spiked Helmet",
+          "file": "purple-silver-spiked-helmet.png",
+          "weight": 100
+        },
+        {
+          "name": "Cyan Silver Spiked Helmet",
+          "file": "cyan-silver-spiked-helmet.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Silver Spiked Helmet",
+          "file": "green-silver-spiked-helmet.png",
+          "weight": 100
+        },
+        {
+          "name": "Yellow Silver Spiked Helmet",
+          "file": "yellow-silver-spiked-helmet.png",
+          "weight": 100
+        },
+        {
+          "name": "Orange Silver Spiked Helmet",
+          "file": "orange-silver-spiked-helmet.png",
+          "weight": 100
+        },
+        {
+          "name": "Teal Silver Spiked Helmet",
+          "file": "teal-silver-spiked-helmet.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Silver Spiked Helmet",
+          "file": "red-silver-spiked-helmet.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Silver Spiked Helmet",
+          "file": "black-silver-spiked-helmet.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Ornamental Face Veil",
+          "file": "green-ornamental-face-veil.png",
+          "weight": 100
+        },
+        {
+          "name": "Gold Ornamental Face Veil",
+          "file": "gold-ornamental-face-veil.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Ornamental Face Veil",
+          "file": "pink-ornamental-face-veil.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Ornamental Face Veil",
+          "file": "purple-ornamental-face-veil.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Ornamental Face Veil",
+          "file": "blue-ornamental-face-veil.png",
+          "weight": 100
+        },
+        {
+          "name": "Cyan Ornamental Face Veil",
+          "file": "cyan-ornamental-face-veil.png",
+          "weight": 100
+        },
+        {
+          "name": "Silver Ornamental Face Veil",
+          "file": "silver-ornamental-face-veil.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Ornamental Face Veil",
+          "file": "black-ornamental-face-veil.png",
+          "weight": 100
+        },
+        {
+          "name": "Fire",
+          "file": "fire.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Fire",
+          "file": "green-fire.png",
+          "weight": 100
+        },
+        {
+          "name": "Yellow Fire",
+          "file": "yellow-fire.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Fire",
+          "file": "pink-fire.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Fire",
+          "file": "purple-fire.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Fire",
+          "file": "blue-fire.png",
+          "weight": 100
+        },
+        {
+          "name": "Silver Fire",
+          "file": "silver-fire.png",
+          "weight": 100
+        },
+        {
+          "name": "Grey Fire",
+          "file": "grey-fire.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Sleep Mask",
+          "file": "blue-sleep-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Sleep Mask",
+          "file": "pink-sleep-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Sleep Mask",
+          "file": "purple-sleep-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Violet Sleep Mask",
+          "file": "violet-sleep-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Sleep Mask",
+          "file": "green-sleep-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Yellow Sleep Mask",
+          "file": "yellow-sleep-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Salmon Sleep Mask",
+          "file": "salmon-sleep-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "White Sleep Mask",
+          "file": "white-sleep-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Silver Sleep Mask",
+          "file": "silver-sleep-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Spooky",
+          "file": "black-spooky.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Spooky",
+          "file": "red-spooky.png",
+          "weight": 100
+        },
+        {
+          "name": "White Spooky",
+          "file": "white-spooky.png",
+          "weight": 100
+        },
+        {
+          "name": "Grey Spooky",
+          "file": "grey-spooky.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Spooky",
+          "file": "purple-spooky.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Spooky",
+          "file": "blue-spooky.png",
+          "weight": 100
+        },
+        {
+          "name": "Teal Spooky",
+          "file": "teal-spooky.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Spooky",
+          "file": "green-spooky.png",
+          "weight": 100
+        },
+        {
+          "name": "Olive Spooky",
+          "file": "olive-spooky.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Spooky",
+          "file": "magenta-spooky.png",
+          "weight": 100
+        },
+        {
+          "name": "Indigo Hero Mask",
+          "file": "indigo-hero-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Teal Hero Mask",
+          "file": "teal-hero-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Brown Hero Mask",
+          "file": "brown-hero-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Burgundy Hero Mask",
+          "file": "burgundy-hero-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Plum Hero Mask",
+          "file": "plum-hero-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Forest Green Hero Mask",
+          "file": "forest-green-hero-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Azure Hero Mask",
+          "file": "azure-hero-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Lime Hero Mask",
+          "file": "lime-hero-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Orange Hero Mask",
+          "file": "orange-hero-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Hero Mask",
+          "file": "pink-hero-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Hero Mask",
+          "file": "purple-hero-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Hero Mask",
+          "file": "blue-hero-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Sky Blue Hero Mask",
+          "file": "sky-blue-hero-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Cyan Hero Mask",
+          "file": "cyan-hero-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Hero Mask",
+          "file": "red-hero-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "White Hero Mask",
+          "file": "white-hero-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Silver Hero Mask",
+          "file": "silver-hero-mask.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Hero Mask",
+          "file": "black-hero-mask.png",
+          "weight": 100
+        }
+      ]
+    },
+    {
+      "name": "Special",
+      "options": [
+        {
+          "name": "None",
+          "weight": 1610
+        },
+        {
+          "name": "Blue Storm Aura",
+          "file": "blue-storm-aura.png",
+          "weight": 10
+        },
+        {
+          "name": "Purple Storm Aura",
+          "file": "purple-storm-aura.png",
+          "weight": 10
+        },
+        {
+          "name": "Tartaro's Sword",
+          "file": "tartaros-sword.png",
+          "weight": 10
+        },
+        {
+          "name": "Gold Tartaro's Sword",
+          "file": "gold-tartaros-sword.png",
+          "weight": 10
+        },
+        {
+          "name": "Cyan Wave",
+          "file": "cyan-wave.png",
+          "weight": 10
+        },
+        {
+          "name": "Grey Wave",
+          "file": "grey-wave.png",
+          "weight": 10
+        },
+        {
+          "name": "Black Wave",
+          "file": "black-wave.png",
+          "weight": 10
+        },
+        {
+          "name": "Silver Wave",
+          "file": "silver-wave.png",
+          "weight": 10
+        },
+        {
+          "name": "Salmon Wave",
+          "file": "salmon-wave.png",
+          "weight": 10
+        },
+        {
+          "name": "Gold Wave",
+          "file": "gold-wave.png",
+          "weight": 10
+        },
+        {
+          "name": "Lime Wave",
+          "file": "lime-wave.png",
+          "weight": 10
+        },
+        {
+          "name": "Mint Wave",
+          "file": "mint-wave.png",
+          "weight": 10
+        },
+        {
+          "name": "Blue Wave",
+          "file": "blue-wave.png",
+          "weight": 10
+        },
+        {
+          "name": "Magenta Wave",
+          "file": "magenta-wave.png",
+          "weight": 10
+        }
+      ]
+    }
+  ]
+}
