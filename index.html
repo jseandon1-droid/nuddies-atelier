@@ -174,16 +174,28 @@
 let M=null, CATS=[], SZ=1000;
 const canvas=document.getElementById('stage'), ctx=canvas.getContext('2d');
 ctx.imageSmoothingEnabled=true; ctx.imageSmoothingQuality='high';
-const state={}; const imgs={};
+const state={}; const imgs=new Map();
 const $=id=>document.getElementById(id);
 let _raf=false; function scheduleRender(){ if(_raf)return; _raf=true; requestAnimationFrame(()=>{ _raf=false; render(); }); }
 // Layers load as lossless WebP (pixel-identical to the PNG masters, ~40% smaller). Each image is
 // decoded off the main thread before it is ever drawn, so compositing never stutters. If a
 // browser can't decode WebP, that layer silently falls back to its PNG.
-function getImg(src, png){ let im=imgs[src]; if(im) return im; im=new Image(); im.decoding='async';
+// Memory cap: every decoded 1000×1000 layer holds ~4 MB of RAM, and phones (iPhone Safari above
+// all) stutter or reload the page once dozens pile up. Only the most recent MAX_IMGS layers are
+// kept decoded; older ones are released and come back instantly from the offline cache if needed.
+const MAX_IMGS=56;
+function getImg(src, png){ let im=imgs.get(src);
+  if(im){ imgs.delete(src); imgs.set(src,im); return im; }       // mark as recently used
+  im=new Image(); im.decoding='async';
   im.onload=()=>{ (im.decode?im.decode():Promise.resolve()).catch(()=>{}).then(()=>{ im._ok=true; scheduleRender(); }); };
   im.onerror=()=>{ if(png&&im.src.indexOf(png)<0){ im.src=png; return; } im._bad=true; scheduleRender(); };
-  im.src=src; imgs[src]=im; return im; }
+  im.src=src; imgs.set(src,im); trimImgs(); return im; }
+function trimImgs(){
+  if(imgs.size<=MAX_IMGS) return;
+  const keep=new Set(); const mark=st=>CATS.forEach(c=>{ const o=c.options[st[c.name]]; if(o&&o.src) keep.add(o.src); });
+  mark(state); if(drawn) mark(drawn); rollQ.forEach(mark);
+  for(const [k,im] of imgs){ if(imgs.size<=MAX_IMGS) break; if(!keep.has(k)){ imgs.delete(k); im.onload=im.onerror=null; im.src=''; } }
+}
 function layer(o){ return getImg(o.src, o.png); }
 function backdrop(){ const g=ctx.createRadialGradient(SZ/2,SZ*0.42,0,SZ/2,SZ*0.42,SZ*0.75);
   g.addColorStop(0,'#1C1824'); g.addColorStop(1,'#0B0A0F'); ctx.fillStyle=g; ctx.fillRect(0,0,SZ,SZ); }
@@ -192,6 +204,10 @@ function selected(){ return CATS.map(c=>c.options[state[c.name]]).filter(o=>o&&o
 // The canvas only ever shows a complete Nuddie: while a new layer downloads, the previous
 // portrait stays up (with a soft pulse) and the whole new look swaps in at once — no pop-in.
 function stateKey(){ return CATS.map(c=>state[c.name]).join(','); }
+// The picture, the trait names and the shimmer always change together, in one frame, once every
+// layer of the new look is decoded — so what you read always matches what you see.
+let drawn=null, wantShimmer=false;
+function snapshot(){ const s={}; CATS.forEach(c=>s[c.name]=state[c.name]); return s; }
 function render(){
   const ims=selected().map(layer), pending=ims.filter(im=>!im._ok&&!im._bad).length;
   document.querySelector('.frame').classList.toggle('loading', pending>0);
@@ -199,8 +215,12 @@ function render(){
     ctx.clearRect(0,0,SZ,SZ);
     if(!bgActive()) backdrop();
     ims.forEach(im=>{ if(im._ok) ctx.drawImage(im,0,0,SZ,SZ); });
-    planNext();
-  }
+    drawn=snapshot(); updateRows();
+    if(wantShimmer){ wantShimmer=false; shimmer(); }
+  } else if(!drawn) updateRows();
+  planNext();
+}
+function updateRows(){
   document.querySelectorAll('.cat').forEach(row=>{
     const c=CATS.find(x=>x.name===row.dataset.cat); const o=c.options[state[c.name]];
     row.querySelector('.name').textContent=o.name; row.querySelector('.name').title=o.name;
@@ -232,20 +252,27 @@ function pick(c){
 // roll is drawn with the same pick() rules (weights, no-repeat) against the current state and
 // re-drawn whenever the state changes, so odds are exactly as before. Stepping a category also
 // warms the next two options in that direction.
-let nextRoll=null, lastStep=null;
+// Up to 3 future rolls are queued as a chain (each drawn from the one before it with the same
+// pick() rules, so weights and no-repeat are exactly as if you rolled live) and downloaded one
+// roll at a time, nearest first, so even rapid tapping stays on art that is already on the device.
+let rollQ=[], qBase=null, lastStep=null;
+const QUEUE=3;
+function rollFrom(base){ const saved=snapshot(); Object.assign(state,base);
+  const r={}; CATS.forEach(c=>{ r[c.name]=pick(c); }); Object.assign(state,saved); return r; }
+function rollReady(r){ return CATS.every(c=>{ const o=c.options[r[c.name]]; if(!(o&&o.src)) return true; const im=imgs.get(o.src); return im&&(im._ok||im._bad); }); }
 function planNext(){
   const key=stateKey();
-  if(!nextRoll||nextRoll.base!==key){
-    const roll={}; CATS.forEach(c=>{ roll[c.name]=pick(c); });
-    nextRoll={base:key, roll};
-  }
+  if(qBase!==key){ rollQ=[]; qBase=key; }
+  let prev=rollQ.length?rollQ[rollQ.length-1]:snapshot();
+  while(rollQ.length<QUEUE){ prev=rollFrom(prev); rollQ.push(prev); }
   clearTimeout(planNext._t);
-  const roll=nextRoll.roll;
   planNext._t=setTimeout(()=>{
-    CATS.forEach(c=>{ const o=c.options[roll[c.name]]; if(o&&o.src) layer(o); });
+    if(document.querySelector('.frame').classList.contains('loading')) return;   // current look first
+    const r=rollQ.find(x=>!rollReady(x));       // nearest roll that still needs downloading
+    if(r) CATS.forEach(c=>{ const o=c.options[r[c.name]]; if(o&&o.src) layer(o); });
     if(lastStep){ const c=CATS.find(x=>x.name===lastStep.cat), n=c.options.length;
       for(let k=1;k<=2;k++){ const o=c.options[(state[c.name]+k*lastStep.d+n*4)%n]; if(o&&o.src) layer(o); } }
-  }, 150);
+  }, 60);
 }
 function buildControls(){
   const box=$('controls');
@@ -299,8 +326,8 @@ async function boot(){
   $('status').textContent=liveText();
 }
 const doRandom=()=>{ if(!M) return;
-  const roll=(nextRoll&&nextRoll.base===stateKey())?nextRoll.roll:null;
-  CATS.forEach(c=>state[c.name]=roll?roll[c.name]:pick(c)); nextRoll=null; lastStep=null; render(); shimmer(); };
+  const r=(qBase===stateKey()&&rollQ.length)?rollQ.shift():rollFrom(snapshot());
+  CATS.forEach(c=>state[c.name]=r[c.name]); qBase=stateKey(); lastStep=null; wantShimmer=true; render(); };
 // --- Save -------------------------------------------------------------------
 // Always the highest quality the site holds: the full 1000×1000 composite exported as a
 // lossless PNG, every layer drawn 1:1 from art that is pixel-identical to the masters.
