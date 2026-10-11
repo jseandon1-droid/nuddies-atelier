@@ -20,7 +20,7 @@
   :root{--void:#0B0A0F;--obsidian:#141119;--obsidian-2:#1C1824;--gold:#C9A34E;--gold-bright:#E7C56A;
     --garnet:#8B2635;--ivory:#EDE6D6;--mauve:#8A8194;--line:rgba(201,163,78,0.22);}
   *{box-sizing:border-box;}
-  html,body{margin:0;padding:0;background:var(--void);color:var(--ivory);}
+  html,body{margin:0;padding:0;background:var(--void);color:var(--ivory);overflow-x:hidden;max-width:100%;}
   body{font-family:"Jost",system-ui,sans-serif;min-height:100vh;
     background:radial-gradient(120% 90% at 50% -10%, rgba(201,163,78,0.08), transparent 55%),
       radial-gradient(80% 70% at 50% 120%, rgba(139,38,53,0.10), transparent 60%),var(--void);
@@ -43,8 +43,22 @@
   .btn--gold{background:linear-gradient(180deg,var(--gold-bright),var(--gold));color:#231a08;border-color:transparent;font-weight:500;}
   .btn:focus-visible,.step:focus-visible,.thumb:focus-visible{outline:2px solid var(--gold-bright);outline-offset:2px;}
   .grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(300px,.95fr);gap:38px;align-items:start;}
-  @media(max-width:860px){.grid{grid-template-columns:minmax(0,1fr);gap:28px;}}
   .grid>*{min-width:0;}
+  .stage-wrap{position:sticky;top:14px;}
+  .stage-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;}
+  .stage-actions .btn{flex:1;text-align:center;}
+  @media(max-width:860px){
+    .grid{grid-template-columns:1fr;gap:14px;}
+    .wrap{padding:calc(18px + env(safe-area-inset-top)) 14px calc(56px + env(safe-area-inset-bottom));}
+    header{margin-bottom:16px;padding-bottom:14px;}
+    .actions{display:none;}
+    .stage-wrap{top:0;z-index:30;padding:6px 0 12px;margin:0 -14px;padding-left:14px;padding-right:14px;
+      background:linear-gradient(180deg,var(--void) 0%,var(--void) 82%,rgba(11,10,15,0));}
+    .frame{max-width:min(52vh,320px);margin:0 auto;padding:8px;}
+    .stage-actions{margin-top:10px;max-width:min(52vh,320px);margin-left:auto;margin-right:auto;}
+    .stage-actions .btn{padding:10px 12px;font-size:11px;}
+  }
+  @media(min-width:861px){.stage-actions{display:none;}}
   .frame{position:relative;border:1px solid var(--line);border-radius:3px;
     background:radial-gradient(80% 80% at 50% 40%, var(--obsidian-2), var(--void) 90%);padding:14px;}
   .frame::before,.frame::after{content:"";position:absolute;width:22px;height:22px;border:1px solid var(--gold);opacity:.55;}
@@ -54,21 +68,44 @@
   #shimmer{position:absolute;inset:14px;pointer-events:none;border-radius:2px;opacity:0;
     background:linear-gradient(105deg,transparent 40%,rgba(231,197,106,.5) 50%,transparent 60%);
     background-size:250% 100%;background-position:120% 0;mix-blend-mode:screen;}
-  .panel{border:1px solid var(--line);border-radius:3px;background:var(--obsidian);overflow:hidden;margin-bottom:16px;}
-  .cat{display:flex;align-items:center;gap:12px;padding:15px 18px;border-bottom:1px solid rgba(201,163,78,.08);}
-  .cat:last-child{border-bottom:none;}
+  .panel{border:1px solid var(--line);border-radius:3px;background:var(--obsidian);overflow:hidden;margin-bottom:14px;}
+  .cat{display:flex;align-items:center;gap:12px;padding:14px 18px;}
+  .cat .meta{cursor:pointer;user-select:none;display:flex;align-items:center;gap:10px;}
+  .cat.empty .meta{cursor:default;}
+  .caret{width:16px;flex:none;color:var(--gold);font-size:11px;transition:transform .22s ease;transform:rotate(-90deg);opacity:.75;}
+  .panel.open .caret{transform:rotate(0deg);}
+  .panel.open .cat{border-bottom:1px solid rgba(201,163,78,.08);}
+  .thumbs{display:none;}
+  .panel.open .thumbs{display:grid;}
   .cat .meta{flex:1;min-width:0;}
+  .cat .meta > div{flex:1;min-width:0;}
+  .stepper{flex:none;}
   .cat .lbl{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--mauve);}
   .cat .val{font-family:"Cormorant Garamond",serif;font-size:20px;color:var(--ivory);margin-top:2px;
     white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
   .cat .val .count{font-family:"Jost";font-size:11px;letter-spacing:.14em;color:var(--gold);margin-left:8px;}
-  .cat.empty .val{color:var(--mauve);font-style:italic;font-size:16px;}
+  .cat.empty .val{color:var(--mauve);font-style:italic;font-size:15px;}
   .stepper{display:flex;gap:6px;}
   .step{width:34px;height:34px;border:1px solid var(--line);border-radius:2px;display:grid;place-items:center;
     color:var(--ivory);font-size:15px;background:rgba(201,163,78,.04);transition:border-color .2s,background .2s;}
   .step:hover{border-color:var(--gold);background:rgba(201,163,78,.1);}
   .step[disabled]{opacity:.3;cursor:default;}
-  .foot{color:var(--mauve);font-size:12px;line-height:1.6;margin-top:6px;letter-spacing:.02em;}
+  .thumbs{grid-template-columns:repeat(auto-fit,minmax(52px,1fr));gap:8px;padding:14px 18px 16px;
+    max-height:46vh;overflow-y:auto;align-content:start;align-items:start;}
+  .thumb{border:1px solid var(--line);border-radius:3px;overflow:hidden;aspect-ratio:1;background:var(--void);
+    padding:0;transition:border-color .2s;position:relative;}
+  .thumb img{width:100%;height:100%;object-fit:contain;object-position:center;display:block;}
+  .thumb.bgthumb img{object-fit:cover;}
+  .thumb:hover{border-color:var(--gold);}
+  .thumb[aria-pressed="true"]{border-color:var(--gold-bright);box-shadow:0 0 0 1px var(--gold-bright) inset;}
+  .thumb.none{display:grid;place-items:center;color:var(--mauve);font-size:9px;letter-spacing:.1em;}
+  .frame.loading::after{animation:pulse 1.1s ease-in-out infinite;}
+  @keyframes pulse{50%{opacity:.15;}}
+  .install-row{margin-top:10px;}
+  @media(max-width:860px){.install-row{max-width:min(52vh,320px);margin-left:auto;margin-right:auto;}}
+  .install-row .btn{width:100%;}
+  @media(min-width:861px){.install-row{display:none!important;}}
+  .foot{color:var(--mauve);font-size:12px;line-height:1.6;margin-top:8px;letter-spacing:.02em;}
   @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
 </style>
 </head>
@@ -80,130 +117,151 @@
       <p>Atelier of the Nu World Order — build your goddess</p>
     </div>
     <div class="actions">
-      <button class="btn" id="randomAll">⟳ Summon at Random</button>
       <button class="btn" id="install" hidden>⤓ Install App</button>
+      <button class="btn" id="randomAll">⟳ Summon at Random</button>
       <button class="btn btn--gold" id="download">↓ Save Portrait</button>
     </div>
   </header>
   <div class="grid">
     <section>
-      <div class="frame">
-        <canvas id="stage" width="1000" height="1000" aria-label="Goddess preview"></canvas>
-        <div id="shimmer"></div>
+      <div class="stage-wrap">
+        <div class="frame">
+          <canvas id="stage" width="1000" height="1000" aria-label="Goddess preview"></canvas>
+          <div id="shimmer"></div>
+        </div>
+        <div class="stage-actions">
+          <button class="btn" id="randomAllM">⟳ Random</button>
+          <button class="btn btn--gold" id="downloadM">↓ Save</button>
+        </div>
+        <div class="install-row" id="installRowM" hidden><button class="btn" id="installM">⤓ Install App</button></div>
       </div>
     </section>
     <aside>
-      <div class="panel" id="controls"></div>
+      <div id="controls"></div>
       <p class="foot" id="status">Loading traits…</p>
     </aside>
   </div>
 </div>
 <script>
-/* Manifest-driven generator. Reads traits/manifest.json; category order = layer order (back→front).
-   Add a new category's PNGs under traits/<Category>/ and list them in manifest.json — the UI extends automatically.
-   Run via a local server or host it (canvas export needs same-origin): e.g.  python3 -m http.server  */
-let M=null, SZ=1000, ctx, state={}, imgs={};
+/* Nuddies Atelier — the live generator. Manifest-driven: reads traits/manifest.json at runtime;
+   category order = layer order (back→front). Add PNGs under traits/<Category>/, list them in the
+   manifest and run tools/rebuild_thumbs.py — the UI extends automatically.
+   Loading is on demand: only the layers on the canvas (and thumbnails of a picker you open) are
+   fetched, so the page is usable in seconds on a phone. Canvas + saves always use the full
+   1000×1000 PNGs, drawn 1:1. Serve it (https or localhost); file:// blocks canvas export. */
+let M=null, CATS=[], SZ=1000;
+const canvas=document.getElementById('stage'), ctx=canvas.getContext('2d');
+ctx.imageSmoothingEnabled=true; ctx.imageSmoothingQuality='high';
+const state={}; const imgs={};
 const $=id=>document.getElementById(id);
-
-async function boot(){
-  try{
-    M = await (await fetch('traits/manifest.json')).json();
-  }catch(e){ $('status').textContent='Could not load traits/manifest.json — run via a local server (python3 -m http.server) or host it.'; return; }
-  SZ = M.canvas||1000;
-  const c=$('stage'); c.width=SZ; c.height=SZ; ctx=c.getContext('2d');
-  // preload all option images that have files
-  const loads=[];
-  M.categories.forEach(cat=>{
-    state[cat.name]=0;
-    cat.options.forEach(o=>{
-      if(o.file){
-        const src='traits/'+cat.name+'/'+o.file;
-        const im=new Image();
-        loads.push(new Promise(r=>{ im.onload=im.onerror=r; im.src=src; }));
-        imgs[src]=im;
-      }
-    });
-  });
-  await Promise.all(loads);
-  buildControls(); summon();
-  $('status').textContent = tally();
-}
-function c_path(o){ const cat=M.categories.find(c=>c.options.includes(o)); return cat.name+'/'+o.file; }
-function tally(){
-  const live=M.categories.filter(c=>c.options.some(o=>o.file)).map(c=>c.name+' ·'+c.options.filter(o=>o.file).length);
-  return 'Live: '+live.join('   ');
-}
-function backdrop(){
-  const g=ctx.createRadialGradient(SZ/2,SZ*0.42,0,SZ/2,SZ*0.42,SZ*0.75);
-  g.addColorStop(0,'#1C1824'); g.addColorStop(1,'#0B0A0F');
-  ctx.fillStyle=g; ctx.fillRect(0,0,SZ,SZ);
-}
-function hasBackground(){ const b=M.categories.find(c=>c.name==='Background'); return b && b.options[state['Background']] && b.options[state['Background']].file; }
+let _raf=false; function scheduleRender(){ if(_raf)return; _raf=true; requestAnimationFrame(()=>{ _raf=false; render(); }); }
+function getImg(src){ let im=imgs[src]; if(im) return im; im=new Image(); im.decoding='async'; im.onload=im.onerror=scheduleRender; im.src=src; imgs[src]=im; return im; }
+function backdrop(){ const g=ctx.createRadialGradient(SZ/2,SZ*0.42,0,SZ/2,SZ*0.42,SZ*0.75);
+  g.addColorStop(0,'#1C1824'); g.addColorStop(1,'#0B0A0F'); ctx.fillStyle=g; ctx.fillRect(0,0,SZ,SZ); }
+function bgActive(){ const b=CATS.find(c=>c.name==='Background'); return b && b.options[state['Background']] && b.options[state['Background']].src; }
+function selected(){ return CATS.map(c=>c.options[state[c.name]]).filter(o=>o&&o.src); }
 function render(){
   ctx.clearRect(0,0,SZ,SZ);
-  if(!hasBackground()) backdrop();
-  M.categories.forEach(cat=>{
-    const o=cat.options[state[cat.name]];
-    if(o && o.file){ const im=imgs['traits/'+cat.name+'/'+o.file]; if(im&&im.complete&&im.naturalWidth) ctx.drawImage(im,0,0,SZ,SZ); }
-  });
+  if(!bgActive()) backdrop();
+  let pending=0;
+  CATS.forEach(c=>{ const o=c.options[state[c.name]]; if(o&&o.src){ const im=getImg(o.src);
+    if(im.complete&&im.naturalWidth) ctx.drawImage(im,0,0,SZ,SZ); else if(!im.complete) pending++; } });
+  document.querySelector('.frame').classList.toggle('loading', pending>0);
   document.querySelectorAll('.cat').forEach(row=>{
-    const name=row.dataset.cat, o=M.categories.find(c=>c.name===name).options[state[name]];
-    row.querySelector('.name').textContent=o.name;
-    const cnt=M.categories.find(c=>c.name===name).options.length;
-    row.querySelector('.count').textContent=(state[name]+1)+' / '+cnt;
+    const c=CATS.find(x=>x.name===row.dataset.cat); const o=c.options[state[c.name]];
+    row.querySelector('.name').textContent=o.name; row.querySelector('.name').title=o.name;
+    row.querySelector('.count').textContent=(state[c.name]+1)+' / '+c.options.length;
+    row.parentElement.querySelectorAll('.thumb').forEach((t,i)=>t.setAttribute('aria-pressed', i===state[c.name]));
   });
 }
-function buildControls(){
-  const box=$('controls'); box.innerHTML='';
-  M.categories.forEach(cat=>{
-    const real=cat.options.some(o=>o.file);
-    const row=document.createElement('div');
-    row.className='cat'+(real?'':' empty'); row.dataset.cat=cat.name;
-    row.innerHTML=`<div class="meta"><div class="lbl">${cat.name}</div>
-      <div class="val"><span class="name">—</span><span class="count"></span></div></div>
-      <div class="stepper">
-        <button class="step" data-d="-1" aria-label="Previous ${cat.name}" ${real?'':'disabled'}>‹</button>
-        <button class="step" data-d="1"  aria-label="Next ${cat.name}" ${real?'':'disabled'}>›</button></div>`;
-    box.appendChild(row);
-    if(real) row.querySelectorAll('.step').forEach(b=>b.onclick=()=>{
-      const n=cat.options.length; state[cat.name]=(state[cat.name]+ (+b.dataset.d) + n)%n; render();
-    });
-  });
-}
-// crypto-backed uniform [0,1) — Math.random is a weak PRNG in some webviews.
+function shimmer(){ const s=$('shimmer'); if(!s||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  s.animate([{opacity:0},{opacity:1,offset:.5},{opacity:0}],{duration:700,easing:'ease-out'}); }
+// --- randomness ---------------------------------------------------------
+// crypto-backed uniform [0,1): Math.random in some in-app webviews is a weak PRNG
+// that visibly repeats across rolls. Falls back cleanly where crypto is absent.
 function rnd(){ try{ const a=new Uint32Array(1); (self.crypto||self.msCrypto).getRandomValues(a); return a[0]/4294967296; }catch(e){ return Math.random(); } }
 function wOf(o){ return (o && o.weight!=null) ? o.weight : 100; }
-function draw(cat){ const opts=cat.options, tot=opts.reduce((s,o)=>s+wOf(o),0); let r=rnd()*tot;
-  for(let i=0;i<opts.length;i++){ r-=wOf(opts[i]); if(r<=0) return i; } return opts.length-1; }
-function pick(cat){
-  // Guarantee a visible change: draw uniformly from everything EXCEPT what is showing.
-  // Only valid for equally-weighted categories — excluding an option in a weighted one
-  // (Special) would wreck its rarity, so that path falls through to the plain draw.
-  const w=cat.options.map(wOf), flat=w.every(x=>x===w[0]), cur=state[cat.name], n=cat.options.length;
+function draw(c){ const t=c.options.reduce((s,o)=>s+wOf(o),0); let r=rnd()*t;
+  for(let i=0;i<c.options.length;i++){ r-=wOf(c.options[i]); if(r<=0) return i; } return c.options.length-1; }
+function pick(c){
+  // Guarantee a visible change: draw uniformly from everything EXCEPT what is already
+  // showing. Only valid where all options are equally likely — excluding an option in a
+  // weighted category (Special) would wreck its intended rarity, so that path is untouched.
+  const w=c.options.map(wOf), flat=w.every(x=>x===w[0]), cur=state[c.name], n=c.options.length;
   if(flat && n>2 && Number.isInteger(cur) && cur>=0 && cur<n){
     let j=Math.floor(rnd()*(n-1)); if(j>=cur) j++; return j;
   }
-  return draw(cat);
+  return draw(c);
 }
-function summon(){ M.categories.forEach(c=>state[c.name]=pick(c)); render(); shimmer(); }
-function shimmer(){ const s=$('shimmer'); if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-  s.animate([{opacity:0,backgroundPosition:'120% 0'},{opacity:1,offset:.5},{opacity:0,backgroundPosition:'-40% 0'}],{duration:700,easing:'ease-out'}); }
-$('randomAll').onclick=summon;
-$('download').onclick=async()=>{
-  // Highest-quality save: every selected layer must be fully decoded, then repaint and
-  // export PNG (lossless) at the manifest canvas size, 1:1 with the source art. Without
-  // this guard a layer that failed to decode would silently export a Nuddie missing a trait.
-  const sel=M.categories.map(c=>c.options[state[c.name]]).filter(o=>o&&o.file)
-                        .map(o=>imgs['traits/'+c_path(o)]);
-  await Promise.all(sel.map(im=> im&&im.decode?im.decode().catch(()=>{}):Promise.resolve()));
-  const missing=sel.filter(im=>!im||!im.complete||!im.naturalWidth).length;
-  if(missing){ alert('Not saved: '+missing+' trait layer(s) failed to load. Reload and try again.'); return; }
+// Warm the next roll in the background so taps feel instant without downloading the library.
+function prefetch(){ CATS.forEach(c=>{ const o=c.options[pick(c)]; if(o&&o.src) getImg(o.src); }); }
+function buildControls(){
+  const box=$('controls');
+  CATS.forEach(c=>{
+    const real=c.options.some(o=>o.src);
+    const panel=document.createElement('div'); panel.className='panel';
+    const row=document.createElement('div'); row.className='cat'+(real?'':' empty'); row.dataset.cat=c.name;
+    row.innerHTML='<div class="meta"><span class="caret">▼</span><div><div class="lbl"></div>'+
+      '<div class="val"><span class="name">—</span><span class="count"></span></div></div></div>'+
+      '<div class="stepper"><button class="step" data-d="-1" '+(real?'':'disabled')+'>‹</button>'+
+      '<button class="step" data-d="1" '+(real?'':'disabled')+'>›</button></div>';
+    row.querySelector('.lbl').textContent=c.name;
+    row.querySelectorAll('.step').forEach(b=>b.setAttribute('aria-label',(b.dataset.d<0?'Previous ':'Next ')+c.name));
+    panel.appendChild(row);
+    if(real){
+      row.querySelectorAll('.step').forEach(b=>b.onclick=()=>{ const n=c.options.length; state[c.name]=(state[c.name]+(+b.dataset.d)+n)%n; render(); });
+      let built=false;
+      function buildThumbs(){ if(built)return; built=true;
+        const tb=document.createElement('div'); tb.className='thumbs';
+        c.options.forEach((o,i)=>{
+          const b=document.createElement('button'); b.className='thumb'+(c.name==='Background'?' bgthumb':'')+(o.src?'':' none');
+          b.setAttribute('aria-label',o.name); b.title=o.name; b.setAttribute('aria-pressed', i===state[c.name]);
+          if(o.src){ const im=document.createElement('img'); im.loading='lazy'; im.decoding='async'; im.src=o.thumb; im.alt=o.name;
+            im.onerror=()=>{ im.onerror=null; im.src=o.src; }; b.appendChild(im); } else { b.textContent='NONE'; }
+          b.onclick=()=>{ state[c.name]=i; render(); };
+          tb.appendChild(b);
+        });
+        panel.appendChild(tb);
+      }
+      row.querySelector('.meta').onclick=()=>{
+        const wasOpen=panel.classList.contains('open');
+        box.querySelectorAll('.panel.open').forEach(p=>p.classList.remove('open'));
+        if(!wasOpen){ buildThumbs(); panel.classList.add('open'); render(); panel.scrollIntoView({block:'nearest',behavior:'smooth'}); }
+      };
+    }
+    box.appendChild(panel);
+  });
+}
+async function boot(){
+  try{ M = await (await fetch('traits/manifest.json',{cache:'no-cache'})).json(); }
+  catch(e){ $('status').textContent='Could not load traits/manifest.json — serve this folder (https or localhost) instead of opening the file.'; return; }
+  SZ = M.canvas||1000; canvas.width=SZ; canvas.height=SZ;
+  CATS = M.categories.map(cat=>({ name:cat.name, options:cat.options.map(o=>({ name:o.name, weight:o.weight,
+    src: o.file ? 'traits/'+cat.name+'/'+o.file : null,
+    thumb: o.file ? 'thumbs/'+cat.name+'/'+o.file.replace(/\.png$/i,'.webp') : null })) }));
+  CATS.forEach(c=>{ state[c.name]=0; });
+  buildControls(); render();
+  $('status').textContent='Live: '+CATS.filter(c=>c.options.some(o=>o.src)).map(c=>c.name+' ·'+c.options.filter(o=>o.src).length).join('   ');
+  setTimeout(prefetch, 1200);
+}
+const doRandom=()=>{ if(!M) return; CATS.forEach(c=>state[c.name]=pick(c)); render(); shimmer(); setTimeout(prefetch, 400); };
+// In-app browsers (X, Instagram, Facebook, Telegram…) ignore programmatic downloads.
+const inApp=/Twitter|FBAN|FBAV|Instagram|Line\/|Telegram|; wv\)/i.test(navigator.userAgent);
+const doSave=async()=>{
+  if(!M) return;
+  // Highest-quality save: every selected layer must be fully decoded, then repaint and export
+  // lossless PNG at the manifest canvas size, 1:1 with the source art. A layer that failed to
+  // load aborts the save rather than exporting a Nuddie with a trait missing.
+  let fallbackWin=null; if(inApp){ try{ fallbackWin=window.open('', '_blank'); }catch(e){} }
+  const sel=selected().map(o=>getImg(o.src));
+  await Promise.all(sel.map(im=> im.complete?Promise.resolve():new Promise(r=>{ im.addEventListener('load',r,{once:true}); im.addEventListener('error',r,{once:true}); })));
+  await Promise.all(sel.map(im=> im.decode?im.decode().catch(()=>{}):Promise.resolve()));
+  const missing=sel.filter(im=>!im.complete||!im.naturalWidth).length;
+  if(missing){ if(fallbackWin) fallbackWin.close(); alert('Not saved: '+missing+' trait layer(s) failed to load. Check your connection and try again.'); return; }
   render();
-  let url;
-  try{ url=$('stage').toDataURL('image/png'); }
-  catch(e){ alert('Export blocked on file:// — run via a local server (python3 -m http.server) or host it.'); return; }
-  // Installed on a phone, a plain download is unreliable — hand the same lossless PNG to the share sheet
-  // (Save Image / Files / Photos). Desktop and browser tabs keep the direct download.
+  const url=canvas.toDataURL('image/png');
+  // Installed on a phone, a plain download is unreliable — hand the same lossless PNG to the
+  // share sheet (Save Image / Files / Photos). Browser tabs keep the direct download.
   const standalone=matchMedia('(display-mode: standalone)').matches||navigator.standalone===true;
   if(standalone&&navigator.canShare){
     try{
@@ -214,8 +272,20 @@ $('download').onclick=async()=>{
       if(navigator.canShare({files:[file]})){ await navigator.share({files:[file],title:'Nuddie'}); return; }
     }catch(e){ if(e&&e.name==='AbortError') return; }
   }
-  const a=document.createElement('a'); a.download='nuddie.png'; a.href=url; a.click();
+  if(fallbackWin){
+    try{
+      fallbackWin.document.write('<!doctype html><title>Nuddie</title><meta name="viewport" content="width=device-width,initial-scale=1">'+
+        '<body style="margin:0;background:#111;min-height:100vh;display:flex;align-items:center;justify-content:center">'+
+        '<div style="text-align:center;font-family:sans-serif;color:#ddd"><img src="'+url+'" alt="Nuddie" style="max-width:96vw;max-height:80vh;display:block;margin:0 auto 14px">'+
+        '<p style="opacity:.75">Press and hold the image, then choose Save Image.</p></div>');
+      fallbackWin.document.close(); return;
+    }catch(e){}
+  }
+  const a=document.createElement('a'); a.download='nuddie.png'; a.href=url; a.style.display='none';
+  document.body.appendChild(a); a.click(); a.remove();
 };
+['randomAll','randomAllM'].forEach(id=>{const b=$(id); if(b) b.onclick=doRandom;});
+['download','downloadM'].forEach(id=>{const b=$(id); if(b) b.onclick=doSave;});
 boot();
 
 /* PWA: offline cache + install. Needs https or localhost; skipped on file://. */
@@ -223,9 +293,11 @@ if('serviceWorker' in navigator && location.protocol!=='file:'){
   addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
 }
 let installEvt=null;
-addEventListener('beforeinstallprompt',e=>{ e.preventDefault(); installEvt=e; $('install').hidden=false; });
-$('install').onclick=async()=>{ if(!installEvt) return; installEvt.prompt(); await installEvt.userChoice.catch(()=>{}); installEvt=null; $('install').hidden=true; };
-addEventListener('appinstalled',()=>{ installEvt=null; $('install').hidden=true; });
+const showInstall=v=>{ $('install').hidden=!v; $('installRowM').hidden=!v; };
+addEventListener('beforeinstallprompt',e=>{ e.preventDefault(); installEvt=e; showInstall(true); });
+const doInstall=async()=>{ if(!installEvt) return; installEvt.prompt(); await installEvt.userChoice.catch(()=>{}); installEvt=null; showInstall(false); };
+$('install').onclick=doInstall; $('installM').onclick=doInstall;
+addEventListener('appinstalled',()=>{ installEvt=null; showInstall(false); });
 </script>
 </body>
 </html>
