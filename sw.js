@@ -4,13 +4,13 @@
      network-first so a new deploy shows up on the next load, cache when offline.
    - traits/manifest.json: network-first. When its content changes, the trait-art cache is
      purged, so replaced or renamed art can never be served from an old cache.
-   - Trait PNGs + picker thumbnails: cache-first, on demand. The app only fetches the layers
+   - Trait layers (lossless WebP, PNG fallback) + picker thumbnails: cache-first, on demand. The app only fetches the layers
      you actually view (no 270 MB preload), and each one is kept for offline use after its
      first view. Freshness comes from the manifest purge above. Bytes are cached untouched,
      so exports stay pixel-identical to the art.
    - Google Fonts: stale-while-revalidate.
    Bump VERSION only when this file's logic changes; content updates need no bump. */
-const VERSION = 'v2';
+const VERSION = 'v3';
 const SHELL = `nuddies-shell-${VERSION}`;
 const ART = `nuddies-art-${VERSION}`;
 const FONTS = `nuddies-fonts-${VERSION}`;
@@ -91,7 +91,7 @@ self.addEventListener('fetch', (e) => {
   if (rel === 'traits/manifest.json') {
     e.respondWith(networkFirst(req, SHELL, purgeArtIfManifestChanged));
   } else if ((rel.startsWith('traits/') && rel.toLowerCase().endsWith('.png')) ||
-             (rel.startsWith('thumbs/') && rel.toLowerCase().endsWith('.webp'))) {
+             ((rel.startsWith('layers/') || rel.startsWith('thumbs/')) && rel.toLowerCase().endsWith('.webp'))) {
     e.respondWith(cacheFirst(req, ART));
   } else if (req.mode === 'navigate') {
     e.respondWith(networkFirst(req, SHELL).catch(() => caches.match('index.html')));

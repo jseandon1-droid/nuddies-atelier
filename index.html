@@ -155,18 +155,30 @@ ctx.imageSmoothingEnabled=true; ctx.imageSmoothingQuality='high';
 const state={}; const imgs={};
 const $=id=>document.getElementById(id);
 let _raf=false; function scheduleRender(){ if(_raf)return; _raf=true; requestAnimationFrame(()=>{ _raf=false; render(); }); }
-function getImg(src){ let im=imgs[src]; if(im) return im; im=new Image(); im.decoding='async'; im.onload=im.onerror=scheduleRender; im.src=src; imgs[src]=im; return im; }
+// Layers load as lossless WebP (pixel-identical to the PNG masters, ~40% smaller). Each image is
+// decoded off the main thread before it is ever drawn, so compositing never stutters. If a
+// browser can't decode WebP, that layer silently falls back to its PNG.
+function getImg(src, png){ let im=imgs[src]; if(im) return im; im=new Image(); im.decoding='async';
+  im.onload=()=>{ (im.decode?im.decode():Promise.resolve()).catch(()=>{}).then(()=>{ im._ok=true; scheduleRender(); }); };
+  im.onerror=()=>{ if(png&&im.src.indexOf(png)<0){ im.src=png; return; } im._bad=true; scheduleRender(); };
+  im.src=src; imgs[src]=im; return im; }
+function layer(o){ return getImg(o.src, o.png); }
 function backdrop(){ const g=ctx.createRadialGradient(SZ/2,SZ*0.42,0,SZ/2,SZ*0.42,SZ*0.75);
   g.addColorStop(0,'#1C1824'); g.addColorStop(1,'#0B0A0F'); ctx.fillStyle=g; ctx.fillRect(0,0,SZ,SZ); }
 function bgActive(){ const b=CATS.find(c=>c.name==='Background'); return b && b.options[state['Background']] && b.options[state['Background']].src; }
 function selected(){ return CATS.map(c=>c.options[state[c.name]]).filter(o=>o&&o.src); }
+// The canvas only ever shows a complete Nuddie: while a new layer downloads, the previous
+// portrait stays up (with a soft pulse) and the whole new look swaps in at once — no pop-in.
+function stateKey(){ return CATS.map(c=>state[c.name]).join(','); }
 function render(){
-  ctx.clearRect(0,0,SZ,SZ);
-  if(!bgActive()) backdrop();
-  let pending=0;
-  CATS.forEach(c=>{ const o=c.options[state[c.name]]; if(o&&o.src){ const im=getImg(o.src);
-    if(im.complete&&im.naturalWidth) ctx.drawImage(im,0,0,SZ,SZ); else if(!im.complete) pending++; } });
+  const ims=selected().map(layer), pending=ims.filter(im=>!im._ok&&!im._bad).length;
   document.querySelector('.frame').classList.toggle('loading', pending>0);
+  if(!pending){
+    ctx.clearRect(0,0,SZ,SZ);
+    if(!bgActive()) backdrop();
+    ims.forEach(im=>{ if(im._ok) ctx.drawImage(im,0,0,SZ,SZ); });
+    planNext();
+  }
   document.querySelectorAll('.cat').forEach(row=>{
     const c=CATS.find(x=>x.name===row.dataset.cat); const o=c.options[state[c.name]];
     row.querySelector('.name').textContent=o.name; row.querySelector('.name').title=o.name;
@@ -193,8 +205,26 @@ function pick(c){
   }
   return draw(c);
 }
-// Warm the next roll in the background so taps feel instant without downloading the library.
-function prefetch(){ CATS.forEach(c=>{ const o=c.options[pick(c)]; if(o&&o.src) getImg(o.src); }); }
+// Smoothness without downloading the library: the NEXT random roll is chosen ahead of time and
+// its layers are fetched while you look at the current one, so Random swaps instantly. The
+// roll is drawn with the same pick() rules (weights, no-repeat) against the current state and
+// re-drawn whenever the state changes, so odds are exactly as before. Stepping a category also
+// warms the next two options in that direction.
+let nextRoll=null, lastStep=null;
+function planNext(){
+  const key=stateKey();
+  if(!nextRoll||nextRoll.base!==key){
+    const roll={}; CATS.forEach(c=>{ roll[c.name]=pick(c); });
+    nextRoll={base:key, roll};
+  }
+  clearTimeout(planNext._t);
+  const roll=nextRoll.roll;
+  planNext._t=setTimeout(()=>{
+    CATS.forEach(c=>{ const o=c.options[roll[c.name]]; if(o&&o.src) layer(o); });
+    if(lastStep){ const c=CATS.find(x=>x.name===lastStep.cat), n=c.options.length;
+      for(let k=1;k<=2;k++){ const o=c.options[(state[c.name]+k*lastStep.d+n*4)%n]; if(o&&o.src) layer(o); } }
+  }, 150);
+}
 function buildControls(){
   const box=$('controls');
   CATS.forEach(c=>{
@@ -209,7 +239,7 @@ function buildControls(){
     row.querySelectorAll('.step').forEach(b=>b.setAttribute('aria-label',(b.dataset.d<0?'Previous ':'Next ')+c.name));
     panel.appendChild(row);
     if(real){
-      row.querySelectorAll('.step').forEach(b=>b.onclick=()=>{ const n=c.options.length; state[c.name]=(state[c.name]+(+b.dataset.d)+n)%n; render(); });
+      row.querySelectorAll('.step').forEach(b=>b.onclick=()=>{ const n=c.options.length; state[c.name]=(state[c.name]+(+b.dataset.d)+n)%n; lastStep={cat:c.name,d:+b.dataset.d}; render(); });
       let built=false;
       function buildThumbs(){ if(built)return; built=true;
         const tb=document.createElement('div'); tb.className='thumbs';
@@ -218,7 +248,8 @@ function buildControls(){
           b.setAttribute('aria-label',o.name); b.title=o.name; b.setAttribute('aria-pressed', i===state[c.name]);
           if(o.src){ const im=document.createElement('img'); im.loading='lazy'; im.decoding='async'; im.src=o.thumb; im.alt=o.name;
             im.onerror=()=>{ im.onerror=null; im.src=o.src; }; b.appendChild(im); } else { b.textContent='NONE'; }
-          b.onclick=()=>{ state[c.name]=i; render(); };
+          b.onpointerdown=()=>{ if(o.src) layer(o); };   // start the download on touch, before the tap completes
+          b.onclick=()=>{ state[c.name]=i; lastStep=null; render(); };
           tb.appendChild(b);
         });
         panel.appendChild(tb);
@@ -237,14 +268,16 @@ async function boot(){
   catch(e){ $('status').textContent='Could not load traits/manifest.json — serve this folder (https or localhost) instead of opening the file.'; return; }
   SZ = M.canvas||1000; canvas.width=SZ; canvas.height=SZ;
   CATS = M.categories.map(cat=>({ name:cat.name, options:cat.options.map(o=>({ name:o.name, weight:o.weight,
-    src: o.file ? 'traits/'+cat.name+'/'+o.file : null,
+    src: o.file ? 'layers/'+cat.name+'/'+o.file.replace(/\.png$/i,'.webp') : null,
+    png: o.file ? 'traits/'+cat.name+'/'+o.file : null,
     thumb: o.file ? 'thumbs/'+cat.name+'/'+o.file.replace(/\.png$/i,'.webp') : null })) }));
   CATS.forEach(c=>{ state[c.name]=0; });
   buildControls(); render();
   $('status').textContent='Live: '+CATS.filter(c=>c.options.some(o=>o.src)).map(c=>c.name+' ·'+c.options.filter(o=>o.src).length).join('   ');
-  setTimeout(prefetch, 1200);
 }
-const doRandom=()=>{ if(!M) return; CATS.forEach(c=>state[c.name]=pick(c)); render(); shimmer(); setTimeout(prefetch, 400); };
+const doRandom=()=>{ if(!M) return;
+  const roll=(nextRoll&&nextRoll.base===stateKey())?nextRoll.roll:null;
+  CATS.forEach(c=>state[c.name]=roll?roll[c.name]:pick(c)); nextRoll=null; lastStep=null; render(); shimmer(); };
 // In-app browsers (X, Instagram, Facebook, Telegram…) ignore programmatic downloads.
 const inApp=/Twitter|FBAN|FBAV|Instagram|Line\/|Telegram|; wv\)/i.test(navigator.userAgent);
 const doSave=async()=>{
@@ -253,12 +286,12 @@ const doSave=async()=>{
   // lossless PNG at the manifest canvas size, 1:1 with the source art. A layer that failed to
   // load aborts the save rather than exporting a Nuddie with a trait missing.
   let fallbackWin=null; if(inApp){ try{ fallbackWin=window.open('', '_blank'); }catch(e){} }
-  const sel=selected().map(o=>getImg(o.src));
-  await Promise.all(sel.map(im=> im.complete?Promise.resolve():new Promise(r=>{ im.addEventListener('load',r,{once:true}); im.addEventListener('error',r,{once:true}); })));
+  const sel=selected().map(layer);
+  const t0=Date.now(); while(sel.some(im=>!im._ok&&!im._bad) && Date.now()-t0<30000) await new Promise(r=>setTimeout(r,60));
   await Promise.all(sel.map(im=> im.decode?im.decode().catch(()=>{}):Promise.resolve()));
-  const missing=sel.filter(im=>!im.complete||!im.naturalWidth).length;
+  const missing=sel.filter(im=>!im._ok||!im.naturalWidth).length;
   if(missing){ if(fallbackWin) fallbackWin.close(); alert('Not saved: '+missing+' trait layer(s) failed to load. Check your connection and try again.'); return; }
-  render();
+  ctx.clearRect(0,0,SZ,SZ); if(!bgActive()) backdrop(); sel.forEach(im=>ctx.drawImage(im,0,0,SZ,SZ));
   const url=canvas.toDataURL('image/png');
   // Installed on a phone, a plain download is unreliable — hand the same lossless PNG to the
   // share sheet (Save Image / Files / Photos). Browser tabs keep the direct download.
