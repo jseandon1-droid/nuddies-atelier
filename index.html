@@ -105,6 +105,16 @@
   @media(max-width:860px){.install-row{max-width:min(52vh,320px);margin-left:auto;margin-right:auto;}}
   .install-row .btn{width:100%;}
   @media(min-width:861px){.install-row{display:none!important;}}
+  .sheet{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;
+    background:rgba(5,4,8,.82);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:20px;}
+  .sheet-card{width:min(440px,100%);max-height:100%;overflow:auto;background:var(--obsidian);border:1px solid var(--line);
+    border-radius:4px;padding:18px;text-align:center;}
+  .sheet-card img{display:block;width:100%;height:auto;border-radius:2px;background:var(--void);
+    -webkit-touch-callout:default;user-select:auto;}
+  .sheet-hint{font-family:"Cormorant Garamond",serif;font-size:18px;color:var(--ivory);margin:14px 0 4px;}
+  .sheet-meta{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:0 0 14px;}
+  .sheet-actions{display:flex;flex-direction:column;gap:10px;}
+  .sheet-actions .btn{display:block;text-decoration:none;text-align:center;}
   .foot{color:var(--mauve);font-size:12px;line-height:1.6;margin-top:8px;letter-spacing:.02em;}
   @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
 </style>
@@ -140,6 +150,18 @@
       <div id="controls"></div>
       <p class="foot" id="status">Loading traits…</p>
     </aside>
+  </div>
+</div>
+<div class="sheet" id="saveSheet" hidden role="dialog" aria-modal="true" aria-label="Save your Nuddie">
+  <div class="sheet-card">
+    <img id="saveImg" alt="Your Nuddie, ready to save" />
+    <p class="sheet-hint" id="saveHint">Your Nuddie is ready</p>
+    <p class="sheet-meta">1000 × 1000 PNG · lossless · full quality</p>
+    <div class="sheet-actions">
+      <button class="btn btn--gold" id="saveShare" hidden>Save to Photos / Share</button>
+      <a class="btn btn--gold" id="saveLink" download="nuddie.png">↓ Download PNG</a>
+      <button class="btn" id="saveClose">Close</button>
+    </div>
   </div>
 </div>
 <script>
@@ -263,6 +285,7 @@ function buildControls(){
     box.appendChild(panel);
   });
 }
+function liveText(){ return 'Live: '+CATS.filter(c=>c.options.some(o=>o.src)).map(c=>c.name+' \u00B7'+c.options.filter(o=>o.src).length).join('   '); }
 async function boot(){
   try{ M = await (await fetch('traits/manifest.json',{cache:'no-cache'})).json(); }
   catch(e){ $('status').textContent='Could not load traits/manifest.json — serve this folder (https or localhost) instead of opening the file.'; return; }
@@ -273,48 +296,74 @@ async function boot(){
     thumb: o.file ? 'thumbs/'+cat.name+'/'+o.file.replace(/\.png$/i,'.webp') : null })) }));
   CATS.forEach(c=>{ state[c.name]=0; });
   buildControls(); render();
-  $('status').textContent='Live: '+CATS.filter(c=>c.options.some(o=>o.src)).map(c=>c.name+' ·'+c.options.filter(o=>o.src).length).join('   ');
+  $('status').textContent=liveText();
 }
 const doRandom=()=>{ if(!M) return;
   const roll=(nextRoll&&nextRoll.base===stateKey())?nextRoll.roll:null;
   CATS.forEach(c=>state[c.name]=roll?roll[c.name]:pick(c)); nextRoll=null; lastStep=null; render(); shimmer(); };
-// In-app browsers (X, Instagram, Facebook, Telegram…) ignore programmatic downloads.
+// --- Save -------------------------------------------------------------------
+// Always the highest quality the site holds: the full 1000×1000 composite exported as a
+// lossless PNG, every layer drawn 1:1 from art that is pixel-identical to the masters.
+// Delivery adapts to the device, because "download" means different things everywhere:
+//  · Desktop browsers → direct download of the PNG file.
+//  · Phones/tablets with a share sheet (iPhone Safari, Android Chrome, installed app) →
+//    share sheet straight away ("Save Image" puts it in Photos).
+//  · Anything that blocks those (in-app browsers like X/Instagram, older phones, a share that
+//    fails) → a save sheet showing the PNG with a real Download button and press-and-hold save.
+// The PNG is built synchronously inside the tap, so iOS keeps the tap's permission for share().
 const inApp=/Twitter|FBAN|FBAV|Instagram|Line\/|Telegram|; wv\)/i.test(navigator.userAgent);
+const touch=matchMedia('(pointer: coarse)').matches;
+let saveURL=null;
+function stamp(){ const d=new Date(), p=n=>String(n).padStart(2,'0');
+  return 'nuddie-'+d.getFullYear()+p(d.getMonth()+1)+p(d.getDate())+'-'+p(d.getHours())+p(d.getMinutes())+p(d.getSeconds())+'.png'; }
+function exportPNG(sel){
+  ctx.clearRect(0,0,SZ,SZ); if(!bgActive()) backdrop(); sel.forEach(im=>ctx.drawImage(im,0,0,SZ,SZ));
+  const url=canvas.toDataURL('image/png');             // lossless PNG at full canvas size
+  const bin=atob(url.split(',')[1]), u8=new Uint8Array(bin.length);
+  for(let i=0;i<bin.length;i++) u8[i]=bin.charCodeAt(i);
+  const name=stamp();
+  return { name, blob:new Blob([u8],{type:'image/png'}), file:(typeof File==='function')?new File([u8],name,{type:'image/png'}):null };
+}
+function canShareFile(f){ try{ return !!(f && navigator.canShare && navigator.canShare({files:[f]})); }catch(e){ return false; } }
+function openSheet(out, msg){
+  if(saveURL) URL.revokeObjectURL(saveURL);
+  saveURL=URL.createObjectURL(out.blob);
+  $('saveImg').src=saveURL;
+  const link=$('saveLink'); link.href=saveURL; link.download=out.name;
+  const sh=$('saveShare'); sh.hidden=!canShareFile(out.file);
+  sh.onclick=async()=>{ try{ await navigator.share({files:[out.file],title:'Nuddie'}); }catch(e){} };
+  $('saveHint').textContent=msg||(touch?'Press and hold the image to save it, or use a button below':'Your Nuddie is ready');
+  $('saveSheet').hidden=false;
+}
+$('saveClose').onclick=()=>{ $('saveSheet').hidden=true; };
+$('saveSheet').addEventListener('click',e=>{ if(e.target.id==='saveSheet') $('saveSheet').hidden=true; });
+addEventListener('keydown',e=>{ if(e.key==='Escape') $('saveSheet').hidden=true; });
 const doSave=async()=>{
   if(!M) return;
-  // Highest-quality save: every selected layer must be fully decoded, then repaint and export
-  // lossless PNG at the manifest canvas size, 1:1 with the source art. A layer that failed to
-  // load aborts the save rather than exporting a Nuddie with a trait missing.
-  let fallbackWin=null; if(inApp){ try{ fallbackWin=window.open('', '_blank'); }catch(e){} }
+  // Every selected layer must be fully decoded first; a layer that failed to load aborts the
+  // save rather than exporting a Nuddie with a trait missing.
   const sel=selected().map(layer);
-  const t0=Date.now(); while(sel.some(im=>!im._ok&&!im._bad) && Date.now()-t0<30000) await new Promise(r=>setTimeout(r,60));
-  await Promise.all(sel.map(im=> im.decode?im.decode().catch(()=>{}):Promise.resolve()));
+  const waited=sel.some(im=>!im._ok&&!im._bad);
+  if(waited){
+    $('status').textContent='Preparing your full-quality PNG…';
+    const t0=Date.now(); while(sel.some(im=>!im._ok&&!im._bad) && Date.now()-t0<30000) await new Promise(r=>setTimeout(r,60));
+    await Promise.all(sel.map(im=> im.decode?im.decode().catch(()=>{}):Promise.resolve()));
+    $('status').textContent=liveText();
+  }
   const missing=sel.filter(im=>!im._ok||!im.naturalWidth).length;
-  if(missing){ if(fallbackWin) fallbackWin.close(); alert('Not saved: '+missing+' trait layer(s) failed to load. Check your connection and try again.'); return; }
-  ctx.clearRect(0,0,SZ,SZ); if(!bgActive()) backdrop(); sel.forEach(im=>ctx.drawImage(im,0,0,SZ,SZ));
-  const url=canvas.toDataURL('image/png');
-  // Installed on a phone, a plain download is unreliable — hand the same lossless PNG to the
-  // share sheet (Save Image / Files / Photos). Browser tabs keep the direct download.
-  const standalone=matchMedia('(display-mode: standalone)').matches||navigator.standalone===true;
-  if(standalone&&navigator.canShare){
-    try{
-      // synchronous data-URL -> bytes keeps the tap's user activation alive for share() on iOS
-      const bin=atob(url.split(',')[1]), u8=new Uint8Array(bin.length);
-      for(let i=0;i<bin.length;i++) u8[i]=bin.charCodeAt(i);
-      const file=new File([u8],'nuddie.png',{type:'image/png'});
-      if(navigator.canShare({files:[file]})){ await navigator.share({files:[file],title:'Nuddie'}); return; }
-    }catch(e){ if(e&&e.name==='AbortError') return; }
+  if(missing){ alert('Not saved: '+missing+' trait layer(s) failed to load. Check your connection and try again.'); return; }
+  const out=exportPNG(sel);
+  // Phones: share sheet first, but only while the tap is still "live" — after a wait, the save
+  // sheet's own buttons provide a fresh tap.
+  if((touch||inApp) && !waited && canShareFile(out.file)){
+    try{ await navigator.share({files:[out.file],title:'Nuddie'}); return; }
+    catch(e){ if(e&&e.name==='AbortError') return; }
   }
-  if(fallbackWin){
-    try{
-      fallbackWin.document.write('<!doctype html><title>Nuddie</title><meta name="viewport" content="width=device-width,initial-scale=1">'+
-        '<body style="margin:0;background:#111;min-height:100vh;display:flex;align-items:center;justify-content:center">'+
-        '<div style="text-align:center;font-family:sans-serif;color:#ddd"><img src="'+url+'" alt="Nuddie" style="max-width:96vw;max-height:80vh;display:block;margin:0 auto 14px">'+
-        '<p style="opacity:.75">Press and hold the image, then choose Save Image.</p></div>');
-      fallbackWin.document.close(); return;
-    }catch(e){}
-  }
-  const a=document.createElement('a'); a.download='nuddie.png'; a.href=url; a.style.display='none';
+  if(touch||inApp){ openSheet(out); return; }
+  // Desktop: direct download of the PNG file.
+  if(saveURL) URL.revokeObjectURL(saveURL);
+  saveURL=URL.createObjectURL(out.blob);
+  const a=document.createElement('a'); a.download=out.name; a.href=saveURL; a.style.display='none';
   document.body.appendChild(a); a.click(); a.remove();
 };
 ['randomAll','randomAllM'].forEach(id=>{const b=$(id); if(b) b.onclick=doRandom;});
