@@ -3,6 +3,11 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<!-- Content Security Policy: scripts only from this site, network calls only to this site and the
+     accounts API (workers.dev / api.nuddiesnwo.xyz), no plugins, no framing of forms. Even if
+     something slipped in, it could not send data anywhere else. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' https://*.workers.dev https://api.nuddiesnwo.xyz; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
 <title>Nuddies · Atelier</title>
 <meta name="description" content="Build your goddess — the Nuddies trait generator." />
 <meta name="theme-color" content="#0B0A0F" />
@@ -133,6 +138,27 @@
   .sheet-meta{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:0 0 14px;}
   .sheet-actions{display:flex;flex-direction:column;gap:10px;}
   .sheet-actions .btn{display:block;text-decoration:none;text-align:center;}
+  /* Accounts (F-12): header chip + stage buttons. The account sheet styles live in accounts.js. */
+  .hright{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:flex-end;}
+  .acct-chip{display:inline-flex;align-items:center;gap:9px;min-height:44px;max-width:220px;padding:4px 14px 4px 4px;border:1px solid var(--line);
+    border-radius:999px;background:var(--obsidian);color:var(--ivory);font-size:13px;letter-spacing:.06em;transition:border-color .25s;}
+  .acct-chip:hover{border-color:var(--gold);}
+  .acct-chip:focus-visible{outline:2px solid var(--gold-bright);outline-offset:2px;}
+  .acct-av{width:34px;height:34px;flex:none;border-radius:50%;overflow:hidden;border:1px solid var(--gold);display:grid;place-items:center;
+    background:var(--void);color:var(--gold);}
+  .acct-chip.signed-in .acct-av{border:1.5px solid var(--gold-bright);}
+  .acct-av canvas,.acct-av img{width:100%;height:100%;object-fit:cover;display:block;}
+  .acct-av .ac-letter{font-family:"Cinzel",serif;font-size:15px;text-transform:uppercase;line-height:1;display:grid;place-items:center;}
+  #acctLabel{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .acct-row{display:flex;gap:10px;margin-top:10px;}
+  .acct-row .btn{flex:1;text-align:center;}
+  @media(max-width:860px){
+    header{flex-wrap:nowrap;align-items:center;}
+    .brand{min-width:0;}
+    .acct-row{max-width:min(52vh,320px);margin-left:auto;margin-right:auto;}
+    .acct-row .btn{padding:10px 8px;font-size:11px;letter-spacing:.12em;}
+  }
+  @media(max-width:420px){ .acct-chip.signed-in{padding-right:4px;} .acct-chip.signed-in #acctLabel{display:none;} }
   .foot{color:var(--mauve);font-size:12px;line-height:1.6;margin-top:8px;letter-spacing:.02em;}
   @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
 </style>
@@ -144,10 +170,17 @@
       <h1>NUDDIES</h1>
       <p>Atelier of the Nu World Order — build your goddess</p>
     </div>
-    <div class="actions">
-      <button class="btn" id="install" hidden>⤓ Install App</button>
-      <button class="btn" id="randomAll">⟳ Summon at Random</button>
-      <button class="btn btn--gold" id="download">↓ Save Portrait</button>
+    <div class="hright">
+      <div class="actions">
+        <button class="btn" id="install" hidden>⤓ Install App</button>
+        <button class="btn" id="randomAll">⟳ Summon at Random</button>
+        <button class="btn btn--gold" id="download">↓ Save Portrait</button>
+      </div>
+      <!-- Account chip (F-12) — shown by accounts.js only when accounts are switched on. -->
+      <button class="acct-chip" id="acctChip" type="button" hidden aria-haspopup="dialog">
+        <span class="acct-av" id="acctAv"><canvas width="96" height="96" hidden></canvas><img alt="" hidden /><span class="ac-letter"></span></span>
+        <span id="acctLabel">Sign in</span>
+      </button>
     </div>
   </header>
   <div class="grid">
@@ -160,6 +193,10 @@
         <div class="stage-actions">
           <button class="btn" id="randomAllM">⟳ Random</button>
           <button class="btn btn--gold" id="downloadM">↓ Save</button>
+        </div>
+        <div class="acct-row" id="acctRow" hidden>
+          <button class="btn" id="acSetPfp" type="button">◉ Set as PFP</button>
+          <button class="btn" id="acSaveCreation" type="button">☆ Save to Creations</button>
         </div>
         <div class="install-row" id="installRowM" hidden><button class="btn" id="installM">⤓ Install App</button></div>
       </div>
@@ -335,14 +372,25 @@ async function boot(){
   try{ M = await (await fetch('traits/manifest.json',{cache:'no-cache'})).json(); }
   catch(e){ $('status').textContent='Could not load traits/manifest.json — serve this folder (https or localhost) instead of opening the file.'; return; }
   SZ = M.canvas||1000; canvas.width=SZ; canvas.height=SZ;
-  CATS = M.categories.map(cat=>({ name:cat.name, options:cat.options.map(o=>({ name:o.name, weight:o.weight,
+  CATS = M.categories.map(cat=>({ name:cat.name, options:cat.options.map(o=>({ name:o.name, weight:o.weight, file:o.file||null,
     src: o.file ? 'layers/'+cat.name+'/'+o.file.replace(/\.png$/i,'.webp') : null,
     png: o.file ? 'traits/'+cat.name+'/'+o.file : null,
     thumb: o.file ? 'thumbs/'+cat.name+'/'+o.file.replace(/\.png$/i,'.webp') : null })) }));
   CATS.forEach(c=>{ state[c.name]=0; });
   buildControls(); render();
   $('status').textContent=liveText();
+  window.Atelier.ready=true; dispatchEvent(new Event('atelier:ready'));
 }
+// Small bridge for accounts.js (F-12): read the current look as {category: trait file|null} and
+// load a saved look back. Unknown traits (renamed/removed since saving) are skipped and counted.
+window.Atelier={ ready:false,
+  cats:()=>CATS,
+  combo:()=>{ const c={}; CATS.forEach(cat=>{ const o=cat.options[state[cat.name]]; c[cat.name]=o&&o.file?o.file:null; }); return c; },
+  apply:(combo)=>{ let missing=0;
+    CATS.forEach(cat=>{ if(!(cat.name in combo)) return; const v=combo[cat.name];
+      const i=v===null ? cat.options.findIndex(o=>!o.file) : cat.options.findIndex(o=>o.file===v);
+      if(i<0){ missing++; return; } state[cat.name]=i; });
+    lastStep=null; wantShimmer=true; render(); return missing; } };
 const doRandom=()=>{ if(!M) return;
   const r=(qBase===stateKey()&&rollQ.length)?rollQ.shift():rollFrom(snapshot());
   CATS.forEach(c=>state[c.name]=r[c.name]); qBase=stateKey(); lastStep=null; wantShimmer=true; render(); };
@@ -426,5 +474,6 @@ const doInstall=async()=>{ if(!installEvt) return; installEvt.prompt(); await in
 $('install').onclick=doInstall; $('installM').onclick=doInstall;
 addEventListener('appinstalled',()=>{ installEvt=null; showInstall(false); });
 </script>
+<script src="accounts.js" defer></script>
 </body>
 </html>
