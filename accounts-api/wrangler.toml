@@ -1,0 +1,28 @@
+# Nuddies Atelier accounts API — Cloudflare Worker + D1.
+# Deployed by .github/workflows/accounts-api.yml (see accounts-api/README.md). The workflow
+# finds or creates the D1 database and writes its id below at deploy time.
+name = "nuddies-accounts"
+main = "src/index.js"
+compatibility_date = "2025-09-01"
+workers_dev = true
+
+# No request logs, no analytics: Workers Logs stay off for this Worker.
+[observability]
+enabled = false
+
+[vars]
+# Only the Atelier may call this API from a browser (CORS). Comma-separated.
+ALLOWED_ORIGINS = "https://atelier.nuddiesnwo.xyz"
+# Nuddies on-chain collection (Metaplex Core) — used to verify holdings.
+COLLECTION = "2n6DteH5DVoWnQe6ZDNGiQeuK9e8Wcq3jBmaTQNywypm"
+SITE_HOST = "atelier.nuddiesnwo.xyz"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "nuddies-accounts"
+database_id = "00000000-0000-0000-0000-000000000000"
+
+# Secrets (set by the workflow, never committed):
+#   PEPPER          64 hex chars, generated once on first deploy. NEVER rotate it: every
+#                   password would stop working.
+#   HELIUS_API_KEY  optional; enables "My holdings" (reads which Nuddies a wallet holds).

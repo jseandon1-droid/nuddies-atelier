@@ -1,0 +1,66 @@
+# Deploys the Atelier accounts API (accounts-api/) to Cloudflare Workers + D1, then publishes its
+# address in api-config.json so the site turns accounts on. Safe to re-run any time.
+# Setup (once): repo Settings → Secrets and variables → Actions → add
+#   CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID   (required)
+#   HELIUS_API_KEY                                (optional — enables "My holdings")
+name: Deploy accounts API
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['accounts-api/**', '.github/workflows/accounts-api.yml']
+
+permissions:
+  contents: write
+
+concurrency:
+  group: accounts-api
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      HELIUS_API_KEY: ${{ secrets.HELIUS_API_KEY }}
+    steps:
+      - name: Check Cloudflare secrets
+        id: gate
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ] || [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
+            echo "::notice::Accounts API not deployed yet: add the CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID repository secrets, then run this workflow."
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.gate.outputs.ready == 'true'
+
+      - uses: actions/setup-node@v4
+        if: steps.gate.outputs.ready == 'true'
+        with:
+          node-version: 20
+
+      - name: Deploy Worker + database
+        if: steps.gate.outputs.ready == 'true'
+        env:
+          API_URL_FILE: ${{ runner.temp }}/api-url
+        run: bash accounts-api/deploy.sh
+
+      - name: Publish API address to the site
+        if: steps.gate.outputs.ready == 'true'
+        run: |
+          url="$(cat "$RUNNER_TEMP/api-url")"
+          printf '{"api":"%s"}\n' "$url" > api-config.json
+          if git diff --quiet -- api-config.json 2>/dev/null && git ls-files --error-unmatch api-config.json >/dev/null 2>&1; then
+            echo "api-config.json already points at $url"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add api-config.json
+            git commit -m "Accounts API live at $url"
+            git push
+          fi
