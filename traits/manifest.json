@@ -5540,7 +5540,7 @@
       "options": [
         {
           "name": "None",
-          "weight": 1610
+          "weight": 2415
         },
         {
           "name": "Blue Storm Aura",
@@ -5610,6 +5610,41 @@
         {
           "name": "Magenta Wave",
           "file": "magenta-wave.png",
+          "weight": 10
+        },
+        {
+          "name": "Pink Storm Aura",
+          "file": "pink-storm-aura.png",
+          "weight": 10
+        },
+        {
+          "name": "Violet Storm Aura",
+          "file": "violet-storm-aura.png",
+          "weight": 10
+        },
+        {
+          "name": "Mint Storm Aura",
+          "file": "mint-storm-aura.png",
+          "weight": 10
+        },
+        {
+          "name": "Lime Storm Aura",
+          "file": "lime-storm-aura.png",
+          "weight": 10
+        },
+        {
+          "name": "Gold Storm Aura",
+          "file": "gold-storm-aura.png",
+          "weight": 10
+        },
+        {
+          "name": "Red Storm Aura",
+          "file": "red-storm-aura.png",
+          "weight": 10
+        },
+        {
+          "name": "Silver Storm Aura",
+          "file": "silver-storm-aura.png",
           "weight": 10
         }
       ]
