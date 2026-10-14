@@ -5537,6 +5537,36 @@
           "name": "Golden Snake Vomit",
           "file": "golden-snake-vomit.png",
           "weight": 100
+        },
+        {
+          "name": "Silver Snake Vomit",
+          "file": "silver-snake-vomit.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Snake Vomit",
+          "file": "blue-snake-vomit.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Snake Vomit",
+          "file": "purple-snake-vomit.png",
+          "weight": 100
+        },
+        {
+          "name": "Pink Snake Vomit",
+          "file": "pink-snake-vomit.png",
+          "weight": 100
+        },
+        {
+          "name": "Salmon Snake Vomit",
+          "file": "salmon-snake-vomit.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Snake Vomit",
+          "file": "green-snake-vomit.png",
+          "weight": 100
         }
       ]
     },
