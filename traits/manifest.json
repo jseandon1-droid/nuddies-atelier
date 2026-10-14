@@ -5442,6 +5442,51 @@
           "name": "Gold Glasses",
           "file": "gold-glasses.png",
           "weight": 100
+        },
+        {
+          "name": "Silver Glasses",
+          "file": "silver-glasses.png",
+          "weight": 100
+        },
+        {
+          "name": "White Glasses",
+          "file": "white-glasses.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Glasses",
+          "file": "blue-glasses.png",
+          "weight": 100
+        },
+        {
+          "name": "Violet Glasses",
+          "file": "violet-glasses.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Glasses",
+          "file": "magenta-glasses.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Glasses",
+          "file": "red-glasses.png",
+          "weight": 100
+        },
+        {
+          "name": "Lime Glasses",
+          "file": "lime-glasses.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Glasses",
+          "file": "green-glasses.png",
+          "weight": 100
+        },
+        {
+          "name": "Fairy Wings",
+          "file": "fairy-wings.png",
+          "weight": 100
         }
       ]
     },
