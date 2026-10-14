@@ -5532,6 +5532,11 @@
           "name": "Red Fairy Wings",
           "file": "red-fairy-wings.png",
           "weight": 100
+        },
+        {
+          "name": "Golden Snake Vomit",
+          "file": "golden-snake-vomit.png",
+          "weight": 100
         }
       ]
     },
