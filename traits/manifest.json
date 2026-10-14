@@ -5437,6 +5437,11 @@
           "name": "Black Hero Mask",
           "file": "black-hero-mask.png",
           "weight": 100
+        },
+        {
+          "name": "Gold Glasses",
+          "file": "gold-glasses.png",
+          "weight": 100
         }
       ]
     },
