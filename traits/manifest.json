@@ -2510,6 +2510,16 @@
           "name": "Purple 3 Stars Holy Set",
           "file": "purple-3-stars-holy-set.png",
           "weight": 100
+        },
+        {
+          "name": "Christmas Hat",
+          "file": "christmas-hat.png",
+          "weight": 100
+        },
+        {
+          "name": "Christmas Hat w/ Beard",
+          "file": "christmas-hat-w-beard.png",
+          "weight": 100
         }
       ]
     },
