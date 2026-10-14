@@ -5487,6 +5487,51 @@
           "name": "Fairy Wings",
           "file": "fairy-wings.png",
           "weight": 100
+        },
+        {
+          "name": "Silver Fairy Wings",
+          "file": "silver-fairy-wings.png",
+          "weight": 100
+        },
+        {
+          "name": "Grey Fairy Wings",
+          "file": "grey-fairy-wings.png",
+          "weight": 100
+        },
+        {
+          "name": "Black Fairy Wings",
+          "file": "black-fairy-wings.png",
+          "weight": 100
+        },
+        {
+          "name": "Magenta Fairy Wings",
+          "file": "magenta-fairy-wings.png",
+          "weight": 100
+        },
+        {
+          "name": "Purple Fairy Wings",
+          "file": "purple-fairy-wings.png",
+          "weight": 100
+        },
+        {
+          "name": "Blue Fairy Wings",
+          "file": "blue-fairy-wings.png",
+          "weight": 100
+        },
+        {
+          "name": "Sky Blue Fairy Wings",
+          "file": "sky-blue-fairy-wings.png",
+          "weight": 100
+        },
+        {
+          "name": "Green Fairy Wings",
+          "file": "green-fairy-wings.png",
+          "weight": 100
+        },
+        {
+          "name": "Red Fairy Wings",
+          "file": "red-fairy-wings.png",
+          "weight": 100
         }
       ]
     },
