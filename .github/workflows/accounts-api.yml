@@ -36,13 +36,23 @@ jobs:
             echo "ready=true" >> "$GITHUB_OUTPUT"
           fi
 
-      - uses: actions/checkout@v4
+      # Actions pinned to exact commits (v4.4.0) so a hijacked tag can't swap in different code.
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         if: steps.gate.outputs.ready == 'true'
 
-      - uses: actions/setup-node@v4
+      # Node 20 is end-of-life. Latest Node 22 every run (22.23.4+ has the Oct 21 2026 security fixes).
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         if: steps.gate.outputs.ready == 'true'
         with:
-          node-version: 20
+          node-version: 22
+          check-latest: true
+
+      - name: Install pinned deploy tools (lockfile, no install scripts)
+        if: steps.gate.outputs.ready == 'true'
+        run: |
+          node -v
+          npm ci --prefix accounts-api --ignore-scripts --no-audit --no-fund
+          echo "WRANGLER=$GITHUB_WORKSPACE/accounts-api/node_modules/.bin/wrangler" >> "$GITHUB_ENV"
 
       - name: Deploy Worker + database
         if: steps.gate.outputs.ready == 'true'
