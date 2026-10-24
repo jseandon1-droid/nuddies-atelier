@@ -4,5 +4,8 @@
   "description": "Pinned deploy tooling. Installed with npm ci --ignore-scripts so no package install hooks ever run.",
   "devDependencies": {
     "wrangler": "4.149.0"
+  },
+  "overrides": {
+    "undici": "7.30.1"
   }
 }
