@@ -355,9 +355,16 @@ async function route(req, env, ctx) {
     let sig; try { sig = b64Decode(String(b.signature || '')); } catch { sig = null; }
     if (!sig || sig.length !== 64) throw new HttpError(400, 'bad_signature');
     if (!await edVerify(pub, sig, enc.encode(walletMessage(env, user.username, pl)))) throw new HttpError(400, 'bad_signature');
+    // One wallet, one account: a wallet already proven by another account can't be linked again.
+    if (await env.DB.prepare('SELECT 1 FROM users WHERE wallet = ? AND id != ?').bind(b.address, user.id).first()) throw new HttpError(409, 'wallet_taken');
     const pfp = parsePfp(user.pfp);
     const clear = pfp && pfp.kind === 'held' && user.wallet !== b.address;
-    await env.DB.prepare('UPDATE users SET wallet = ?' + (clear ? ', pfp = NULL' : '') + ' WHERE id = ?').bind(b.address, user.id).run();
+    try {
+      await env.DB.prepare('UPDATE users SET wallet = ?' + (clear ? ', pfp = NULL' : '') + ' WHERE id = ?').bind(b.address, user.id).run();
+    } catch (e) {
+      if (/UNIQUE/i.test(String(e && e.message))) throw new HttpError(409, 'wallet_taken');
+      throw e;
+    }
     return json(await me(env, user.id));
   }
 
@@ -388,6 +395,9 @@ const BASE_HEADERS = {
   'x-content-type-options': 'nosniff',
   'referrer-policy': 'no-referrer',
   'cross-origin-resource-policy': 'cross-origin',
+  // JSON only: nothing here may run, load or be framed if a response is ever opened as a page.
+  'content-security-policy': "default-src 'none'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'",
+  'x-frame-options': 'DENY',
 };
 
 export default {

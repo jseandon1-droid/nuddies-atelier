@@ -90,6 +90,7 @@
     no_wallet: 'Verify a wallet first.',
     bad_signature: "The wallet signature didn't check out. Try again.",
     challenge_expired: 'That took too long — try again.',
+    wallet_taken: 'That wallet is already linked to another Atelier account.',
     holdings_unavailable: 'Holdings are switched off right now.',
     holdings_upstream: "Couldn't load your Nuddies right now. Try again shortly.",
     not_configured: 'Accounts are still being set up. Try again later.',

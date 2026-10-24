@@ -21,13 +21,13 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    env:
-      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-      HELIUS_API_KEY: ${{ secrets.HELIUS_API_KEY }}
+    # Secrets go only to the steps that need them; installing the tools never sees them.
     steps:
       - name: Check Cloudflare secrets
         id: gate
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: |
           if [ -z "$CLOUDFLARE_API_TOKEN" ] || [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
             echo "::notice::Accounts API not deployed yet: add the CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID repository secrets, then run this workflow."
@@ -39,6 +39,8 @@ jobs:
       # Actions pinned to exact commits (v4.4.0) so a hijacked tag can't swap in different code.
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         if: steps.gate.outputs.ready == 'true'
+        with:
+          persist-credentials: false
 
       # Node 20 is end-of-life. Latest Node 22 every run (22.23.4+ has the Oct 21 2026 security fixes).
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
@@ -58,10 +60,15 @@ jobs:
         if: steps.gate.outputs.ready == 'true'
         env:
           API_URL_FILE: ${{ runner.temp }}/api-url
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          HELIUS_API_KEY: ${{ secrets.HELIUS_API_KEY }}
         run: bash accounts-api/deploy.sh
 
       - name: Publish API address to the site
         if: steps.gate.outputs.ready == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           url="$(cat "$RUNNER_TEMP/api-url")"
           printf '{"api":"%s"}\n' "$url" > api-config.json
@@ -72,5 +79,5 @@ jobs:
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add api-config.json
             git commit -m "Accounts API live at $url"
-            git push
+            git push "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:main
           fi
