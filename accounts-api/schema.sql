@@ -25,6 +25,9 @@ CREATE TABLE IF NOT EXISTS sessions (
 );
 CREATE INDEX IF NOT EXISTS sessions_user ON sessions(user_id);
 
+-- One wallet, one account (enforced by the database too, not only the API).
+CREATE UNIQUE INDEX IF NOT EXISTS users_wallet ON users(wallet) WHERE wallet IS NOT NULL;
+
 CREATE TABLE IF NOT EXISTS creations (
   id      INTEGER PRIMARY KEY,
   user_id INTEGER NOT NULL,
