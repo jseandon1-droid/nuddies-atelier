@@ -70,6 +70,7 @@
   .stage-wrap{position:sticky;top:14px;}
   .stage-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;}
   .stage-actions .btn{flex:1;text-align:center;}
+  .btn--undo{border-color:var(--gold-bright);color:var(--gold-bright);}
   @media(max-width:860px){
     .grid{grid-template-columns:1fr;gap:14px;}
     .wrap{padding:calc(18px + env(safe-area-inset-top)) 14px calc(56px + env(safe-area-inset-bottom));}
@@ -79,7 +80,8 @@
       background:linear-gradient(180deg,var(--void) 0%,var(--void) 82%,rgba(11,10,15,0));}
     .frame{max-width:min(52vh,320px);margin:0 auto;padding:8px;}
     .stage-actions{margin-top:10px;max-width:min(52vh,320px);margin-left:auto;margin-right:auto;}
-    .stage-actions .btn{padding:10px 12px;font-size:11px;}
+    .stage-actions{gap:8px;}
+    .stage-actions .btn{padding:10px 6px;font-size:11px;white-space:nowrap;}
   }
   @media(min-width:861px){.stage-actions{display:none;}}
   .frame{position:relative;border:1px solid var(--line);border-radius:3px;
@@ -173,6 +175,7 @@
     <div class="hright">
       <div class="actions">
         <button class="btn" id="install" hidden>⤓ Install App</button>
+        <button class="btn" id="resetAll" type="button" aria-label="Reset to a blank goddess">↺ Reset</button>
         <button class="btn" id="randomAll">⟳ Summon at Random</button>
         <button class="btn btn--gold" id="download">↓ Save Portrait</button>
       </div>
@@ -191,6 +194,7 @@
           <div id="shimmer"></div>
         </div>
         <div class="stage-actions">
+          <button class="btn" id="resetAllM" type="button" aria-label="Reset to a blank goddess">↺ Reset</button>
           <button class="btn" id="randomAllM">⟳ Random</button>
           <button class="btn btn--gold" id="downloadM">↓ Save</button>
         </div>
@@ -271,6 +275,7 @@ function render(){
     if(!bgActive()) backdrop();
     ims.forEach(im=>{ if(im._ok) ctx.drawImage(im,0,0,SZ,SZ); });
     drawn=snapshot(); updateRows();
+    if(undoSnap&&!isClean()){ undoSnap=null; clearTimeout(undoT); setResetLabel(false); }
     if(wantShimmer){ wantShimmer=false; shimmer(); }
   } else if(!drawn) updateRows();
   planNext();
@@ -459,6 +464,24 @@ const doSave=async()=>{
   const a=document.createElement('a'); a.download=out.name; a.href=saveURL; a.style.display='none';
   document.body.appendChild(a); a.click(); a.remove();
 };
+// --- Reset -----------------------------------------------------------------
+// Clears the build back to a blank goddess (every trait None, base Nu skin: the same look the
+// Atelier opens with) so a new one can be built. One tap, no dialog; for 6 seconds the button
+// turns into Undo and brings the previous look back. Changing any trait ends the Undo window.
+let undoSnap=null, undoT=0;
+function isClean(){ return CATS.every(c=>state[c.name]===0); }
+function setResetLabel(undo){ ['resetAll','resetAllM'].forEach(id=>{ const b=$(id); if(!b) return;
+  b.textContent=undo?'↶ Undo':'↺ Reset'; b.setAttribute('aria-label',undo?'Undo reset':'Reset to a blank goddess'); b.classList.toggle('btn--undo',undo); }); }
+const doReset=()=>{ if(!M) return;
+  if(undoSnap){ const s=undoSnap; undoSnap=null; clearTimeout(undoT); setResetLabel(false);
+    CATS.forEach(c=>state[c.name]=s[c.name]); lastStep=null; wantShimmer=true; render(); $('status').textContent='Your goddess is back.'; return; }
+  if(isClean()){ $('status').textContent='Already a blank goddess. Pick traits to build her.'; return; }
+  undoSnap=snapshot(); CATS.forEach(c=>state[c.name]=0); lastStep=null; wantShimmer=true;
+  document.querySelectorAll('#controls .panel.open').forEach(p=>p.classList.remove('open'));
+  render(); setResetLabel(true); $('status').textContent='Cleared. Build your next goddess.';
+  clearTimeout(undoT); undoT=setTimeout(()=>{ undoSnap=null; setResetLabel(false); $('status').textContent=liveText(); },6000);
+};
+['resetAll','resetAllM'].forEach(id=>{const b=$(id); if(b) b.onclick=doReset;});
 ['randomAll','randomAllM'].forEach(id=>{const b=$(id); if(b) b.onclick=doRandom;});
 ['download','downloadM'].forEach(id=>{const b=$(id); if(b) b.onclick=doSave;});
 boot();
