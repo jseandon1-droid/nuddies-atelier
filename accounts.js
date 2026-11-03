@@ -259,7 +259,7 @@
       <button class="ac-x" id="acClose" type="button" aria-label="Close">×</button>
 
       <section data-view="auth" hidden>
-        <img class="ac-logo" src="icons/icon-192.png" alt="" width="56" height="56">
+        <img class="ac-logo" src="icons/v2/icon-512.png" alt="" width="56" height="56">
         <h2 class="ac-h ac-center">Enter the Atelier</h2>
         <p class="ac-sub">Keep your creations. Wear your goddess.</p>
         <div class="ac-tabs" role="tablist" aria-label="Account">

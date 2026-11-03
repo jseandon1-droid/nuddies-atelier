@@ -16,8 +16,8 @@ const ART = `nuddies-art-${VERSION}`;
 const FONTS = `nuddies-fonts-${VERSION}`;
 const SHELL_FILES = [
   './', 'index.html', 'accounts.js', 'manifest.webmanifest', 'traits/manifest.json',
-  'icons/icon-192.png', 'icons/icon-512.png', 'icons/icon-maskable-192.png',
-  'icons/icon-maskable-512.png', 'icons/apple-touch-icon.png', 'icons/favicon-32.png',
+  'icons/v2/icon-192.png', 'icons/v2/icon-512.png', 'icons/v2/icon-1024.png', 'icons/v2/icon-maskable-192.png',
+  'icons/v2/icon-maskable-512.png', 'icons/v2/apple-touch-icon.png', 'icons/v2/apple-touch-icon-1024.png', 'icons/v2/favicon-32.png',
 ];
 
 self.addEventListener('install', (e) => {
