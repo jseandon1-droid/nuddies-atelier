@@ -15,7 +15,7 @@ const SHELL = `nuddies-shell-${VERSION}`;
 const ART = `nuddies-art-${VERSION}`;
 const FONTS = `nuddies-fonts-${VERSION}`;
 const SHELL_FILES = [
-  './', 'index.html', 'accounts.js', 'manifest.webmanifest', 'traits/manifest.json',
+  './', 'index.html', 'accounts.js', 'lookup.js', 'manifest.webmanifest', 'traits/manifest.json',
   'icons/v2/icon-192.png', 'icons/v2/icon-512.png', 'icons/v2/icon-1024.png', 'icons/v2/icon-maskable-192.png',
   'icons/v2/icon-maskable-512.png', 'icons/v2/apple-touch-icon.png', 'icons/v2/apple-touch-icon-1024.png', 'icons/v2/favicon-32.png',
 ];
@@ -87,6 +87,10 @@ self.addEventListener('fetch', (e) => {
 
   const scope = new URL(self.registration.scope);
   const rel = url.pathname.startsWith(scope.pathname) ? url.pathname.slice(scope.pathname.length) : url.pathname;
+
+  // Collection lookup art (2,322 Nuddies × 2 sizes) is left to the browser's own cache: keeping
+  // it here would grow without limit as someone browses the whole collection.
+  if (rel.startsWith('collection/') && rel.toLowerCase().endsWith('.webp')) return;
 
   if (rel === 'traits/manifest.json') {
     e.respondWith(networkFirst(req, SHELL, purgeArtIfManifestChanged));

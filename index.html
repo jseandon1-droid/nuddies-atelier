@@ -163,6 +163,54 @@
   }
   @media(max-width:420px){ .acct-chip.signed-in{padding-right:4px;} .acct-chip.signed-in #acctLabel{display:none;} }
   .foot{color:var(--mauve);font-size:12px;line-height:1.6;margin-top:8px;letter-spacing:.02em;}
+  /* Collection lookup (F-13) — built from the Atelier's own panels, buttons, frame and sheet. */
+  .modes{display:flex;gap:10px;margin:-12px 0 22px;}
+  .modes .btn{flex:0 1 190px;text-align:center;}
+  .btn[aria-pressed="true"]{border-color:var(--gold-bright);color:var(--gold-bright);background:rgba(201,163,78,0.10);}
+  body.nu-collection .actions{display:none;}
+  .nu-row{display:flex;align-items:center;gap:12px;padding:14px 18px;cursor:text;}
+  .nu-field{flex:1;min-width:0;display:flex;align-items:center;gap:10px;}
+  .nu-field>div{flex:1;min-width:0;}
+  .nu-ico{width:18px;flex:none;color:var(--gold);font-size:19px;line-height:1;}
+  .nu-row .lbl{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--mauve);}
+  .nu-q{display:block;width:100%;border:0;outline:0;background:none;padding:0;margin-top:2px;color:var(--ivory);
+    font-family:"Cormorant Garamond",serif;font-size:20px;line-height:1.3;border-radius:0;-webkit-appearance:none;appearance:none;}
+  .nu-q::placeholder{color:var(--mauve);font-style:italic;opacity:1;}
+  .nu-q::-webkit-search-cancel-button{display:none;}
+  .nu-find:focus-within{border-color:var(--gold);}
+  .nu-tabs{display:flex;gap:10px;margin-bottom:6px;}
+  .nu-tabs .btn{flex:1;text-align:center;padding:12px 6px;white-space:nowrap;}
+  #nuCount{margin:10px 2px 14px;min-height:19px;}
+  .nu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:14px;}
+  .nu-card{display:block;width:100%;margin:0;padding:0;text-align:left;color:inherit;transition:border-color .2s;}
+  .nu-card:hover{border-color:var(--gold);}
+  .nu-card:focus-visible{outline:2px solid var(--gold-bright);outline-offset:2px;}
+  .nu-card img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;background:var(--void);}
+  .nu-cap{display:block;padding:11px 14px 13px;border-top:1px solid rgba(201,163,78,.08);}
+  .nu-cap .lbl{display:block;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);min-height:13px;}
+  .nu-cap .val{display:block;font-family:"Cormorant Garamond",serif;font-size:19px;line-height:1.2;color:var(--ivory);margin-top:3px;overflow-wrap:anywhere;}
+  .nu-empty{border:1px solid var(--line);border-radius:3px;background:var(--obsidian);padding:30px 18px;text-align:center;
+    font-family:"Cormorant Garamond",serif;font-style:italic;font-size:18px;color:var(--mauve);}
+  #nuMore{display:block;margin:22px auto 0;}
+  .nu-detail{width:min(470px,100%);}
+  .nu-bar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px;}
+  .nu-bar .lbl{font-size:10px;letter-spacing:.24em;color:var(--mauve);font-variant-numeric:tabular-nums;}
+  .nu-detail .frame{padding:10px;}
+  .nu-detail .frame img{aspect-ratio:1;object-fit:cover;}
+  .nu-detail .sheet-hint{font-size:26px;line-height:1.15;margin:16px 0 2px;overflow-wrap:anywhere;}
+  .nu-given{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:17px;color:var(--mauve);margin:0 0 6px;}
+  .nu-detail .sheet-meta{margin:6px 0 14px;}
+  .nu-traits{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 0 14px;text-align:left;}
+  .nu-t{border:1px solid var(--line);border-radius:3px;background:rgba(201,163,78,.04);padding:9px 12px;min-width:0;}
+  .nu-t .lbl{font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--mauve);}
+  .nu-t .val{font-family:"Cormorant Garamond",serif;font-size:17px;line-height:1.2;color:var(--ivory);margin-top:2px;overflow-wrap:anywhere;}
+  @media(max-width:860px){
+    .modes{margin:-4px 0 14px;gap:8px;}
+    .modes .btn{flex:1;padding:11px 6px;font-size:11px;}
+    .nu-tabs{gap:8px;} .nu-tabs .btn{font-size:10.5px;letter-spacing:.12em;padding:11px 4px;}
+    .nu-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
+    .nu-cap{padding:9px 11px 11px;} .nu-cap .val{font-size:17px;}
+  }
   @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
 </style>
 </head>
@@ -187,7 +235,11 @@
       </button>
     </div>
   </header>
-  <div class="grid">
+  <nav class="modes" aria-label="Sections">
+    <button class="btn" id="modeAtelier" type="button" aria-pressed="true">Atelier</button>
+    <button class="btn" id="modeCollection" type="button" aria-pressed="false">Collection</button>
+  </nav>
+  <div class="grid" id="atelierView">
     <section>
       <div class="stage-wrap">
         <div class="frame">
@@ -210,6 +262,45 @@
       <div id="controls"></div>
       <p class="foot" id="status">Loading traits…</p>
     </aside>
+  </div>
+  <!-- Collection lookup (F-13): every Nuddie on-chain, by number or name. Logic in lookup.js. -->
+  <section id="collectionView" hidden>
+    <div class="panel nu-find">
+      <label class="nu-row">
+        <div class="nu-field"><span class="nu-ico" aria-hidden="true">⌕</span><div>
+          <div class="lbl">Find a goddess</div>
+          <input class="nu-q" id="nuQ" type="search" inputmode="search" enterkeyhint="search" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Number or name" />
+        </div></div>
+        <button class="step" id="nuClear" type="button" aria-label="Clear search" hidden>×</button>
+      </label>
+    </div>
+    <div class="nu-tabs" role="group" aria-label="Show">
+      <button class="btn" id="nuTabAll" type="button" aria-pressed="true">All</button>
+      <button class="btn" id="nuTabCore" type="button" aria-pressed="false">Nuddies</button>
+      <button class="btn" id="nuTabOne" type="button" aria-pressed="false">1:1s</button>
+    </div>
+    <p class="foot" id="nuCount" aria-live="polite"></p>
+    <div class="nu-grid" id="nuGrid"></div>
+    <div class="nu-empty" id="nuEmpty" hidden>No goddess answers to that. Try another name, or a number from 1 to 2,222.</div>
+    <button class="btn" id="nuMore" type="button" hidden>Show more</button>
+  </section>
+</div>
+<div class="sheet" id="nuSheet" hidden role="dialog" aria-modal="true" aria-labelledby="nuName">
+  <div class="sheet-card nu-detail">
+    <div class="nu-bar">
+      <button class="step" id="nuPrev" type="button" aria-label="Previous">‹</button>
+      <span class="lbl" id="nuPos"></span>
+      <span class="stepper"><button class="step" id="nuNext" type="button" aria-label="Next">›</button><button class="step" id="nuClose" type="button" aria-label="Close">×</button></span>
+    </div>
+    <div class="frame"><img id="nuArt" alt="" width="960" height="960" /></div>
+    <p class="sheet-hint" id="nuName"></p>
+    <p class="nu-given" id="nuGiven" hidden></p>
+    <p class="sheet-meta" id="nuMeta"></p>
+    <div class="nu-traits" id="nuTraits"></div>
+    <div class="sheet-actions">
+      <a class="btn btn--gold" id="nuLink" target="_blank" rel="noopener">View on Magic Eden</a>
+      <button class="btn" id="nuClose2" type="button">Close</button>
+    </div>
   </div>
 </div>
 <div class="sheet" id="saveSheet" hidden role="dialog" aria-modal="true" aria-label="Save your Nuddie">
@@ -499,5 +590,6 @@ $('install').onclick=doInstall; $('installM').onclick=doInstall;
 addEventListener('appinstalled',()=>{ installEvt=null; showInstall(false); });
 </script>
 <script src="accounts.js" defer></script>
+<script src="lookup.js" defer></script>
 </body>
 </html>
