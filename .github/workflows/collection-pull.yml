@@ -1,6 +1,6 @@
-# One-time pull of the full Nuddies collection list (public on-chain data, no keys).
-# Runs only on the collection-data branch; never touches the live site.
-name: Collection pull
+# Builds the Collection lookup art (public on-chain images, no keys) and adds it to the site.
+# Runs only when this branch's tools change.
+name: Collection art
 on:
   push:
     branches: [collection-data]
@@ -8,23 +8,40 @@ on:
 permissions:
   contents: write
 jobs:
-  pull:
+  art:
     runs-on: ubuntu-latest
     timeout-minutes: 90
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
+          path: src
           sparse-checkout: |
             tools-collection
+            collection/collection.json
+          sparse-checkout-cone-mode: false
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: main
+          path: site
+          sparse-checkout: |
             collection
+            README.md
+          sparse-checkout-cone-mode: false
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: 22
       - run: npm install --no-save --no-audit --no-fund sharp@0.33.5
+        working-directory: src
       - run: node tools-collection/images.mjs
+        working-directory: src
+        env:
+          OUT: ../site/collection
+          LIST: collection/collection.json
       - run: |
+          ls collection/thumbs | wc -l; ls collection/art | wc -l; du -sh collection/thumbs collection/art
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add collection
-          git commit -q -m "Collection thumbs [skip ci]" || echo "nothing to commit"
-          git push
+          git commit -q -m "Collection lookup art: 2,322 Nuddies (400px grid, 960px detail)"
+          git push origin HEAD:main
+        working-directory: site
