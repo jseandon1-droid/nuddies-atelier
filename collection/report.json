@@ -1,0 +1,82 @@
+{
+ "started": "2026-11-12T15:46:37.547Z",
+ "attempts": [
+  {
+   "url": "https://api.mainnet-beta.solana.com",
+   "ok": true,
+   "n": 2322
+  },
+  {
+   "url": "https://api-mainnet.magiceden.dev/v2/collections/nuddies_/stats",
+   "status": 200,
+   "body": "{\"symbol\":\"nuddies_\",\"floorPrice\":133453000,\"listedCount\":182,\"avgPrice24hr\":128997606.5,\"volume7d\":5432371102}"
+  },
+  {
+   "url": "https://api-mainnet.magiceden.dev/v2/collections/nuddies_/listings?offset=0&limit=2",
+   "status": 200,
+   "body": "[{\"pdaAddress\":\"FwWzDCdesLy7WyFTmfYqRtrnWjaK2u5CWgQWD2gwZGHU\",\"auctionHouse\":\"E8cU1WiRWjanGxmn96ewBgk9vPTcL6AEZ1t6F6fkgUWe\",\"tokenAddress\":\"dCeNrRymCfc9byrVuiJT4Lo69XekLigmfnZ8HJk3Z7m\",\"tokenMint\":\"dCeNrRymCfc9byrVuiJT4Lo69XekLigmfnZ8HJk3Z7m\",\"seller\":\"DauaHwPffkLjiWYc8JruWJhX4s5tn63wqrwkmz2CKZJH\",\"sellerReferral\":\"EsL9bsHeaLgEK7BrUUErmVLGgXmcVYC6RnUFVWP39o8W\",\"tokenSize\":1,\"price\":0.133453,\"priceInfo\":{\"solPrice\":{\"rawAmount\":\"133453000\",\"address\":\"So11111111111111111111111111111111111111112\",\"decimals\":9}},\"rarity\":{\"meInstant\":{\"rank\":1681}},\"extra\":{\"img\":\"https://na-assets.pinit.io/AP8RvH"
+  },
+  {
+   "url": "https://api-mainnet.magiceden.dev/v2/collections/nuddies_/holder_stats",
+   "status": 400,
+   "body": "Not Found."
+  },
+  {
+   "url": "https://api-mainnet.magiceden.io/idxv2/getAllNftsByCollectionSymbol?collectionSymbol=nuddies_&limit=2&offset=0",
+   "status": 200,
+   "body": "{\"results\":[],\"nextCursor\":\"VBe5dwm0j+AhuUE7rixGi0Hh/NH5eHaW/yUKmK6L3svtKWegNipURrK2lwLHw/Qe29FqDD7OurtmzYBfUX3BZW8=\"}"
+  }
+ ],
+ "result": "ok",
+ "count": 2322,
+ "metaFailures": 0,
+ "imageHosts": {
+  "gateway.pinit.io": 138,
+  "na-assets.pinit.io": 2184
+ },
+ "sample": [
+  {
+   "mint": "D8VbeWcP9H8WfTBdu8LxHbKbtDYiv51SuH8VLtYwQNat",
+   "name": " Goddess of Precious Wonders",
+   "chainName": " Goddess of Precious Wonders",
+   "uri": "https://gateway.pinit.io/ipfs/QmUJs8xgmikTNCEgymFPNdH9V1mbsNQFxLQz298qHUviHw/0",
+   "image": "https://gateway.pinit.io/ipfs/QmS6itdExESgKzAQ9gqRxSgfyuiBhs6iUrVHC8Jhou9ZaF/0",
+   "attributes": [
+    {
+     "trait_type": "The Forgotten",
+     "value": "1/1"
+    }
+   ],
+   "description": "Vionette - Goddess of Precious Wonders 1/1"
+  },
+  {
+   "mint": "2xiiTksb6qigXCEjoFB8nDi8eYX6dEN7eiuTNWjGMTsD",
+   "name": "Althea Frostine",
+   "chainName": "Althea Frostine",
+   "uri": "https://gateway.pinit.io/ipfs/QmUzJkMiGPkx4MCj3xuUUNwsEXxsDv5n8T7PLeDAYN1zhP/0",
+   "image": "https://gateway.pinit.io/ipfs/QmWUuGDH3s39Q2WCwaSmzGRrJ49CTKXk2NjhVnh7vBoJMg/0",
+   "attributes": [
+    {
+     "trait_type": "Special",
+     "value": "1/1"
+    }
+   ],
+   "description": "Althea Frostine 1/1"
+  },
+  {
+   "mint": "2mpvK4LtDs5WxqGu9mSSjHNc1HTUYNghxTnmF9pbjDK2",
+   "name": "Anubis",
+   "chainName": "Anubis",
+   "uri": "https://gateway.pinit.io/ipfs/QmPsWNrGutGTvKcj1XzEVsmTfoU7gghKBUxfYfoLVHcqd8/0",
+   "image": "https://gateway.pinit.io/ipfs/QmbSE9JUxdMK57HY9jiPWKDvkeKta688wUdNYhX9GtpEc5/0",
+   "attributes": [
+    {
+     "trait_type": "The Forgotten",
+     "value": "1/1"
+    }
+   ],
+   "description": "Anubis 1/1"
+  }
+ ],
+ "finished": "2026-11-12T15:47:22.582Z"
+}
