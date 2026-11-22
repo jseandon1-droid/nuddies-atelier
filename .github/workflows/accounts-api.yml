@@ -82,7 +82,8 @@ jobs:
   # The only job that can write: no secrets, no installs, just one file committed.
   publish:
     needs: deploy
-    if: needs.deploy.outputs.ready == 'true'
+    # only a run from main may write to main
+    if: needs.deploy.outputs.ready == 'true' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     permissions:
       contents: write

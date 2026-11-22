@@ -22,7 +22,7 @@ if [ -z "$id" ]; then
 fi
 [ -n "$id" ] || { echo "::error::Could not find or create the D1 database. Check the API token has the D1 Edit permission."; exit 1; }
 sed -i "s/^database_id = .*/database_id = \"$id\"/" wrangler.toml
-echo "D1 database: $DB ($id)"
+echo "D1 database: $DB ready"
 
 $WR d1 execute "$DB" --remote --file=schema.sql --yes >/dev/null
 echo "Schema applied."
