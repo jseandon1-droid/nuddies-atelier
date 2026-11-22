@@ -1,0 +1,35 @@
+# Holders snapshot: which wallet holds which Nuddie (public on-chain data + Magic Eden public API, no keys).
+# Runs only on the collection-data branch; never touches the live site.
+name: Holders pull
+on:
+  workflow_dispatch:
+  push:
+    branches: [collection-data]
+    paths: ['tools-collection/holders.mjs', '.github/workflows/holders-pull.yml']
+permissions:
+  contents: write
+concurrency:
+  group: holders-pull
+  cancel-in-progress: false
+jobs:
+  pull:
+    if: github.ref == 'refs/heads/collection-data'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          sparse-checkout: |
+            tools-collection
+            collection/holders.json
+            collection/holders-report.json
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 22
+      - run: mkdir -p collection && node tools-collection/holders.mjs
+      - name: Commit snapshot to collection-data
+        run: |
+          git -c user.name="github-actions[bot]" -c user.email="" add collection/holders.json collection/holders-report.json
+          git -c user.name="github-actions[bot]" -c user.email="" commit -m "Holders snapshot [skip ci]" || echo "nothing to commit"
+          git push origin HEAD:collection-data
