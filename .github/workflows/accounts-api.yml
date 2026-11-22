@@ -11,8 +11,9 @@ on:
     branches: [main]
     paths: ['accounts-api/**', '.github/workflows/accounts-api.yml']
 
+# Read-only by default. Only the last job, which commits the API address, can write to the repo.
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: accounts-api
@@ -21,6 +22,11 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      ready: ${{ steps.gate.outputs.ready }}
+      url: ${{ steps.addr.outputs.url }}
     # Secrets go only to the steps that need them; installing the tools never sees them.
     steps:
       - name: Check Cloudflare secrets
@@ -65,12 +71,32 @@ jobs:
           HELIUS_API_KEY: ${{ secrets.HELIUS_API_KEY }}
         run: bash accounts-api/deploy.sh
 
-      - name: Publish API address to the site
+      - name: Hand the API address to the publish job
+        id: addr
         if: steps.gate.outputs.ready == 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
         run: |
           url="$(cat "$RUNNER_TEMP/api-url")"
+          case "$url" in https://*.workers.dev|https://*.workers.dev/) ;; *) echo "::error::unexpected API address"; exit 1;; esac
+          echo "url=$url" >> "$GITHUB_OUTPUT"
+
+  # The only job that can write: no secrets, no installs, just one file committed.
+  publish:
+    needs: deploy
+    if: needs.deploy.outputs.ready == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+
+      - name: Publish API address to the site
+        env:
+          GH_TOKEN: ${{ github.token }}
+          API_URL: ${{ needs.deploy.outputs.url }}
+        run: |
+          url="$API_URL"
           printf '{"api":"%s"}\n' "$url" > api-config.json
           if git diff --quiet -- api-config.json 2>/dev/null && git ls-files --error-unmatch api-config.json >/dev/null 2>&1; then
             echo "api-config.json already points at $url"
