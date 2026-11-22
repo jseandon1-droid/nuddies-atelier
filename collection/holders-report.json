@@ -1,0 +1,581 @@
+{
+ "started": "2026-11-22T18:25:32.361Z",
+ "rpc": [
+  {
+   "url": "https://api.mainnet-beta.solana.com",
+   "ok": true,
+   "n": 2322
+  }
+ ],
+ "me": {
+  "stats": {
+   "status": 200,
+   "body": {
+    "symbol": "nuddies_",
+    "floorPrice": 134044751,
+    "listedCount": 175,
+    "avgPrice24hr": 124692793,
+    "volume7d": 2276312342
+   }
+  },
+  "holder_stats": {
+   "status": 400,
+   "body": "Not Found."
+  },
+  "listingsFetched": 96,
+  "listingsComplete": true
+ },
+ "finished": "2026-11-22T18:25:34.244Z",
+ "rpcSource": "https://api.mainnet-beta.solana.com",
+ "count": 2322,
+ "uniqueHolders": 522,
+ "top10": [
+  {
+   "wallet": "CQmUZqS78ZuW3gAc5YPZxXA3kKZh7EQfeiv9TKhDX8zW",
+   "n": 185
+  },
+  {
+   "wallet": "DcyPLHNkGNJVvaYH8ki8V4XSr4Dyd8UhEddGsG99mDXL",
+   "n": 171
+  },
+  {
+   "wallet": "5Z3gdwS2ec859oNtjmTNXqLYmxZ36rSZvdVj7QMLSNnY",
+   "n": 124
+  },
+  {
+   "wallet": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+   "n": 74
+  },
+  {
+   "wallet": "CpfWtLvNSkc65VcgcEV9qpnSwprhoTLB4adBvCxpyz8t",
+   "n": 57
+  },
+  {
+   "wallet": "412tJxCvqRD2ybYZoKZkV8wbmJZkPnkX2LJEtZYeatUv",
+   "n": 56
+  },
+  {
+   "wallet": "4rivX41U4M4sFPZxjWuZ1ryWm4VvMRSqaYVbjBRBVMPP",
+   "n": 54
+  },
+  {
+   "wallet": "FURvwpwAmuuCstpNPWdU7VVKXU5VpyAJhFYPLqsKqBeS",
+   "n": 50
+  },
+  {
+   "wallet": "F6cxT8Ud1to4Lr8YaMcM5aWWgG5BRpZBbdygCyGZdjWb",
+   "n": 46
+  },
+  {
+   "wallet": "CsG8D62WUCMDjJnxdBAHaQgGEryE9rmqLj3n5bvPYFfw",
+   "n": 45
+  }
+ ],
+ "crossCheck": {
+  "supply": {
+   "ours": 2322,
+   "meHolderStatsSupply": null
+  },
+  "uniqueHolders": {
+   "ours": 522,
+   "meHolderStats": null
+  },
+  "listed": {
+   "meStatsListedCount": 175,
+   "listingsFetched": 96,
+   "listingSources": {
+    "MMM": 5,
+    "M2": 91
+   }
+  },
+  "floorSol": 0.134044751,
+  "ownerSellerMismatches": [
+   {
+    "mint": "Bzn2TV6eb8CeUmBW8ZPE4c5M4k4nWfx9CPK1F5iP71wL",
+    "chainOwner": "Fpi7E384wm2Sf3sQgsHynZaeLKRSQqot2556o95ypQgj",
+    "meSeller": "H6B1xriQkPSgpKAfLrTexDWtnuNGga77wGNnuJzwnY3G"
+   },
+   {
+    "mint": "DyGSwsYCUzvdcAYqmxZVCKRVGWS6Ecb26WbZerVbP2HB",
+    "chainOwner": "Fpi7E384wm2Sf3sQgsHynZaeLKRSQqot2556o95ypQgj",
+    "meSeller": "H6B1xriQkPSgpKAfLrTexDWtnuNGga77wGNnuJzwnY3G"
+   },
+   {
+    "mint": "GMB8fvsE7YytyHPVBq3rYhYaxwTSgJLMGhZN2pTETJPR",
+    "chainOwner": "Fpi7E384wm2Sf3sQgsHynZaeLKRSQqot2556o95ypQgj",
+    "meSeller": "H6B1xriQkPSgpKAfLrTexDWtnuNGga77wGNnuJzwnY3G"
+   },
+   {
+    "mint": "utFK9pL7whVHBmRRwMj35cTxtUsEG8ztFuMvcbUvAMi",
+    "chainOwner": "Fpi7E384wm2Sf3sQgsHynZaeLKRSQqot2556o95ypQgj",
+    "meSeller": "H6B1xriQkPSgpKAfLrTexDWtnuNGga77wGNnuJzwnY3G"
+   },
+   {
+    "mint": "YaoZWMVBZG12mKWfHLzLSbQerUyPy87j5dvN4DRe86T",
+    "chainOwner": "Fpi7E384wm2Sf3sQgsHynZaeLKRSQqot2556o95ypQgj",
+    "meSeller": "H6B1xriQkPSgpKAfLrTexDWtnuNGga77wGNnuJzwnY3G"
+   },
+   {
+    "mint": "GAMiNa2Aoq9Y1YQJJv7bN3yQZG1rbdQjVyRk8KyEBF3i",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "EcvXEE4Z8PEexQWQ3Wq1owpd6pKXqSGGsNEs9m897wMW"
+   },
+   {
+    "mint": "29w2em8Wg9QJHTuiMoKES8BE9ueDFakEnLxvMqHEdhpr",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "77cNR75Ag8mGBtSjbV2AFnjZ9NNKVvVSDZL86cGBd961"
+   },
+   {
+    "mint": "2LQURDqfW7aFUD5U2wxBgvxmAZjBeZt2bqg9qDxuhNZ2",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "A8nfC5q8hy8GnWHvx55a5HEGMAafimZ8V9z2KuJFQrAZ"
+   },
+   {
+    "mint": "6j1Yt4bBs7e3eHC6FiWgXHqxFK3jBM2JaTEL6gqbVzpZ",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "A8nfC5q8hy8GnWHvx55a5HEGMAafimZ8V9z2KuJFQrAZ"
+   },
+   {
+    "mint": "8Mahh78CSSJAPC5hQpWSkQG4GokBgVxeBGQVfConpx3S",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "5XQVrUeDq8huvreuYiff8HYN72uwWVyR3YuKCo8EAgk4"
+   },
+   {
+    "mint": "9HzLXn4tZSBRrCqSJrKeJbvX7AdqypZw63VME4Rq5G4W",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "A8nfC5q8hy8GnWHvx55a5HEGMAafimZ8V9z2KuJFQrAZ"
+   },
+   {
+    "mint": "BpTnGCRgeN5tx4oUvv53aNmskEwBJCynE5Xp9fQTgGbh",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "A8nfC5q8hy8GnWHvx55a5HEGMAafimZ8V9z2KuJFQrAZ"
+   },
+   {
+    "mint": "HL587nYLveG8SW9LK4bXtgQP5YRbwp9HUhBAMmBe1sVm",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "A8nfC5q8hy8GnWHvx55a5HEGMAafimZ8V9z2KuJFQrAZ"
+   },
+   {
+    "mint": "JA54rwyemzdLiXvpY6iPC2VM7r2mMKJ3yqmXfWYgHx3V",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "A8nfC5q8hy8GnWHvx55a5HEGMAafimZ8V9z2KuJFQrAZ"
+   },
+   {
+    "mint": "2NjrBBQiE41Nz5ATHmJbvjv9ha7RXpp9RMPRGr4R1QKV",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "Arcgp86ScN9ZXDxWvm9d7nWGpDh3aFUcHPxyybUqyJx4"
+   },
+   {
+    "mint": "4HbYDAixUvHy5gwwQWrrGQrSBnNaBvFnnEJ2B294poo8",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "Arcgp86ScN9ZXDxWvm9d7nWGpDh3aFUcHPxyybUqyJx4"
+   },
+   {
+    "mint": "5FzSKrSecfeZ5XguCyk6r31TYP2PUJDVPqTYzf4jGsao",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "Arcgp86ScN9ZXDxWvm9d7nWGpDh3aFUcHPxyybUqyJx4"
+   },
+   {
+    "mint": "EGZjYFVURGE9yikV7AfPTa5GANWoRvFyKMc5To3Fpxre",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "Arcgp86ScN9ZXDxWvm9d7nWGpDh3aFUcHPxyybUqyJx4"
+   },
+   {
+    "mint": "FrA1TLhaaTKv2bxTW2g8xmYFFDWGDqyZYg2Vz68qgiYe",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "7VYMwK3hcj376RcJuZrtQiVGKdKUvpkeqGAuvpgEkprU"
+   },
+   {
+    "mint": "FRNPSuZgMTPtfQRTsq3yaeR6JeBFicKWaRHbjqnUSZSt",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "Arcgp86ScN9ZXDxWvm9d7nWGpDh3aFUcHPxyybUqyJx4"
+   },
+   {
+    "mint": "6gbmKRpX5QtfzM8Xy27DFmMaH7UWwFM4arfa4zNr5wcC",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "3SyKNQ3HSSSSw9UcN3Fkr7wrLBcN1mgPXbPZnkjEMpUZ"
+   },
+   {
+    "mint": "FoYN5oRBJbDbPz2n9rQLx8NpsKhhn1unX4BAeDc85KqZ",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "3SyKNQ3HSSSSw9UcN3Fkr7wrLBcN1mgPXbPZnkjEMpUZ"
+   },
+   {
+    "mint": "CZL27JQy2LbtetaU3jMgQXSkxAPAZqShkue5Sp9yvQLU",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "AupP9g6Qeom79jgzGWJqYo9ywe6GbRD1kbCx6nQNRmjh"
+   },
+   {
+    "mint": "6fjoxDmmvbExCQicvC1ahLWbmaYWfmKbvrCGHfkkGBrp",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "7dHyNvqYn2mTPXFJMUNsavBSUMtsku9UZ3dhNiB8uHp8"
+   },
+   {
+    "mint": "95TKaqqAoDu95JF2oAkS1MFD48S9gNEAXqxJ41fGtm2Y",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "7dHyNvqYn2mTPXFJMUNsavBSUMtsku9UZ3dhNiB8uHp8"
+   },
+   {
+    "mint": "9KCoHUFL5VP17krRWMz4d1gCSz2hjMQJK8sVkCD4sRLg",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "Arcgp86ScN9ZXDxWvm9d7nWGpDh3aFUcHPxyybUqyJx4"
+   },
+   {
+    "mint": "DvyaNo5cVbgJKNSUUcvvMJL4pjMZ8EsiTQSMgGKhJri5",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "7dHyNvqYn2mTPXFJMUNsavBSUMtsku9UZ3dhNiB8uHp8"
+   },
+   {
+    "mint": "Eq9fvxrPs3C5oL9Dj8VoLqu1DRt3D2nbbFgWZWiUDdhh",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "8i2py5HsRP2bZgwPB8h7EEazpT7adMETiBuBSYaYQKG1"
+   },
+   {
+    "mint": "HbTez6e41ZSpT6gknCK1QPbWZnnHFnYDCXFhPxA4A2dt",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "Arcgp86ScN9ZXDxWvm9d7nWGpDh3aFUcHPxyybUqyJx4"
+   },
+   {
+    "mint": "sgRVZXWVTdxUbR1Fi2QcK4Bpxv36YL3Kr8fABvDZysR",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "EBkFxxLSZzqrXeHFBEngGEUAsvKn4A5uzse56ndDahbb"
+   },
+   {
+    "mint": "AfEUTXaRE6tjYwYVuDzQ6XTnBwBDx2z3HZ3HTEdzpCCy",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "3TrXUJfi2XQXkHy3j1EjKCKJQLBPRTsqME5QhoGsRvA4"
+   },
+   {
+    "mint": "5QegFsRiwVR9MJL1pcH5qXQdF7M45734UFwbz6W6oh4f",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "F6zcU7TboRN8coXs6LWkwvjXGk4SXkhxydfjM6z1M2Ku"
+   },
+   {
+    "mint": "3b82dyk9ysqFk4KGCYWfquZzfSvFZC8EirdeE3qrwknj",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "42jqQK9zv97kUygpuYiKWFXC8obaZNwrv8Tg8MbBvife"
+   },
+   {
+    "mint": "5YnzyoaRDqdNNyM9vQYqrqsY8g5VkK4Ruz58NCEFfgTy",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "BGJgrPsQG1SyP3cDyhYkVxwbp4tuYhFG84YM8a2oymTf"
+   },
+   {
+    "mint": "Bz9qEE4kbKa2KCPzVC4tM1jaNKXuoryyE9yUiFqPfTcr",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "F6zcU7TboRN8coXs6LWkwvjXGk4SXkhxydfjM6z1M2Ku"
+   },
+   {
+    "mint": "EwELdEYCDRjk7JPbTnehx15U9aqcHppVDr5CaK3izCVr",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "BxSHmaVfktJW82aqGyzdfBhLPnLqkawY8kXjvxzrSEXX"
+   },
+   {
+    "mint": "2HczAAaCPi944LTMsuYWY7fnRGFozfptw6NPr8hNK66k",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "9iGxgj2bq3MgBrnzKr8DEnuBN4Xfxp29kMfnSxEte1Pp"
+   },
+   {
+    "mint": "CUbn5De5AfSvxo8AEf8C5v6DDcZY5uTqFoPZCgZChfum",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "F6zcU7TboRN8coXs6LWkwvjXGk4SXkhxydfjM6z1M2Ku"
+   },
+   {
+    "mint": "21Vad9Tr4A2JXukK4Koq4vYnHwBjAxqfYXwzpTU2uvrJ",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "HXPb3xV2uQ4hExJ97r3uapHTMtHJF5zxpBH7sFZXTcbX"
+   },
+   {
+    "mint": "2Ja2AQBRioVXnVvtc3ceJnUNfuGWYJNt4qdWDDYGyvT8",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "9JzLJYKvJvp1WFEN81nRgiFLRoqdu9TaMRRdGwE7DnJN"
+   },
+   {
+    "mint": "2uB3Nk6bLkfSyNvAhCV6N2SQ6KVCNCCJVShNvHxkMxj7",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "4CYNFmF6VzuNvDPPwV5kU7JV9jQfHSJDnRoiDesvUqY2"
+   },
+   {
+    "mint": "3AjpiyJet9bwcLdie2YKhcyK8y8VNbchopamtQZn8qGJ",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "Epwg6hH8A9NphmaChqQdDAQvAjf9AgHpLBSLr9S8LM4p"
+   },
+   {
+    "mint": "3pYmkwDL8Bsy99ZxUcKkv6YvBZtyvoi6EqKaGeMXEoMf",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "HzWL4Qjzcn1dT4LUP6Ho8ejnudwjSXNEswQ6KEAc58rC"
+   },
+   {
+    "mint": "7LKU5S4vNoNTGREt7XHrnqCQUz1C93phVoTUKeUa96F8",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "42jqQK9zv97kUygpuYiKWFXC8obaZNwrv8Tg8MbBvife"
+   },
+   {
+    "mint": "7qQxtu2Ra7E24Nc9wZMocEmhM4Pzt8HuL268rgMhxzCr",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "GeDfJoLMSJ16NswM56AsEoJgwbgZUaoi9Y8YHm3iY5EJ"
+   },
+   {
+    "mint": "BYYvisbyNXtnmEJ9UdSknztZCNL1LwL5rRigNJ3mPtfi",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "3rVvfsn3WXTxN2vkgn2D8iDtvQGsTFmoHaR432bQ16zg"
+   },
+   {
+    "mint": "C7eDMYSb44ZQGhR8L1285ZYWzo3CJ4KQeLN33K1Rzofb",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "J6R3F5sDTXf6YG28HSXVryvTzAZkMqZiw1Vp4RTbVUc9"
+   },
+   {
+    "mint": "Gh62W5XkkSDnZkWJzdyW3ci7ZWui1yBfyisBtMfE13no",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "Arcgp86ScN9ZXDxWvm9d7nWGpDh3aFUcHPxyybUqyJx4"
+   },
+   {
+    "mint": "HNx33Vy5A7BxTXtvXpkuc9rsdgQFJRD3kNzNN3aD9U8Y",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "DhGHZFAeZXMMY9FadBKh4z1SXntgYuPDNefTmFrGfjpr"
+   },
+   {
+    "mint": "HZBWg5VuJubSwJiHt6v9MQdCcrKE9i8r6AdBfq7hzy6B",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "EW2FVLmWvptTvZyA7oiPLNiW6Q6JrsqmXXsbHFwgoiZB"
+   },
+   {
+    "mint": "7KBiqFB4qxorCG3YEmME7MbZnLnQFfaGoLUWasSkpKMg",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "FaawYwxxz5zsdagoauYPQqDm8pBKkwxFMg7E1MJ9fiVU"
+   },
+   {
+    "mint": "EGigD3yjHsnBjJjqQwnowH6EZnkShfbA7Bw6U2bJZMaX",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "J4i6bKVM1mnkRNKK1EG8stkfTwcG6xTs9HRC98Lrg37B"
+   },
+   {
+    "mint": "3qroZB7vr6KDdTgcgKb1EhqvjtL7e5MWbikaZBWaWFsw",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "HXPb3xV2uQ4hExJ97r3uapHTMtHJF5zxpBH7sFZXTcbX"
+   },
+   {
+    "mint": "2zXrZwqqG66jp4PLm8M7nN2UgTUtsC2j75eo4eZUZ5bm",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "FuVZdUeweqcMTjxPxWwayj3JJFo5BBi2tr2jPmfGuqSh"
+   },
+   {
+    "mint": "3wrEo2nx5es2i4mAWWxHLm4SHGeyZtqrbErzxbWy5NGt",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "EW2FVLmWvptTvZyA7oiPLNiW6Q6JrsqmXXsbHFwgoiZB"
+   },
+   {
+    "mint": "4bSfz2R7b16ouYnuXBjrUXfVywWuBVb8xmaJZ6WQMvMS",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "9JzLJYKvJvp1WFEN81nRgiFLRoqdu9TaMRRdGwE7DnJN"
+   },
+   {
+    "mint": "CZDfj7ZwTTk2JDpNCbuByWuC285vtFsts7YqoU9fboQ9",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "8nXxmcKM6jDmJ5FQjr7mVNFT3mFwH8eSWZV5xjdFUBDc"
+   },
+   {
+    "mint": "F8EevgT7jY5xkQX4byAkjWPZnJAB8inbmKcu387gqopo",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "3rVvfsn3WXTxN2vkgn2D8iDtvQGsTFmoHaR432bQ16zg"
+   },
+   {
+    "mint": "22V6K2gTDgAuwfpnoxjExU8kBuFxAmzZqK37m4dmtfs6",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "5XQVrUeDq8huvreuYiff8HYN72uwWVyR3YuKCo8EAgk4"
+   },
+   {
+    "mint": "2qELi7fbwJkTsSe8fPxtbKJPK4fQ4k4DRkGCkiErfb1k",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "G1NEdepMCugMXChdh5S62WRMUhseHAjJPMbeTT4SPeMo"
+   },
+   {
+    "mint": "389PgxzXpkRneV7uspteTwRrZN4s751x9d6YpPrD3oom",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "7joNoXhooPKcjoM4Bz346hyKCxkdKBXnHwK1kHtrMtk"
+   },
+   {
+    "mint": "3JXDv4ATisdYqNB4xT3KyRo9DSWwveTdzcksjUsoP3EK",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "HzWL4Qjzcn1dT4LUP6Ho8ejnudwjSXNEswQ6KEAc58rC"
+   },
+   {
+    "mint": "3LyHC7856FQiKU6YhqZTheXsNmUF6eippncPgvsB1PSR",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "2HYdjCRv8i5qLaMnpUnAtELJWpkfggzK6TEoKWXFfoSB"
+   },
+   {
+    "mint": "4QfKEytqnVUj9kv6xWPKU1C5qnUXSNCRgGfCKNo7JHVc",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "FiFaqQSz4AkHiPkEStKVQTWvX1ZnJXBy9aDXXnCPCMot"
+   },
+   {
+    "mint": "5656tsFeL3nMgNTRHh7JL4RbBK6Mg5DmeGvom31gQC1v",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "4nCuNe2136nzpvrBssgkvvXSKjNjoWTsRreZoyGM4ZZb"
+   },
+   {
+    "mint": "5K8Lgyo1QMdVKWRcAws9As8sKppGQwV4Azhxy2cP8Qqy",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "7joNoXhooPKcjoM4Bz346hyKCxkdKBXnHwK1kHtrMtk"
+   },
+   {
+    "mint": "5T1REawS2T4p39dPgWp4GaKQbDMQS8MeWx4LKva1ippJ",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "KYkDHBjp75gLybsQ8zRJ18QNqf4tsd8L8TgjChhzvQD"
+   },
+   {
+    "mint": "6PnooyAzDr2gwoFhF6m3fLS9Cx2898sCvcYXcJXvCc9R",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "FaawYwxxz5zsdagoauYPQqDm8pBKkwxFMg7E1MJ9fiVU"
+   },
+   {
+    "mint": "7J2v4sQNXiSCcLQPqE6eJazAHRbRzRJyPAr6KnJPSyzT",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "8nXxmcKM6jDmJ5FQjr7mVNFT3mFwH8eSWZV5xjdFUBDc"
+   },
+   {
+    "mint": "7Pxsj9DfXwzU59U2Cqrs4XxgaQ9v2yZ4HTz8744LKysN",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "7joNoXhooPKcjoM4Bz346hyKCxkdKBXnHwK1kHtrMtk"
+   },
+   {
+    "mint": "8LeX5mhqFt5CQVQ9hydvS1AsdsQdSjakgm41gLjDeGrn",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "7joNoXhooPKcjoM4Bz346hyKCxkdKBXnHwK1kHtrMtk"
+   },
+   {
+    "mint": "8zJLceqFU8Sjd5ZTxjzjKa2kzXnmZNeXgewDGZYxohWY",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "7Hwm1uJhSGWkZ3Y5syY1yMoLKC46ZjCxprq8ybPAHGw8"
+   },
+   {
+    "mint": "9ixzQF8fyQ4fgAz19QgEMSUh2K9X4bvHvX3XnAbwatZs",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "7joNoXhooPKcjoM4Bz346hyKCxkdKBXnHwK1kHtrMtk"
+   },
+   {
+    "mint": "9SGN7MtBebnQ5JMT1xCvKLmZvYVz4cQN7o8rdc23uQLL",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "BBoYEzXewHYuHUGorDXJgY4hdUhn7NpNHm7Q272WWNpQ"
+   },
+   {
+    "mint": "AezZUNJQaPjMB4MUb65vbe7cr2zKGVh2iyZUfkS6cSgZ",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "4nCuNe2136nzpvrBssgkvvXSKjNjoWTsRreZoyGM4ZZb"
+   },
+   {
+    "mint": "CrMyJLS1BsjaBqQva7XjXKx4YmvX8jxWm66GTP58iC1T",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "EW2FVLmWvptTvZyA7oiPLNiW6Q6JrsqmXXsbHFwgoiZB"
+   },
+   {
+    "mint": "doszWqVZpv75SBTMXK2dYB7FccxCGT2FtKWDrJN7s7f",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "FaawYwxxz5zsdagoauYPQqDm8pBKkwxFMg7E1MJ9fiVU"
+   },
+   {
+    "mint": "H8oeWfQ9eN4bdeXnj9tcrXi5QuUxC5z6SPcvVuVBxZN3",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "7joNoXhooPKcjoM4Bz346hyKCxkdKBXnHwK1kHtrMtk"
+   },
+   {
+    "mint": "HeRnz3fnPzUVpnVhzne2qA2CEzQ6ZstMqQT8LzNLB5M8",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "E7B4noXdhmG7UGxuaghqC4ZbVgDmfuB34VwVWd66yn4R"
+   },
+   {
+    "mint": "HP75Dc9A6ExwroW12RbQhA9FWzv7k2kGbWqJyd8xSyMC",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "5pKC6J79pqdv8BDE8inyVMDoYgMFUgrQetjvEg9kvffC"
+   },
+   {
+    "mint": "aA4n6KGZHoS68TFkFGroNnzdZ2JnGeCBUdJrB88oWmm",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "77cNR75Ag8mGBtSjbV2AFnjZ9NNKVvVSDZL86cGBd961"
+   },
+   {
+    "mint": "BZ2KwoTipmVJiyHJ2o6AMfRxuBNtAVnRCLYqtKRJN55b",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "HzWL4Qjzcn1dT4LUP6Ho8ejnudwjSXNEswQ6KEAc58rC"
+   },
+   {
+    "mint": "EzqpUenkTPKnnnAiDB6URKoVu71ZB1BwbtN5yybhArF8",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "C1xiuiXgQDLX4qLGRkUeiuM9vrfszFLbgaRaMM3zHWc3"
+   },
+   {
+    "mint": "2mpvK4LtDs5WxqGu9mSSjHNc1HTUYNghxTnmF9pbjDK2",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "Arcgp86ScN9ZXDxWvm9d7nWGpDh3aFUcHPxyybUqyJx4"
+   },
+   {
+    "mint": "2N4A9HUWjU3Wt48EVfLU3knFy5Af4tDaSdLdqRm1FEME",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "5XQVrUeDq8huvreuYiff8HYN72uwWVyR3YuKCo8EAgk4"
+   },
+   {
+    "mint": "FCHtAesxbzbEqzGYB3yWX7dMuY1HQ7i9GK8YuKgmjBp5",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "5XQVrUeDq8huvreuYiff8HYN72uwWVyR3YuKCo8EAgk4"
+   },
+   {
+    "mint": "7WiZG8qeocHWSSv3RHsWMwwv4rTLrEXu4rYPEEqdhRYW",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "DDgAXsTt2ybas2U2BZC6dEzWb5uA6U5bnA8ggtzvcmsf"
+   },
+   {
+    "mint": "8hQ94j2TGeqBAsT2hyLj3H5UqqUdTKQekZw8DfmdthNZ",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "8nXxmcKM6jDmJ5FQjr7mVNFT3mFwH8eSWZV5xjdFUBDc"
+   },
+   {
+    "mint": "8kKA2gW32gXP8suMXFPkCyjf2MYpTBmyaG849NLC9E1c",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "5XQVrUeDq8huvreuYiff8HYN72uwWVyR3YuKCo8EAgk4"
+   },
+   {
+    "mint": "9sVYHKbBL1wbJPLUm62Qg7m3wmVJQ6vWwtmqp3N7H7qb",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "FuVZdUeweqcMTjxPxWwayj3JJFo5BBi2tr2jPmfGuqSh"
+   },
+   {
+    "mint": "D1Mx2g74W5rGzsQahfCCW1U9FpKmHKwej3LqWP3DuvGk",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "HHQS1X4QMAivwcjmiQGvoChjhcEjL1xyZ7p4Jcx4QZQo"
+   },
+   {
+    "mint": "Hz1ggbtPxtvfY73SRR1iQa48Fwazr4T1PBokS4G4iMs2",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "C1xiuiXgQDLX4qLGRkUeiuM9vrfszFLbgaRaMM3zHWc3"
+   },
+   {
+    "mint": "5EpQiUAYwrmprTGodHdZdTg3TP6rfN2hmqK9A9tWNkky",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "C1xiuiXgQDLX4qLGRkUeiuM9vrfszFLbgaRaMM3zHWc3"
+   },
+   {
+    "mint": "8ueKDDCyVmw2FSqoue1Hc2oYpjieEQ1XBGPRwMSQvVMQ",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "9aiq4QSd5MPs2icrwgMX6Bmq5KXqReMFHpzi5i8pxrCh"
+   },
+   {
+    "mint": "DMsw7zxnrMFbpguKZop2HkxfLbXBUqsbQhMPECBE7Fz6",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "C1xiuiXgQDLX4qLGRkUeiuM9vrfszFLbgaRaMM3zHWc3"
+   },
+   {
+    "mint": "9fsPFQw7UwrJNfgSDUDsZH4R98qATrSfLyjbPLDY51Sh",
+    "chainOwner": "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",
+    "meSeller": "7yPEAJEHGqJyRCTv2YUqY4WX6zCXzpBgfWM67joXJWmB"
+   }
+  ],
+  "listedNotInCollection": []
+ },
+ "coverage": {
+  "mainListCount": 2322,
+  "missingOwner": [],
+  "notInMainList": []
+ }
+}
