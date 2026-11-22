@@ -528,6 +528,17 @@ function openSheet(out, msg){
 $('saveClose').onclick=()=>{ $('saveSheet').hidden=true; };
 $('saveSheet').addEventListener('click',e=>{ if(e.target.id==='saveSheet') $('saveSheet').hidden=true; });
 addEventListener('keydown',e=>{ if(e.key==='Escape') $('saveSheet').hidden=true; });
+// Inside The Order (opened there with ?embed=order): Save hands the finished goddess back to
+// The Order, where she becomes the new account's picture, instead of downloading a file.
+// Only The Order's own addresses can receive her.
+const ORDER_ORIGINS=['https://nuddiesnwo.xyz','https://www.nuddiesnwo.xyz'];
+const EMBED_ORDER=(()=>{ try{ return window.parent!==window && new URLSearchParams(location.search).get('embed')==='order'; }catch(e){ return false; } })();
+function sendToOrder(){
+  let img=canvas.toDataURL('image/webp',0.92);
+  if(!/^data:image\/webp/.test(img)) img=canvas.toDataURL('image/jpeg',0.92);
+  ORDER_ORIGINS.forEach(o=>{ try{ parent.postMessage({nu:'atelier-goddess',img},o); }catch(e){} });
+  $('status').textContent='She is yours. Sent to The Order.';
+}
 const doSave=async()=>{
   if(!M) return;
   // Every selected layer must be fully decoded first; a layer that failed to load aborts the
@@ -543,6 +554,7 @@ const doSave=async()=>{
   const missing=sel.filter(im=>!im._ok||!im.naturalWidth).length;
   if(missing){ alert('Not saved: '+missing+' trait layer(s) failed to load. Check your connection and try again.'); return; }
   const out=exportPNG(sel);
+  if(EMBED_ORDER){ sendToOrder(); return; }
   // Phones: share sheet first, but only while the tap is still "live" — after a wait, the save
   // sheet's own buttons provide a fresh tap.
   if((touch||inApp) && !waited && canShareFile(out.file)){
@@ -576,6 +588,7 @@ const doReset=()=>{ if(!M) return;
 ['resetAll','resetAllM'].forEach(id=>{const b=$(id); if(b) b.onclick=doReset;});
 ['randomAll','randomAllM'].forEach(id=>{const b=$(id); if(b) b.onclick=doRandom;});
 ['download','downloadM'].forEach(id=>{const b=$(id); if(b) b.onclick=doSave;});
+if(EMBED_ORDER){ const d=$('download'), m=$('downloadM'); if(d) d.textContent='✓ Use her as my picture'; if(m) m.textContent='✓ Use her'; }
 boot();
 
 /* PWA: offline cache + install. Needs https or localhost; skipped on file://. */
