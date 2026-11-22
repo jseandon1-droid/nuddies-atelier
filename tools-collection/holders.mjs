@@ -46,14 +46,40 @@ for (const a of accounts) { const d = Buffer.from(a.account.data[0], 'base64'); 
 
 // 2) Magic Eden cross-check (public, no key)
 const stats = await getJson(`${ME}/collections/${SYMBOL}/stats`); report.me.stats = stats; await sleep(600);
-const holderStats = await getJson(`${ME}/collections/${SYMBOL}/holder_stats`); report.me.holder_stats = holderStats; await sleep(600);
-const listings = []; let pagesOk = true;
+let holderStats = await getJson(`${ME}/collections/${SYMBOL}/holder_stats`); report.me.holder_stats = holderStats; await sleep(600);
+if (holderStats.status !== 200) { // older public endpoint used by the ME site; record either way
+  const alt = await getJson(`https://api-mainnet.magiceden.io/rpc/getCollectionHolderStats/${SYMBOL}`, 2); report.me.holder_stats_alt = { status: alt.status, body: typeof alt.body === 'string' ? alt.body.slice(0, 200) : alt.body, err: alt.error };
+  if (alt.status === 200 && alt.body?.results) holderStats = { status: 200, body: alt.body.results };
+  await sleep(600);
+}
+// ME may return fewer than `limit` rows on a full page, so page until an empty page (dedupe by mint).
+const listingByMint = new Map(); let pagesOk = true;
 for (let offset = 0; offset < 5000; offset += 100) {
   const r = await getJson(`${ME}/collections/${SYMBOL}/listings?offset=${offset}&limit=100`);
   if (r.status !== 200 || !Array.isArray(r.body)) { pagesOk = false; report.me.listingsError = { offset, status: r.status, err: r.error || r.body }; break; }
-  listings.push(...r.body); console.log('listings offset', offset, r.body.length);
-  if (r.body.length < 100) break; await sleep(600);
+  console.log('listings offset', offset, r.body.length);
+  for (const l of r.body) if (l.tokenMint && !listingByMint.has(l.tokenMint)) listingByMint.set(l.tokenMint, l);
+  if (r.body.length === 0) break; await sleep(600);
 }
+// Any mint still held by a known escrow wallet: ask ME per token (listings, then token owner).
+const ESCROW_SEEDS = ['1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix', 'Fpi7E384wm2Sf3sQgsHynZaeLKRSQqot2556o95ypQgj'];
+const escrows = new Set(ESCROW_SEEDS);
+for (const l of listingByMint.values()) if (chainOwner[l.tokenMint] && chainOwner[l.tokenMint] !== l.seller) escrows.add(chainOwner[l.tokenMint]);
+report.me.escrowWallets = [...escrows];
+const perToken = { tried: 0, viaListings: 0, viaOwner: 0, unresolved: [] };
+for (const [mint, w] of Object.entries(chainOwner)) {
+  if (!escrows.has(w) || listingByMint.has(mint)) continue;
+  perToken.tried++;
+  const r = await getJson(`${ME}/tokens/${mint}/listings`); await sleep(550);
+  const hit = Array.isArray(r.body) ? r.body.find((l) => l.seller) : null;
+  if (hit) { listingByMint.set(mint, { ...hit, tokenMint: mint }); perToken.viaListings++; continue; }
+  const t = await getJson(`${ME}/tokens/${mint}`); await sleep(550);
+  const o = t.body && typeof t.body === 'object' ? t.body.owner : null;
+  if (o && !escrows.has(o)) { listingByMint.set(mint, { tokenMint: mint, seller: o, price: t.body.price ?? null, listingSource: 'token-owner' }); perToken.viaOwner++; continue; }
+  perToken.unresolved.push(mint);
+}
+report.me.perToken = perToken; console.log('perToken', JSON.stringify(perToken).slice(0, 300));
+const listings = [...listingByMint.values()];
 report.me.listingsFetched = listings.length; report.me.listingsComplete = pagesOk;
 
 // 3) Resolve real holder: on-chain owner, except a listed mint held by someone other than the ME seller (escrow) -> seller
